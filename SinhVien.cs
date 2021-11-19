@@ -13,15 +13,15 @@ namespace OOP_QuanLyKTX
         public string tenSV { get; set; }
         public bool gioiTinh { get; set; }
         public string soDienThoai { get; set; }
-        public Phong maPhong { get; set; }
+        public Phong phong { get; set; }
 
-        public SinhVien(string maSV, string tenSV, bool gioiTinh, string soDienThoai, Phong maPhong)
+        public SinhVien(string maSV, string tenSV, bool gioiTinh, string soDienThoai, Phong phong)
         {
             this.maSV = maSV;
             this.tenSV = tenSV;
             this.gioiTinh = gioiTinh;
             this.soDienThoai = soDienThoai;
-            this.maPhong = maPhong;
+            this.phong = phong;
         }
         public SinhVien(SinhVien sv)
         {
@@ -29,7 +29,7 @@ namespace OOP_QuanLyKTX
             tenSV = sv.tenSV;
             gioiTinh = sv.gioiTinh;
             soDienThoai = sv.soDienThoai;
-            maPhong = sv.maPhong;
+            phong = sv.phong;
         }
     }
 }

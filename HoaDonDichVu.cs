@@ -10,21 +10,21 @@ namespace OOP_QuanLyKTX
     public class HoaDonDichVu
     {
         public string maHoaDon { get; set; }
-        public Phong maPhong { get; set; }
+        public Phong phong { get; set; }
         public double tongTien { get; set; }
-        public string ngayThanhToan { get; set; }
+        public DateTime ngayThanhToan { get; set; }
 
-        public HoaDonDichVu(string maHoaDon, Phong maPhong, double tongTien, string ngayThanhToan)
+        public HoaDonDichVu(string maHoaDon, Phong phong, double tongTien, DateTime ngayThanhToan)
         {
             this.maHoaDon = maHoaDon;
-            this.maPhong = maPhong;
+            this.phong = phong;
             this.tongTien = tongTien;
             this.ngayThanhToan = ngayThanhToan;
         }
         public HoaDonDichVu(HoaDonDichVu HoaDonDV)
         {
             maHoaDon = HoaDonDV.maHoaDon;
-            maPhong = HoaDonDV.maPhong;
+            phong = HoaDonDV.phong;
             tongTien = HoaDonDV.tongTien;
             ngayThanhToan = HoaDonDV.ngayThanhToan;
         }

@@ -11,21 +11,21 @@ namespace OOP_QuanLyKTX
     {
         public string maQuanLy { get; set; }
         public string tenQuanLy { get; set; }
-        public Toa maToa { get; set;}
+        public Toa toa { get; set;}
         public string soDienThoai { get; set; }
 
-        public QuanLy(string maQuanLy, string tenQuanLy,Toa maToa, string soDienThoai)
+        public QuanLy(string maQuanLy, string tenQuanLy,Toa toa, string soDienThoai)
         {
             this.maQuanLy = maQuanLy;
             this.tenQuanLy = tenQuanLy;
-            this.maToa = maToa;
+            this.toa = toa;
             this.soDienThoai = soDienThoai;
         }
         public QuanLy(QuanLy ql)
         {
             maQuanLy = ql.maQuanLy;
             tenQuanLy = ql.tenQuanLy;
-            maToa = ql.maToa;
+            toa = ql.toa;
             soDienThoai = ql.soDienThoai;
         }
     }
