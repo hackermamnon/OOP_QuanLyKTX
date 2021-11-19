@@ -114,6 +114,13 @@ namespace OOP_QuanLyKTX
             sinhVien.Add(new SinhVien("SV09", "Mai Phuong Thuy", false, "0955515045", phong[6]));
             sinhVien.Add(new SinhVien("SV10", "Hoang Huong Thao", false, "0895501461", phong[6]));
         }
+
+        //1. Cho biết những phòng còn trống ở tòa A và C
+        public static void Linq1()
+        {
+
+        }
+
         //Cho biết nhân viên "Tran Phuong Thanh" đang làm việc ở tòa nhà nào
         public static void Linq2()
         {
@@ -124,6 +131,20 @@ namespace OOP_QuanLyKTX
             foreach(var nv in result)
                 Console.WriteLine("Nhan vien {0} dang lam viec o toa {1}", nv.tenNhanVien, nv.maToa.maToa);
         }
+
+        //3. Cho biết các nhân viên mà Vu Duc Manh đang quản lý
+        public static void Linq3()
+        {
+            var nhanVienLamViec = from ql in quanLy 
+                           join t in toa on ql.maToa.maToa equals t.maToa  
+                           join nv in nhanVien on ql.maToa.maToa equals nv.maToa.maToa
+                           where ql.tenQuanLy == "Vu Duc Manh"
+                           select new {nv.tenNhanVien};
+            Console.WriteLine("Danh sach nhan vien ma quan ly Vu Duc Manh dang quan ly:");
+            foreach (var nv in nhanVienLamViec)
+                Console.WriteLine("{0}", nv.tenNhanVien);
+        }
+
         //Danh sách những nhân viên đang giữ chức vụ Bao ve
         public static void Linq4()
         {
@@ -135,6 +156,12 @@ namespace OOP_QuanLyKTX
             foreach (var nv in result)
                 Console.WriteLine("MaNV: {0}\nTen: {1}", nv.maNV, nv.tenNhanVien);
         }
+
+        //5. Cho biết tiền dịch vụ của phòng ...
+        public static void Linq5()
+        {
+
+        }
         //Cho biết số lượng phòng chưa được thuê của tòa C
         public static void Linq6()
         {
@@ -144,6 +171,13 @@ namespace OOP_QuanLyKTX
                          select new { p.maPhong };
             Console.WriteLine("So luong phong chua duoc thue cua toa C la: {0}", result.Count());
         }
+
+        //7. Cho biết những hợp đồng hết hạn trước ngày 21/04/2021
+        public static void Linq7()
+        {
+
+        }
+
         //Cho biết số lượng phòng máy lạnh đang được thuê ở tòa A
         public static void Linq8()
         {
@@ -154,11 +188,27 @@ namespace OOP_QuanLyKTX
             var result = dsPhong.Count();
             Console.WriteLine("So luong phong may lanh duoc thue o toa A la: {0}", result);
         }
+
+        //9. Liệt kê sinh viên đang ở phòng
+        public static void Linq9()
+        {
+             var sinhVienP06 = from sv in sinhVien
+                              join p in phong on sv.maPhong.maPhong equals p.maPhong
+                              where p.maPhong == "P06"
+                              select new { sv.tenSV };
+        }
         //Cho biết các phòng chưa thanh toán tiền dịch vụ
         public static void Linq10()
         {
 
         }
+
+        //11) Cho biết thời hạn hợp đồng của phòng
+        public static void Linq11()
+        {
+
+        }
+
         //Cho biết sức chứa của những tòa được thuê từ 2 phòng trở lên
         public static void Linq12()
         {
@@ -184,6 +234,13 @@ namespace OOP_QuanLyKTX
                                    from d in phongDuocThueToaD
                                    select a;
         }
+
+        //13. Cho biết tòa đã được thuê hết phòng
+        public static void Linq13()
+        {
+
+        }
+
         //Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
         public static void Linq14()
         {
@@ -195,21 +252,41 @@ namespace OOP_QuanLyKTX
             foreach (var p in result)
                 Console.WriteLine("Phong: {0} - Gia phong: {1} VND", p.maPhong, p.giaPhong);
         }
+
+        //15) Cho biết các sinh viên đang ở loại phòng ...
+        public static void Linq15()
+        {
+
+        }
         //Cho biết tòa có số lượng SV nhiều nhất
         public static void Linq16()
         {
             
+        }
+
+        //17) Cho biết phòng có tiền sử dụng dịch vụ cao nhất
+        public static void Linq17()
+        {
+
         }
         //Cho biết phòng có thời gian thuê ngắn nhất
         public static void Linq18()
         {
 
         }
+
+        //19. Cho biết những nhân viên đang làm ... có lương cao hơn trung bình ở tòa ... *
+        public static void Linq19()
+        {
+
+        }
+
         //Cho biết tiền sử dụng dịch vụ trung bình của tòa
         public static void Linq20()
         {
 
         }
+
         static void Main(string[] args)
         {
             
@@ -222,60 +299,8 @@ namespace OOP_QuanLyKTX
             TaoDanhSachSinhVien();
             TaoDanhSachHopDong();
             TaoDanhSachChiTiet_HD();
-            
-            //1. Cho biết những phòng còn trống ở tòa A và C
-           var phongTrong = from p in phong join t in toa
-                             on p.maToa.maToa equals t.maToa
-                             where p.trangThai == false && t.maToa == 'A' || t.maToa == 'C'
-                             select new {p.maPhong};
-            Console.WriteLine("Nhung phong con trong o toa A va  toa C:");
-            foreach (var i in phongTrong)
-                Console.WriteLine("Phong {0}", i.maPhong);
-        
-            
-            //3. Cho biết các nhân viên mà Vu Duc Manh đang quản lý
-            var nhanVienLamViec = from ql in quanLy 
-                           join t in toa on ql.maToa.maToa equals t.maToa  
-                           join nv in nhanVien on ql.maToa.maToa equals nv.maToa.maToa
-                           where ql.tenQuanLy == "Vu Duc Manh"
-                           select new {nv.tenNhanVien};
-            Console.WriteLine("Danh sach nhan vien ma quan ly Vu Duc Manh dang quan ly:");
-            foreach (var nv in nhanVienLamViec)
-                Console.WriteLine("{0}", nv.tenNhanVien);
-
-            //5. Cho biết tiền dịch vụ của phòng ...
-
-            //7. Cho biết những hợp đồng hết hạn trước ngày 21/04/2021
-            /*var hopDongHetHan = from hd in hopDongThuePhong
-                               join cthd in chiTiet_HD on hd.maHopDong equals cthd.maHopDong.maHopDong
-                               where cthd.ngayKetThuc <= "21/04/2021"
-                               select new {hd.maHopDong};
-            foreach (var hd in hopDongHetHan)
-                Console.WriteLine("{0}", hd.maHopDong);*/
-
-            /*
-             9) Liệt kê sinh viên đang ở phòng ...
-**→ Mã SV + Tên SV**
-11) Cho biết thời hạn hợp đồng của phòng ...
-**→ Ngày kết thúc - ngày bắt đầu**
-13) Cho biết tòa đã được thuê hết phòng
-**→ Mã tòa**
-15) Cho biết các sinh viên đang ở loại phòng ...
-**→ Mã SV + Tên SV**
-17) Cho biết phòng có tiền sử dụng dịch vụ cao nhất *
-**→ Mã phòng + Số tiền**
-19)  Cho biết những nhân viên đang làm ... có lương cao hơn trung bình ở tòa ... *
-             */
-            //9. Liệt kê sinh viên đang ở phòng P06
-            var sinhVienP06 = from sv in sinhVien
-                              join p in phong on sv.maPhong.maPhong equals p.maPhong
-                              where p.maPhong == "P06"
-                              select new { sv.tenSV };
-                               ///abc
-                               /////abcd
-                               /////abcde
-                               //////dsadadsa
-                               ////////abcdefg
+       
+                              
         }
     }
 }
