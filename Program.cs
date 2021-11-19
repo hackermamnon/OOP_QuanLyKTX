@@ -175,7 +175,7 @@ namespace OOP_QuanLyKTX
             var sinhVienP06 = from sv in sinhVien
                               join p in phong on sv.maPhong.maPhong equals p.maPhong
                               where p.maPhong == "P06"
-                               select new {sv.}
+                               select new {sv.tenSV}
         }
     }
 }
