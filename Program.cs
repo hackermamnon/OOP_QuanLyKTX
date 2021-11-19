@@ -114,7 +114,102 @@ namespace OOP_QuanLyKTX
             sinhVien.Add(new SinhVien("SV09", "Mai Phuong Thuy", false, "0955515045", phong[6]));
             sinhVien.Add(new SinhVien("SV10", "Hoang Huong Thao", false, "0895501461", phong[6]));
         }
+        //Cho biết nhân viên "Tran Phuong Thanh" đang làm việc ở tòa nhà nào
+        public static void Linq2()
+        {
+            var result = from nv in nhanVien
+                         join t in toa on nv.maToa.maToa equals t.maToa
+                         where nv.tenNhanVien == "Tran Phuong Thanh"
+                         select new { nv.tenNhanVien, nv.maToa };
+            foreach(var nv in result)
+                Console.WriteLine("Nhan vien {0} dang lam viec o toa {1}", nv.tenNhanVien, nv.maToa.maToa);
+        }
+        //Danh sách những nhân viên đang giữ chức vụ Bao ve
+        public static void Linq4()
+        {
+            var result = from nv in nhanVien
+                         join lnv in loaiNhanVien on nv.maLoaiNV.maLoaiNV equals lnv.maLoaiNV
+                         where lnv.chucVu == "Bao ve"
+                         select new { nv.maNV, nv.tenNhanVien, lnv.chucVu ,lnv.congViec };
+            Console.WriteLine("Danh sach nhung nhan vien giu chuc vu Bao ve la: ");
+            foreach (var nv in result)
+                Console.WriteLine("MaNV: {0}\nTen: {1}", nv.maNV, nv.tenNhanVien);
+        }
+        //Cho biết số lượng phòng chưa được thuê của tòa C
+        public static void Linq6()
+        {
+            var result = from p in phong
+                         join t in toa on p.maToa.maToa equals t.maToa
+                         where t.maToa == 'D' && p.trangThai == false
+                         select new { p.maPhong };
+            Console.WriteLine("So luong phong chua duoc thue cua toa C la: {0}", result.Count());
+        }
+        //Cho biết số lượng phòng máy lạnh đang được thuê ở tòa A
+        public static void Linq8()
+        {
+            var dsPhong = from p in phong
+                         join t in toa on p.maToa.maToa equals t.maToa
+                         where p.loaiPhong.tenLoaiPhong.StartsWith("Phong may lanh") && t.maToa == 'A'
+                         select p;
+            var result = dsPhong.Count();
+            Console.WriteLine("So luong phong may lanh duoc thue o toa A la: {0}", result);
+        }
+        //Cho biết các phòng chưa thanh toán tiền dịch vụ
+        public static void Linq10()
+        {
 
+        }
+        //Cho biết sức chứa của những tòa được thuê từ 2 phòng trở lên
+        public static void Linq12()
+        {
+            var phongDuocThueToaA = from p in phong
+                                    join t in toa on p.maToa.maToa equals t.maToa
+                                    where p.trangThai == true && t.maToa == 'A'
+                                    select new { p.maPhong };
+            var phongDuocThueToaB = from p in phong
+                                    join t in toa on p.maToa.maToa equals t.maToa
+                                    where p.trangThai == true && t.maToa == 'B'
+                                    select new { p.maPhong };
+            var phongDuocThueToaC = from p in phong
+                                    join t in toa on p.maToa.maToa equals t.maToa
+                                    where p.trangThai == true && t.maToa == 'C'
+                                    select new { p.maPhong };
+            var phongDuocThueToaD = from p in phong
+                                    join t in toa on p.maToa.maToa equals t.maToa
+                                    where p.trangThai == true && t.maToa == 'D'
+                                    select new { p.maPhong };
+            var toaDuocThueTren2 = from a in phongDuocThueToaA
+                                   from b in phongDuocThueToaB
+                                   from c in phongDuocThueToaC
+                                   from d in phongDuocThueToaD
+                                   select a;
+        }
+        //Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
+        public static void Linq14()
+        {
+            var result = from p in phong
+                         where p.trangThai == true
+                         orderby p.loaiPhong.giaPhong
+                         select new { p.maPhong, p.loaiPhong.giaPhong };
+            Console.WriteLine("Danh sach cac phong dang duoc thue theo thu tu tang dan cua gia phong: ");
+            foreach (var p in result)
+                Console.WriteLine("Phong: {0} - Gia phong: {1} VND", p.maPhong, p.giaPhong);
+        }
+        //Cho biết tòa có số lượng SV nhiều nhất
+        public static void Linq16()
+        {
+            
+        }
+        //Cho biết phòng có thời gian thuê ngắn nhất
+        public static void Linq18()
+        {
+
+        }
+        //Cho biết tiền sử dụng dịch vụ trung bình của tòa
+        public static void Linq20()
+        {
+
+        }
         static void Main(string[] args)
         {
             
