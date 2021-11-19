@@ -9,25 +9,25 @@ namespace OOP_QuanLyKTX
     //Chi tiết hợp đồng (Mã HĐ, Mã phòng, Mã tòa, Ngày bắt đầu, Ngày kết thúc)
     public class ChiTiet_HD
     {
-        public HopDongThuePhong maHopDong { get; set; }
-        public Phong maPhong { get; set; }
-        public Toa maToa { get; set; }
-        public string ngayBatDau { get; set; }
-        public string ngayKetThuc { get; set; }
+        public HopDongThuePhong hopDong { get; set; }
+        public Phong phong { get; set; }
+        public Toa toa { get; set; }
+        public DateTime ngayBatDau { get; set; }
+        public DateTime ngayKetThuc { get; set; }
 
-        public ChiTiet_HD(HopDongThuePhong maHopDong, Phong maPhong, Toa maToa, string ngayBatDau, string ngayKetThuc)
+        public ChiTiet_HD(HopDongThuePhong hopDong, Phong phong, Toa toa, DateTime ngayBatDau, DateTime ngayKetThuc)
         {
-            this.maHopDong = maHopDong;
-            this.maPhong = maPhong;
-            this.maToa = maToa;
+            this.hopDong = hopDong;
+            this.phong = phong;
+            this.toa = toa;
             this.ngayBatDau = ngayBatDau;
             this.ngayKetThuc = ngayKetThuc;
         }
         public ChiTiet_HD(ChiTiet_HD ct)
         {
-            maHopDong = ct.maHopDong;
-            maPhong = ct.maPhong;
-            maToa = ct.maToa;
+            hopDong = ct.hopDong;
+            phong = ct.phong;
+            toa = ct.toa;
             ngayBatDau = ct.ngayBatDau;
             ngayKetThuc = ct.ngayKetThuc;
         }
