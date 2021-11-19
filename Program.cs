@@ -176,6 +176,7 @@ namespace OOP_QuanLyKTX
                               join p in phong on sv.maPhong.maPhong equals p.maPhong
                               where p.maPhong == "P06"
                                select new {sv.tenSV}
+                               ///abc
         }
     }
 }
