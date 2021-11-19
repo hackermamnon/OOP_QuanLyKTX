@@ -27,11 +27,11 @@ namespace OOP_QuanLyKTX
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[2], phong[2], toa[1], new DateTime(2020, 2, 23), new DateTime(2021, 2, 23)));
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[3], phong[3], toa[1], new DateTime(2020, 2, 18), new DateTime(2021, 2, 18)));
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[4], phong[4], toa[2], new DateTime(2020, 3, 2), new DateTime(2021, 3, 2)));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[5], phong[5], toa[2], new DateTime(2020, 3, 7), "07/03/2021"));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[6], phong[6], toa[3], new DateTime(2020, 3, 12), "12/03/2021"));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[7], phong[7], toa[3], new DateTime(2020, 3, 17), "17/03/2021"));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[8], phong[8], toa[1], new DateTime(2020, 3, 24), "24/03/2021"));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[9], phong[9], toa[3], new DateTime(2020, 4, 21), "21/04/2021"));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[5], phong[5], toa[2], new DateTime(2020, 3, 7), new DateTime(2021, 1, 7));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[6], phong[6], toa[3], new DateTime(2020, 3, 12), new DateTime(2021, 6, 12)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[7], phong[7], toa[3], new DateTime(2020, 3, 17), new DateTime(2021, 6, 17)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[8], phong[8], toa[1], new DateTime(2020, 3, 24), new DateTime(2021, 1, 24)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[9], phong[9], toa[3], new DateTime(2020, 4, 21), new DateTime(2022, 4, 21)));
         }
         public static void TaoDanhSachHopDong()
         {
