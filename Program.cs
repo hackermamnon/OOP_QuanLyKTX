@@ -35,16 +35,16 @@ namespace OOP_QuanLyKTX
         }
         public static void TaoDanhSachHopDong()
         {
-            hopDongThuePhong.Add(new HopDongThuePhong("HD01", sinhVien[0], "01/01/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD02", sinhVien[1], "10/01/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD03", sinhVien[2], "26/01/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD04", sinhVien[3], "11/02/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD05", sinhVien[4], "23/02/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD06", sinhVien[5], "28/02/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD07", sinhVien[6], "5/03/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD08", sinhVien[7], "10/03/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD09", sinhVien[8], "17/03/2020"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD10", sinhVien[9], "14/04/2020"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD01", sinhVien[0], new DateTime(2020, 1, 1)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD02", sinhVien[1], new DateTime(2020, 10, 2)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD03", sinhVien[2], new DateTime(2020, 1, 26)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD04", sinhVien[3], new DateTime(2020, 2, 11)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD05", sinhVien[4], new DateTime(2020, 2, 23)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD06", sinhVien[5], new DateTime(2020, 2, 28)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD07", sinhVien[6], new DateTime(2020, 3, 2)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD08", sinhVien[7], new DateTime(2020, 3, 10)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD09", sinhVien[8], new DateTime(2020, 3, 17)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD10", sinhVien[9], new DateTime(2020, 04, 14)));
         }
         public static void TaoDanhSachLoaiNhanVien()
         {
