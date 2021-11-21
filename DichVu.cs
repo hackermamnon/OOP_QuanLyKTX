@@ -11,21 +11,18 @@ namespace OOP_QuanLyKTX
     {
         public string maDichVu { get; set; }
         public string tenDichVu { get; set; }
-        public int chiSoThang { get; set; }
         public double tienDichVu { get; set; }
 
-        public DichVu(string maDichVu, string tenDichVu, int chiSoThang, double tienDichVu)
+        public DichVu(string maDichVu, string tenDichVu, double tienDichVu)
         {
             this.maDichVu = maDichVu;
             this.tenDichVu = tenDichVu;
-            this.chiSoThang = chiSoThang;
             this.tienDichVu = tienDichVu;
         }
         public DichVu(DichVu dv)
         {
             maDichVu = dv.maDichVu;
             tenDichVu = dv.tenDichVu;
-            chiSoThang = dv.chiSoThang;
             tienDichVu = dv.tienDichVu;
         }
     }

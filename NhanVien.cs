@@ -11,16 +11,16 @@ namespace OOP_QuanLyKTX
     {
         public string maNV { get; set; }
         public LoaiNhanVien loaiNhanVien { get; set; }
-        public Toa maToa { get; set; }
+        public Toa toa { get; set; }
         public string tenNhanVien { get; set; }
         public string soDienThoai { get; set; }
         public double luong { get; set; }
 
-        public NhanVien(string maNV, LoaiNhanVien loaiNhanVien, Toa maToa, string tenNhanVien, string soDienThoai, double luong)
+        public NhanVien(string maNV, LoaiNhanVien loaiNhanVien, Toa toa, string tenNhanVien, string soDienThoai, double luong)
         {
             this.maNV = maNV;
             this.loaiNhanVien = loaiNhanVien;
-            this.maToa = maToa;
+            this.toa = toa;
             this.tenNhanVien = tenNhanVien;
             this.soDienThoai = soDienThoai;
             this.luong = luong;
@@ -29,7 +29,7 @@ namespace OOP_QuanLyKTX
         {
             maNV = nv.maNV;
             loaiNhanVien = nv.loaiNhanVien;
-            maToa = nv.maToa;
+            toa = nv.toa;
             tenNhanVien = nv.tenNhanVien;
             soDienThoai = nv.soDienThoai;
             luong = nv.luong;
