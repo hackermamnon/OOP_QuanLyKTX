@@ -19,6 +19,8 @@ namespace OOP_QuanLyKTX
         static List<ChiTiet_HD> chiTiet_HD = new List<ChiTiet_HD>();
         static List<DichVu> dichVu = new List<DichVu>();
         static List<BaoCaoThietBi> baoCaoThietBi = new List<BaoCaoThietBi>();
+
+       
         
         public static void TaoDanhSachChiTiet_HD()
         {

@@ -13,7 +13,7 @@ namespace OOP_QuanLyKTX
         public Phong phong { get; set; }
         public DateTime thoiGian { get; set; }
         public string moTaBaoCao { get; set; }
-        
+
         public BaoCaoThietBi(string maBaoCao, Phong phong, DateTime thoiGian, string moTaBaoCao)
         {
             this.maBaoCao = maBaoCao;
