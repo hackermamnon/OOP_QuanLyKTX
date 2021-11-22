@@ -297,7 +297,7 @@ namespace OOP_QuanLyKTX
                                    select a;
         }
 
-        //13. Cho biết tòa đã được thuê hết phòng
+        //13. Cho biết tòa đã được thuê hết phòng """
         public static void Linq13()
         {
 
