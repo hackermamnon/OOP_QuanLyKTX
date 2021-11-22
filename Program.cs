@@ -20,25 +20,94 @@ namespace OOP_QuanLyKTX
         static List<DichVu> dichVu = new List<DichVu>();
         static List<BaoCaoThietBi> baoCaoThietBi = new List<BaoCaoThietBi>();
 
-       
-        
+        public static void TaoDanhSachBaoCao()
+        {
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC01", phong[0], new DateTime(2020, 1, 15), "Máy lạnh không hoạt động"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC02", phong[1], new DateTime(2020, 3, 16), "Vòi nước bị rò rỉ"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC03", phong[1], new DateTime(2020, 5, 1), "Quạt số 1 không thể đảo"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC04", phong[3], new DateTime(2020, 5, 16), "Vòi sen bị vỡ"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC05", phong[4], new DateTime(2020, 5, 23), "Chân giường số 1 bị gãy"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC06", phong[11], new DateTime(2020, 6, 16), "Tủ đựng đồ số 4 bị hư khóa"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC07", phong[11], new DateTime(2020, 8, 23), "Cửa phòng vệ sinh bị hư chốt"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC08", phong[27], new DateTime(2020, 8, 25), "Quạt số 2 bị hư động cơ"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC09", phong[18], new DateTime(2020, 9, 10), "Cửa sổ bị bung bản lề"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC10", phong[18], new DateTime(2020, 10, 12), "Cầu thang giường tầng số 1 bị gãy"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC11", phong[12], new DateTime(2020, 11, 13), "Bồn rửa tay bị sập"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC12", phong[17], new DateTime(2020, 12, 25), "Gương nhà tắm bị vỡ"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC13", phong[16], new DateTime(2021, 1, 16), "Điều khiển của máy lạnh bị hư"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC14", phong[15], new DateTime(2021, 2, 28), "Đèn phòng không hoạt động"));
+            baoCaoThietBi.Add(new BaoCaoThietBi("BC15", phong[25], new DateTime(2021, 4, 25), "Máy lạnh không hoạt động"));
+        }
+        public static void TaoDanhSachDichVu()
+        {
+            dichVu.Add(new DichVu("HD01", phong[0], 5360000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD02", phong[1], 7850000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD03", phong[2], 6250000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD04", phong[3], 4840000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD05", phong[4], 8940000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD06", phong[5], 5680000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD07", phong[6], 6520000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD08", phong[7], 7580000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD09", phong[8], 7120000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD10", phong[9], 6890000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD11", phong[10], 10540000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD12", phong[11], 7360000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD13", phong[12], 6360000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD14", phong[13], 8360000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD15", phong[14], 760000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD16", phong[15], 8960000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD17", phong[16], 5850000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD18", phong[17], 6560000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD19", phong[18], 7480000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD20", phong[19], 8590000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD21", phong[20], 8750000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD22", phong[21], 9890000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD23", phong[22], 9200000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD24", phong[23], 7200000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD25", phong[24], 9850000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD26", phong[25], 7540000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD27", phong[26], 6580000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD28", phong[27], 7540000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD29", phong[28], 7890000, new DateTime(2020, 2, 1)));
+            dichVu.Add(new DichVu("HD30", phong[29], 8790000, new DateTime(2020, 2, 1)));
+        }
         public static void TaoDanhSachChiTiet_HD()
         {
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[0], phong[0], toa[0], new DateTime(2020, 1, 8), new DateTime(2021, 1, 8)));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[1], phong[1], toa[0], new DateTime(2020, 1, 17), new DateTime(2021, 1, 17)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[1], phong[0], toa[0], new DateTime(2020, 1, 9), new DateTime(2021, 1, 9)));
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[2], phong[2], toa[1], new DateTime(2020, 2, 23), new DateTime(2021, 2, 23)));
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[3], phong[3], toa[1], new DateTime(2020, 2, 18), new DateTime(2021, 2, 18)));
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[4], phong[4], toa[2], new DateTime(2020, 3, 2), new DateTime(2021, 3, 2)));
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[5], phong[5], toa[2], new DateTime(2020, 3, 7), new DateTime(2021, 1, 7)));
             chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[6], phong[6], toa[3], new DateTime(2020, 3, 12), new DateTime(2021, 6, 12)));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[7], phong[7], toa[3], new DateTime(2020, 3, 17), new DateTime(2021, 6, 17)));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[8], phong[8], toa[1], new DateTime(2020, 3, 24), new DateTime(2021, 1, 24)));
-            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[9], phong[9], toa[3], new DateTime(2020, 4, 21), new DateTime(2022, 4, 21)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[7], phong[6], toa[3], new DateTime(2020, 3, 17), new DateTime(2021, 6, 17)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[8], phong[6], toa[3], new DateTime(2020, 3, 24), new DateTime(2021, 1, 24)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[9], phong[6], toa[3], new DateTime(2020, 4, 21), new DateTime(2022, 4, 21)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[10], phong[8], toa[1], new DateTime(2020, 4, 24), new DateTime(2021, 4, 24)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[11], phong[8], toa[1], new DateTime(2020, 5, 7), new DateTime(2021, 5, 7)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[12], phong[8], toa[1], new DateTime(2020, 5, 8), new DateTime(2021, 5, 8)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[13], phong[8], toa[1], new DateTime(2020, 5, 18), new DateTime(2021, 5, 18)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[14], phong[1], toa[0], new DateTime(2020, 5, 28), new DateTime(2021, 1, 28)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[15], phong[1], toa[0], new DateTime(2020, 6, 6), new DateTime(2021, 2, 6)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[16], phong[2], toa[1], new DateTime(2020, 6, 9), new DateTime(2021, 2, 9)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[17], phong[2], toa[1], new DateTime(2020, 6, 17), new DateTime(2021, 2, 17)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[18], phong[2], toa[1], new DateTime(2020, 6, 24), new DateTime(2021, 2, 24)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[19], phong[10], toa[0], new DateTime(2020, 7, 21), new DateTime(2022, 7, 21)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[20], phong[10], toa[0], new DateTime(2020, 7, 28), new DateTime(2022, 7, 28)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[21], phong[10], toa[0], new DateTime(2020, 8, 5), new DateTime(2022, 8, 5)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[22], phong[10], toa[0], new DateTime(2020, 8, 12), new DateTime(2022, 8, 12)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[23], phong[11], toa[0], new DateTime(2020, 8, 28), new DateTime(2021, 8, 28)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[24], phong[11], toa[0], new DateTime(2020, 9, 17), new DateTime(2021, 9, 17)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[25], phong[11], toa[0], new DateTime(2020, 10, 12), new DateTime(2021, 9, 12)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[26], phong[11], toa[0], new DateTime(2020, 10, 22), new DateTime(2021, 10, 22)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[27], phong[12], toa[1], new DateTime(2020, 10, 26), new DateTime(2021, 2, 26)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[28], phong[12], toa[1], new DateTime(2020, 10, 30), new DateTime(2021, 3, 3)));
+            chiTiet_HD.Add(new ChiTiet_HD(hopDongThuePhong[29], phong[12], toa[1], new DateTime(2020, 10, 31), new DateTime(2021, 3, 3)));
         }
         public static void TaoDanhSachHopDong()
         {
             hopDongThuePhong.Add(new HopDongThuePhong("HD01", sinhVien[0], new DateTime(2020, 1, 1)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD02", sinhVien[1], new DateTime(2020, 10, 2)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD02", sinhVien[1], new DateTime(2020, 1, 2)));
             hopDongThuePhong.Add(new HopDongThuePhong("HD03", sinhVien[2], new DateTime(2020, 1, 26)));
             hopDongThuePhong.Add(new HopDongThuePhong("HD04", sinhVien[3], new DateTime(2020, 2, 11)));
             hopDongThuePhong.Add(new HopDongThuePhong("HD05", sinhVien[4], new DateTime(2020, 2, 23)));
@@ -46,7 +115,27 @@ namespace OOP_QuanLyKTX
             hopDongThuePhong.Add(new HopDongThuePhong("HD07", sinhVien[6], new DateTime(2020, 3, 2)));
             hopDongThuePhong.Add(new HopDongThuePhong("HD08", sinhVien[7], new DateTime(2020, 3, 10)));
             hopDongThuePhong.Add(new HopDongThuePhong("HD09", sinhVien[8], new DateTime(2020, 3, 17)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD10", sinhVien[9], new DateTime(2020, 04, 14)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD10", sinhVien[9], new DateTime(2020, 4, 14)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD11", sinhVien[10], new DateTime(2020, 4, 17)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD12", sinhVien[11], new DateTime(2020, 4, 30)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD13", sinhVien[12], new DateTime(2020, 5, 1)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD14", sinhVien[13], new DateTime(2020, 5, 11)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD15", sinhVien[14], new DateTime(2020, 5, 20)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD16", sinhVien[15], new DateTime(2020, 5, 30)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD17", sinhVien[16], new DateTime(2020, 6, 2)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD18", sinhVien[17], new DateTime(2020, 6, 10)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD19", sinhVien[18], new DateTime(2020, 6, 17)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD20", sinhVien[19], new DateTime(2020, 7, 14)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD21", sinhVien[20], new DateTime(2020, 7, 20)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD22", sinhVien[21], new DateTime(2020, 7, 28)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD23", sinhVien[22], new DateTime(2020, 8, 5)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD24", sinhVien[23], new DateTime(2020, 8, 20)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD25", sinhVien[24], new DateTime(2020, 9, 10)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD26", sinhVien[25], new DateTime(2020, 10, 5)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD27", sinhVien[26], new DateTime(2020, 10, 15)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD28", sinhVien[27], new DateTime(2020, 10, 19)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD29", sinhVien[28], new DateTime(2020, 10, 23)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD30", sinhVien[29], new DateTime(2020, 10, 24)));
         }
         public static void TaoDanhSachLoaiNhanVien()
         {
@@ -83,7 +172,7 @@ namespace OOP_QuanLyKTX
             nhanVien.Add(new NhanVien("NV23", loaiNhanVien[0], toa[2], "Trịnh Thiện Luân", "0987558119", 12500000));
             nhanVien.Add(new NhanVien("NV24", loaiNhanVien[1], toa[2], "Nguyễn Quang Ninh", "0935502239", 15500000));
             nhanVien.Add(new NhanVien("NV25", loaiNhanVien[1], toa[3], "Trần Minh Thạc", "0936457259", 10300000));
-            nhanVien.Add(new NhanVien("NV26", loaiNhanVien[1], toa[3], "Ngyyen64 Minh Thạc", "0935599247", 14800000));
+            nhanVien.Add(new NhanVien("NV26", loaiNhanVien[1], toa[3], "Nguyễn Minh Thạc", "0935599247", 14800000));
             nhanVien.Add(new NhanVien("NV27", loaiNhanVien[0], toa[3], "Trần Công Ân", "0912590004", 17200000));
             nhanVien.Add(new NhanVien("NV28", loaiNhanVien[0], toa[0], "Mạnh Gia Bình", "0958974792", 9500000));
             nhanVien.Add(new NhanVien("NV29", loaiNhanVien[0], toa[1], "Thịnh Bảo Lâm", "0915501907", 11000000));
@@ -110,7 +199,7 @@ namespace OOP_QuanLyKTX
             phong.Add(new Phong("P08", toa[3], loaiPhong[3], false));
             phong.Add(new Phong("P09", toa[1], loaiPhong[0], false));
             phong.Add(new Phong("P10", toa[3], loaiPhong[0], false));
-            phong.Add(new Phong("P11", toa[0], loaiPhong[4], false));
+            phong.Add(new Phong("P11", toa[0], loaiPhong[4], true));
             phong.Add(new Phong("P12", toa[0], loaiPhong[5], true));
             phong.Add(new Phong("P13", toa[1], loaiPhong[4], true));
             phong.Add(new Phong("P14", toa[1], loaiPhong[5], false));
@@ -363,7 +452,7 @@ namespace OOP_QuanLyKTX
             TaoDanhSachSinhVien();
             TaoDanhSachHopDong();
             TaoDanhSachChiTiet_HD();
-       
+            TaoDanhSachDichVu();
             Linq14();
             Console.ReadKey();
         }
