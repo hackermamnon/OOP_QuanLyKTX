@@ -448,10 +448,17 @@ namespace OOP_QuanLyKTX
         {
 
         }
-        //18. Cho biết phòng có thời gian thuê ngắn nhất
+        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         public static void Linq18()
         {
-
+            var danhSachThoiGianThue = from p in phong
+                         join hd in chiTiet_HD on p.maPhong equals hd.phong.maPhong
+                         select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong};
+            var result = danhSachThoiGianThue.Min();
+            Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
+            Console.WriteLine("Danh sach thoi gian thue cua tung phong: ");
+            foreach (var ds in danhSachThoiGianThue)
+                Console.WriteLine("Phong {0} - Thoi gian thue {1}", ds.maPhong, ds.range);
         }
 
         //19. Cho biết những nhân viên đang làm ... có lương cao hơn trung bình ở tòa ... *
@@ -485,7 +492,7 @@ namespace OOP_QuanLyKTX
             TaoDanhSachHopDong();
             TaoDanhSachChiTiet_HD();
             TaoDanhSachDichVu();
-            Linq20();
+            Linq18();
             Console.ReadKey();
         }
     }
