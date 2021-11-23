@@ -10,7 +10,8 @@ namespace OOP_QuanLyKTX
     {
         static List<Toa> toa = new List<Toa>();
         static List<SinhVien> sinhVien = new List<SinhVien>();
-        static List<QuanLy> quanLy = new List<QuanLy>();
+        static List<ThietBi> thietBi = new List<ThietBi>();
+        static List<TrangBi> trangBi = new List<TrangBi>();
         static List<Phong> phong = new List<Phong>();
         static List<NhanVien> nhanVien = new List<NhanVien>();
         static List<LoaiPhong> loaiPhong = new List<LoaiPhong>();
@@ -106,36 +107,36 @@ namespace OOP_QuanLyKTX
         }
         public static void TaoDanhSachHopDong()
         {
-            hopDongThuePhong.Add(new HopDongThuePhong("HD01", sinhVien[0], new DateTime(2020, 1, 1)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD02", sinhVien[1], new DateTime(2020, 1, 2)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD03", sinhVien[2], new DateTime(2020, 1, 26)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD04", sinhVien[3], new DateTime(2020, 2, 11)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD05", sinhVien[4], new DateTime(2020, 2, 23)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD06", sinhVien[5], new DateTime(2020, 2, 28)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD07", sinhVien[6], new DateTime(2020, 3, 2)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD08", sinhVien[7], new DateTime(2020, 3, 10)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD09", sinhVien[8], new DateTime(2020, 3, 17)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD10", sinhVien[9], new DateTime(2020, 4, 14)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD11", sinhVien[10], new DateTime(2020, 4, 17)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD12", sinhVien[11], new DateTime(2020, 4, 30)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD13", sinhVien[12], new DateTime(2020, 5, 1)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD14", sinhVien[13], new DateTime(2020, 5, 11)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD15", sinhVien[14], new DateTime(2020, 5, 20)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD16", sinhVien[15], new DateTime(2020, 5, 30)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD17", sinhVien[16], new DateTime(2020, 6, 2)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD18", sinhVien[17], new DateTime(2020, 6, 10)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD19", sinhVien[18], new DateTime(2020, 6, 17)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD20", sinhVien[19], new DateTime(2020, 7, 14)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD21", sinhVien[20], new DateTime(2020, 7, 20)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD22", sinhVien[21], new DateTime(2020, 7, 28)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD23", sinhVien[22], new DateTime(2020, 8, 5)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD24", sinhVien[23], new DateTime(2020, 8, 20)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD25", sinhVien[24], new DateTime(2020, 9, 10)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD26", sinhVien[25], new DateTime(2020, 10, 5)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD27", sinhVien[26], new DateTime(2020, 10, 15)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD28", sinhVien[27], new DateTime(2020, 10, 19)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD29", sinhVien[28], new DateTime(2020, 10, 23)));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD30", sinhVien[29], new DateTime(2020, 10, 24)));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD01", sinhVien[0], "Hop dong thue phong SV01"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD02", sinhVien[1], "Hop dong thue phong SV02"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD03", sinhVien[2], "Hop dong thue phong SV03"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD04", sinhVien[3], "Hop dong thue phong SV04"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD05", sinhVien[4], "Hop dong thue phong SV05"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD06", sinhVien[5], "Hop dong thue phong SV06"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD07", sinhVien[6], "Hop dong thue phong SV07"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD08", sinhVien[7], "Hop dong thue phong SV08"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD09", sinhVien[8], "Hop dong thue phong SV09"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD10", sinhVien[9], "Hop dong thue phong SV10"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD11", sinhVien[10], "Hop dong thue phong SV11"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD12", sinhVien[11], "Hop dong thue phong SV12"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD13", sinhVien[12], "Hop dong thue phong SV13"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD14", sinhVien[13], "Hop dong thue phong SV14"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD15", sinhVien[14], "Hop dong thue phong SV15"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD16", sinhVien[15], "Hop dong thue phong SV16"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD17", sinhVien[16], "Hop dong thue phong SV17"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD18", sinhVien[17], "Hop dong thue phong SV18"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD19", sinhVien[18], "Hop dong thue phong SV19"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD20", sinhVien[19], "Hop dong thue phong SV20"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD21", sinhVien[20], "Hop dong thue phong SV21"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD22", sinhVien[21], "Hop dong thue phong SV22"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD23", sinhVien[22], "Hop dong thue phong SV23"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD24", sinhVien[23], "Hop dong thue phong SV24"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD25", sinhVien[24], "Hop dong thue phong SV25"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD26", sinhVien[25], "Hop dong thue phong SV26"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD27", sinhVien[26], "Hop dong thue phong SV27"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD28", sinhVien[27], "Hop dong thue phong SV28"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD29", sinhVien[28], "Hop dong thue phong SV29"));
+            hopDongThuePhong.Add(new HopDongThuePhong("HD30", sinhVien[29], "Hop dong thue phong SV30"));
         }
         public static void TaoDanhSachLoaiNhanVien()
         {
@@ -227,45 +228,38 @@ namespace OOP_QuanLyKTX
             toa.Add(new Toa('C', 300, 45));
             toa.Add(new Toa('D', 330, 50));
         }
-        public static void TaoDanhSachQuanLy()
-        {
-            quanLy.Add(new QuanLy("QL0A", "Nguyễn Bảo Định", toa[0], "0355511246"));
-            quanLy.Add(new QuanLy("QL0B", "Vũ Đức Mạnh", toa[1], "0985568304"));
-            quanLy.Add(new QuanLy("QL0C", "Dương Bách Quỳnh", toa[2], "0855568006"));
-            quanLy.Add(new QuanLy("QL0D", "Nghiêm Phạm Thu Phương", toa[3], "0955560295"));
-        }
         public static void TaoDanhSachSinhVien()
         {
-            sinhVien.Add(new SinhVien("SV01", "Văn Minh Anh", true, "0335573464", phong[0]));
-            sinhVien.Add(new SinhVien("SV02", "Kha Sỹ Phú", true, "0955546106", phong[1]));
-            sinhVien.Add(new SinhVien("SV03", "Phan Phúc Lâm", true, "0875516075", phong[2]));
-            sinhVien.Add(new SinhVien("SV04", "Trần Trung Thế", true, "0335555459", phong[3]));
-            sinhVien.Add(new SinhVien("SV05", "Cao Đăng Ngọc Quý", true, "0995578740", phong[4]));
-            sinhVien.Add(new SinhVien("SV06", "Phạm Vĩnh Long", true, "0335558622", phong[5]));
-            sinhVien.Add(new SinhVien("SV07", "Tạ Bạch Cúc", false, "0935505935", phong[6]));
-            sinhVien.Add(new SinhVien("SV08", "Mai Kiều Hoa", false, "0855533475", phong[6]));
-            sinhVien.Add(new SinhVien("SV09", "Mai Phương Thúy", false, "0955515045", phong[6]));
-            sinhVien.Add(new SinhVien("SV10", "Hoàng Phương Thảo", false, "0895501461", phong[6]));
-            sinhVien.Add(new SinhVien("SV11", "Trần Quang Bửu", true, "09732588394", phong[8]));
-            sinhVien.Add(new SinhVien("SV12", "Nguyễn Quang Dũng", true, "03312598591", phong[8]));
-            sinhVien.Add(new SinhVien("SV13", "Nguyễn Thiện Giang", true, "09331529049", phong[8]));
-            sinhVien.Add(new SinhVien("SV14", "Nguyễn Trọng Khánh", true, "09556752852", phong[8]));
-            sinhVien.Add(new SinhVien("SV15", "Phan Bảo Long", true, "03758710360", phong[1]));
-            sinhVien.Add(new SinhVien("SV16", "Cao Khắc Minh", true, "03512548013", phong[1]));
-            sinhVien.Add(new SinhVien("SV17", "Đoàn Kiên Trung", true, "09655516844", phong[2]));
-            sinhVien.Add(new SinhVien("SV18", "Huỳnh Huy Cường", true, "03578507626", phong[2]));
-            sinhVien.Add(new SinhVien("SV19", "Danh Hoàng Giang", true, "098559527928", phong[2]));
-            sinhVien.Add(new SinhVien("SV20", "Đỗ Mỹ Loan", false, "03515538943", phong[10]));
-            sinhVien.Add(new SinhVien("SV21", "Nguyễn Phương Lan", false, "09959743180", phong[10]));
-            sinhVien.Add(new SinhVien("SV22", "Trịnh Thúy Anh", false, "03565533549", phong[10]));
-            sinhVien.Add(new SinhVien("SV23", "Lương Bạch Loan", false, "09351210183", phong[10]));
-            sinhVien.Add(new SinhVien("SV24", "Nghiêm Diệu Hà", false, "03364557138", phong[11]));
-            sinhVien.Add(new SinhVien("SV25", "Nguyễn Hải Châu", false, "0333129573", phong[11]));
-            sinhVien.Add(new SinhVien("SV26", "Vũ Bạch Yến", false, "0335979171", phong[11]));
-            sinhVien.Add(new SinhVien("SV27", "Nguyễn Bích Thủy", false, "09915542642", phong[11]));
-            sinhVien.Add(new SinhVien("SV28", "Việt Mỹ Kiều", false, "09532563250", phong[12]));
-            sinhVien.Add(new SinhVien("SV29", "Nguyễn Linh Sương Sương", false, "09857975293", phong[12]));
-            sinhVien.Add(new SinhVien("SV30", "Vũ Bích Vân", false, "03368595027", phong[12]));
+            sinhVien.Add(new SinhVien("SV01", "Văn Minh Anh", true, "0335573464"));
+            sinhVien.Add(new SinhVien("SV02", "Kha Sỹ Phú", true, "0955546106"));
+            sinhVien.Add(new SinhVien("SV03", "Phan Phúc Lâm", true, "0875516075"));
+            sinhVien.Add(new SinhVien("SV04", "Trần Trung Thế", true, "0335555459"));
+            sinhVien.Add(new SinhVien("SV05", "Cao Đăng Ngọc Quý", true, "0995578740"));
+            sinhVien.Add(new SinhVien("SV06", "Phạm Vĩnh Long", true, "0335558622"));
+            sinhVien.Add(new SinhVien("SV07", "Tạ Bạch Cúc", false, "0935505935"));
+            sinhVien.Add(new SinhVien("SV08", "Mai Kiều Hoa", false, "0855533475"));
+            sinhVien.Add(new SinhVien("SV09", "Mai Phương Thúy", false, "0955515045"));
+            sinhVien.Add(new SinhVien("SV10", "Hoàng Phương Thảo", false, "0895501461"));
+            sinhVien.Add(new SinhVien("SV11", "Trần Quang Bửu", true, "09732588394"));
+            sinhVien.Add(new SinhVien("SV12", "Nguyễn Quang Dũng", true, "03312598591"));
+            sinhVien.Add(new SinhVien("SV13", "Nguyễn Thiện Giang", true, "09331529049"));
+            sinhVien.Add(new SinhVien("SV14", "Nguyễn Trọng Khánh", true, "09556752852"));
+            sinhVien.Add(new SinhVien("SV15", "Phan Bảo Long", true, "03758710360"));
+            sinhVien.Add(new SinhVien("SV16", "Cao Khắc Minh", true, "03512548013"));
+            sinhVien.Add(new SinhVien("SV17", "Đoàn Kiên Trung", true, "09655516844"));
+            sinhVien.Add(new SinhVien("SV18", "Huỳnh Huy Cường", true, "03578507626"));
+            sinhVien.Add(new SinhVien("SV19", "Danh Hoàng Giang", true, "098559527928"));
+            sinhVien.Add(new SinhVien("SV20", "Đỗ Mỹ Loan", false, "03515538943"));
+            sinhVien.Add(new SinhVien("SV21", "Nguyễn Phương Lan", false, "09959743180"));
+            sinhVien.Add(new SinhVien("SV22", "Trịnh Thúy Anh", false, "03565533549"));
+            sinhVien.Add(new SinhVien("SV23", "Lương Bạch Loan", false, "09351210183"));
+            sinhVien.Add(new SinhVien("SV24", "Nghiêm Diệu Hà", false, "03364557138"));
+            sinhVien.Add(new SinhVien("SV25", "Nguyễn Hải Châu", false, "0333129573"));
+            sinhVien.Add(new SinhVien("SV26", "Vũ Bạch Yến", false, "0335979171"));
+            sinhVien.Add(new SinhVien("SV27", "Nguyễn Bích Thủy", false, "09915542642"));
+            sinhVien.Add(new SinhVien("SV28", "Việt Mỹ Kiều", false, "09532563250"));
+            sinhVien.Add(new SinhVien("SV29", "Nguyễn Linh Sương Sương", false, "09857975293"));
+            sinhVien.Add(new SinhVien("SV30", "Vũ Bích Vân", false, "03368595027"));
         }
 
         //1. Cho biết những phòng còn trống ở tòa A và C
@@ -286,17 +280,17 @@ namespace OOP_QuanLyKTX
         }
 
         //3. Cho biết các nhân viên mà Vu Duc Manh đang quản lý
-        public static void Linq3()
-        {
-            var nhanVienLamViec = from ql in quanLy 
-                           join t in toa on ql.toa.maToa equals t.maToa  
-                           join nv in nhanVien on ql.toa.maToa equals nv.toa.maToa
-                           where ql.tenQuanLy == "Vu Duc Manh"
-                           select new {nv.tenNhanVien};
-            Console.WriteLine("Danh sach nhan vien ma quan ly Vu Duc Manh dang quan ly:");
-            foreach (var nv in nhanVienLamViec)
-                Console.WriteLine("{0}", nv.tenNhanVien);
-        }
+        //public static void Linq3()
+        //{
+        //    var nhanVienLamViec = from ql in quanLy 
+        //                   join t in toa on ql.toa.maToa equals t.maToa  
+        //                   join nv in nhanVien on ql.toa.maToa equals nv.toa.maToa
+        //                   where ql.tenQuanLy == "Vu Duc Manh"
+        //                   select new {nv.tenNhanVien};
+        //    Console.WriteLine("Danh sach nhan vien ma quan ly Vu Duc Manh dang quan ly:");
+        //    foreach (var nv in nhanVienLamViec)
+        //        Console.WriteLine("{0}", nv.tenNhanVien);
+        //}
 
         //4. Danh sách những nhân viên đang giữ chức vụ Bao ve
         public static void Linq4()
@@ -343,13 +337,13 @@ namespace OOP_QuanLyKTX
         }
 
         //9. Liệt kê sinh viên đang ở phòng
-        public static void Linq9()
-        {
-             var sinhVienP06 = from sv in sinhVien
-                              join p in phong on sv.phong.maPhong equals p.maPhong
-                              where p.maPhong == "P06"
-                              select new { sv.tenSV };
-        }
+        //public static void Linq9()
+        //{
+        //     var sinhVienP06 = from sv in sinhVien
+        //                      join p in phong on sv.phong.maPhong equals p.maPhong
+        //                      where p.maPhong == "P06"
+        //                      select new { sv.tenSV };
+        //}
         //10. Cho biết các phòng chưa thanh toán tiền dịch vụ
         public static void Linq10()
         {
@@ -404,19 +398,19 @@ namespace OOP_QuanLyKTX
         {
 
         }
-        //16. Cho biết tòa có số lượng SV nhiều nhất
-        public static void Linq16()
-        {
-            var result = from sv in sinhVien
-                         join p in phong on sv.phong.maPhong equals p.maPhong
-                         join t in toa on p.toa.maToa equals t.maToa
-                         group p.maPhong by t.maToa into groups
-                         select new { groups};
-            //select new { sv.maSV, sv.phong.maPhong, p.toa.maToa };
-            Console.WriteLine("Danh sach sinh vien theo ma toa: ");
-            foreach (var r in result)
-                Console.WriteLine("Sinh vien {0}", r.groups);
-        }
+        //16. Cho biết tòa có số lượng SV nhiều nhất (*)
+        //public static void Linq16()
+        //{
+        //    var result = from sv in sinhVien
+        //                 join p in phong on sv.phong.maPhong equals p.maPhong
+        //                 join t in toa on p.toa.maToa equals t.maToa
+        //                 group p.maPhong by t.maToa into groups
+        //                 select new { groups};
+        //    //select new { sv.maSV, sv.phong.maPhong, p.toa.maToa };
+        //    Console.WriteLine("Danh sach sinh vien theo ma toa: ");
+        //    foreach (var r in result)
+        //        Console.WriteLine("Sinh vien {0}", r.groups);
+        //}
 
         //17. Cho biết phòng có tiền sử dụng dịch vụ cao nhất
         public static void Linq17()
@@ -460,7 +454,7 @@ namespace OOP_QuanLyKTX
             TaoDanhSachLoaiPhong();
             TaoDanhSachLoaiNhanVien();
             TaoDachSachToa();
-            TaoDanhSachQuanLy();
+            
             TaoDanhSachNhanVien();
             TaoDanhSachPhong();
             TaoDanhSachSinhVien();
