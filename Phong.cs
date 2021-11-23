@@ -10,23 +10,31 @@ namespace OOP_QuanLyKTX
     public class Phong
     {
         public string maPhong { get; set; }
-        public Toa toa { get; set; }
-        public LoaiPhong loaiPhong { get; set; }
+        public string maToa { get; set; }
+        public string maLoaiPhong { get; set; }
         public bool trangThai { get; set; }
 
-        public Phong(string maPhong, Toa toa, LoaiPhong loaiPhong, bool trangThai)
+        //related = singular
+        public Toa toa { get; set; }
+        public LoaiPhong loaiPhong { get; set; }
+
+        public Phong(string maPhong, string maToa, string maLoaiPhong,  Toa toa, LoaiPhong loaiPhong, bool trangThai)
         {
             this.maPhong = maPhong;
+            this.maLoaiPhong = maLoaiPhong;
+            this.maToa = maToa;
             this.toa = toa;
             this.loaiPhong = loaiPhong;
             this.trangThai = trangThai;
         }
         public Phong(Phong p)
         {
-            maPhong = p.maPhong;
-            toa = p.toa;
-            loaiPhong = p.loaiPhong;
-            trangThai = p.trangThai;
+            this.maPhong = p.maPhong;
+            this.maLoaiPhong = p.maLoaiPhong;
+            this.maToa = p.maToa;
+            this.toa = p.toa;
+            this.loaiPhong = p.loaiPhong;
+            this.trangThai = p.trangThai;
         }
     }
 }

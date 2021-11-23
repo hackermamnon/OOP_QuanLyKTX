@@ -13,6 +13,9 @@ namespace OOP_QuanLyKTX
         public string tenLoaiPhong { get; set; }
         public double giaPhong { get; set; }
 
+        // related = plural
+        public ICollection<Tho> dsphong_loai { get; set; }
+
         public LoaiPhong(string maLoaiPhong, string tenLoaiPhong, double giaPhong)
         {
             this.maLoaiPhong = maLoaiPhong;
