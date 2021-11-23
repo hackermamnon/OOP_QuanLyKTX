@@ -44,32 +44,32 @@ namespace OOP_QuanLyKTX
             dichVu.Add(new DichVu("HD02", phong[1], 7850000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD03", phong[2], 6250000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD04", phong[3], 4840000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD05", phong[4], 8940000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD05", phong[4], 8940000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD06", phong[5], 5680000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD07", phong[6], 6520000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD08", phong[7], 7580000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD09", phong[8], 7120000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD10", phong[9], 6890000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD11", phong[10], 10540000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD11", phong[10], 10540000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD12", phong[11], 7360000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD13", phong[12], 6360000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD14", phong[13], 8360000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD15", phong[14], 760000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD16", phong[15], 8960000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD16", phong[15], 8960000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD17", phong[16], 5850000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD18", phong[17], 6560000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD19", phong[18], 7480000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD20", phong[19], 8590000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD21", phong[20], 8750000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD22", phong[21], 9890000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD23", phong[22], 9200000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD20", phong[19], 8590000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD21", phong[20], 8750000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD22", phong[21], 9890000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD23", phong[22], 9200000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD24", phong[23], 7200000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD25", phong[24], 9850000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD25", phong[24], 9850000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD26", phong[25], 7540000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD27", phong[26], 6580000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD28", phong[27], 7540000, new DateTime(2020, 2, 1)));
             dichVu.Add(new DichVu("HD29", phong[28], 7890000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD30", phong[29], 8790000, new DateTime(2020, 2, 1)));
+            //dichVu.Add(new DichVu("HD30", phong[29], 8790000, new DateTime(2020, 2, 1)));
         }
         public static void TaoDanhSachChiTiet_HD()
         {
@@ -353,7 +353,15 @@ namespace OOP_QuanLyKTX
         //10. Cho biết các phòng chưa thanh toán tiền dịch vụ
         public static void Linq10()
         {
-
+            var tongSoPhong = from p in phong
+                              select p.maPhong;
+            var phongDaDongTien = from dv in dichVu
+                                  select dv.phong.maPhong;
+            var result = from p in tongSoPhong.Except(phongDaDongTien)
+                         select p;
+            Console.WriteLine("Cac phong chua thanh toan tien dich vu la: ");
+            foreach (var r in result)
+                Console.WriteLine(r);
         }
 
         //11. Cho biết thời hạn hợp đồng của phòng
@@ -362,30 +370,40 @@ namespace OOP_QuanLyKTX
 
         }
 
-        //12. Cho biết sức chứa của những tòa được thuê từ 2 phòng trở lên
+        //12. Cho biết sức chứa của những tòa được thuê từ 5 phòng trở lên
         public static void Linq12()
         {
+            List<int> soPhongDuocThue = new List<int>();
             var phongDuocThueToaA = from p in phong
                                     join t in toa on p.toa.maToa equals t.maToa
                                     where p.trangThai == true && t.maToa == 'A'
                                     select new { p.maPhong };
+            var soPhongDuocThueToaA = phongDuocThueToaA.Count();
+            soPhongDuocThue.Add(soPhongDuocThueToaA);
             var phongDuocThueToaB = from p in phong
                                     join t in toa on p.toa.maToa equals t.maToa
                                     where p.trangThai == true && t.maToa == 'B'
                                     select new { p.maPhong };
+            var soPhongDuocThueToaB = phongDuocThueToaB.Count();
+            soPhongDuocThue.Add(soPhongDuocThueToaB);
             var phongDuocThueToaC = from p in phong
                                     join t in toa on p.toa.maToa equals t.maToa
                                     where p.trangThai == true && t.maToa == 'C'
                                     select new { p.maPhong };
+            var soPhongDuocThueToaC = phongDuocThueToaC.Count();
+            soPhongDuocThue.Add(soPhongDuocThueToaC);
             var phongDuocThueToaD = from p in phong
                                     join t in toa on p.toa.maToa equals t.maToa
                                     where p.trangThai == true && t.maToa == 'D'
                                     select new { p.maPhong };
-            var toaDuocThueTren2 = from a in phongDuocThueToaA
-                                   from b in phongDuocThueToaB
-                                   from c in phongDuocThueToaC
-                                   from d in phongDuocThueToaD
-                                   select a;
+            var soPhongDuocThueToaD = phongDuocThueToaD.Count();
+            soPhongDuocThue.Add(soPhongDuocThueToaD);
+            var result = from p in soPhongDuocThue
+                         where p >= 5
+                         select p;
+            Console.WriteLine("Suc chua cua nhung toa duoc thue tu 2 phong tro len la: ");
+            foreach (var t in result)
+                Console.WriteLine(t);
         }
 
         //13. Cho biết tòa đã được thuê hết phòng """
@@ -403,7 +421,7 @@ namespace OOP_QuanLyKTX
                          select new { p.maPhong, p.loaiPhong.giaPhong };
             Console.WriteLine("Danh sach cac phong dang duoc thue theo thu tu tang dan cua gia phong: ");
             foreach (var p in result)
-                Console.WriteLine("Phong: {0} _ Gia phong: {1} VND", p.maPhong, p.giaPhong);
+                Console.WriteLine("Phong: {0} - Gia phong: {1} VND", p.maPhong, p.giaPhong);
         }
 
         //15. Cho biết các sinh viên đang ở loại phòng ...
@@ -414,7 +432,15 @@ namespace OOP_QuanLyKTX
         //16. Cho biết tòa có số lượng SV nhiều nhất
         public static void Linq16()
         {
-            
+            var result = from sv in sinhVien
+                         join p in phong on sv.phong.maPhong equals p.maPhong
+                         join t in toa on p.toa.maToa equals t.maToa
+                         group p.maPhong by t.maToa into groups
+                         select new { groups};
+            //select new { sv.maSV, sv.phong.maPhong, p.toa.maToa };
+            Console.WriteLine("Danh sach sinh vien theo ma toa: ");
+            foreach (var r in result)
+                Console.WriteLine("Sinh vien {0}", r.groups);
         }
 
         //17. Cho biết phòng có tiền sử dụng dịch vụ cao nhất
@@ -434,10 +460,16 @@ namespace OOP_QuanLyKTX
 
         }
 
-        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa
+        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa B/(từng tòa)
         public static void Linq20()
         {
-
+            var danhSachTongTien = from dv in dichVu
+                         join p in phong on dv.phong.maPhong equals p.maPhong
+                         join t in toa on p.toa.maToa equals t.maToa
+                         where t.maToa == 'B'
+                         select dv.tongTien;
+            var result = danhSachTongTien.Average();
+            Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
         }
 
         static void Main(string[] args)
@@ -453,7 +485,7 @@ namespace OOP_QuanLyKTX
             TaoDanhSachHopDong();
             TaoDanhSachChiTiet_HD();
             TaoDanhSachDichVu();
-            Linq14();
+            Linq20();
             Console.ReadKey();
         }
     }
