@@ -370,40 +370,15 @@ namespace OOP_QuanLyKTX
 
         }
 
-        //12. Cho biết sức chứa của những tòa được thuê từ 5 phòng trở lên
+        //12. Danh sách các báo cáo từ ngày 1/6/2020 đến nay
         public static void Linq12()
         {
-            List<int> soPhongDuocThue = new List<int>();
-            var phongDuocThueToaA = from p in phong
-                                    join t in toa on p.toa.maToa equals t.maToa
-                                    where p.trangThai == true && t.maToa == 'A'
-                                    select new { p.maPhong };
-            var soPhongDuocThueToaA = phongDuocThueToaA.Count();
-            soPhongDuocThue.Add(soPhongDuocThueToaA);
-            var phongDuocThueToaB = from p in phong
-                                    join t in toa on p.toa.maToa equals t.maToa
-                                    where p.trangThai == true && t.maToa == 'B'
-                                    select new { p.maPhong };
-            var soPhongDuocThueToaB = phongDuocThueToaB.Count();
-            soPhongDuocThue.Add(soPhongDuocThueToaB);
-            var phongDuocThueToaC = from p in phong
-                                    join t in toa on p.toa.maToa equals t.maToa
-                                    where p.trangThai == true && t.maToa == 'C'
-                                    select new { p.maPhong };
-            var soPhongDuocThueToaC = phongDuocThueToaC.Count();
-            soPhongDuocThue.Add(soPhongDuocThueToaC);
-            var phongDuocThueToaD = from p in phong
-                                    join t in toa on p.toa.maToa equals t.maToa
-                                    where p.trangThai == true && t.maToa == 'D'
-                                    select new { p.maPhong };
-            var soPhongDuocThueToaD = phongDuocThueToaD.Count();
-            soPhongDuocThue.Add(soPhongDuocThueToaD);
-            var result = from p in soPhongDuocThue
-                         where p >= 5
-                         select p;
-            Console.WriteLine("Suc chua cua nhung toa duoc thue tu 2 phong tro len la: ");
-            foreach (var t in result)
-                Console.WriteLine(t);
+            var result = from bc in baoCaoThietBi
+                         //where bc.thoiGian <= new DateTime(2020, 6, 1)
+                         select bc;
+            Console.WriteLine("Ma bao cao\tPhong\t\tMo ta");
+            foreach (var r in result)
+                Console.WriteLine("{0}\t\t{1}\t\t{2}\n", r.maBaoCao, r.phong.maPhong, r.moTaBaoCao);
         }
 
         //13. Cho biết tòa đã được thuê hết phòng """
@@ -478,7 +453,7 @@ namespace OOP_QuanLyKTX
             var result = danhSachTongTien.Average();
             Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
         }
-
+        
         static void Main(string[] args)
         {
             
@@ -492,7 +467,8 @@ namespace OOP_QuanLyKTX
             TaoDanhSachHopDong();
             TaoDanhSachChiTiet_HD();
             TaoDanhSachDichVu();
-            Linq18();
+            TaoDanhSachBaoCao();
+            Linq12();
             Console.ReadKey();
         }
     }
