@@ -37,36 +37,36 @@ namespace OOP_QuanLyKTX
         }
         public static void TaoDanhSachChiTiet_HD()
         {
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[0], phong[0], toa[0], new DateTime(2020, 1, 8), new DateTime(2021, 1, 8)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[1], phong[0], toa[0], new DateTime(2020, 1, 9), new DateTime(2021, 1, 9)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[2], phong[2], toa[1], new DateTime(2020, 2, 23), new DateTime(2021, 2, 23)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[3], phong[3], toa[1], new DateTime(2020, 2, 18), new DateTime(2021, 2, 18)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[4], phong[4], toa[2], new DateTime(2020, 3, 2), new DateTime(2021, 3, 2)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[5], phong[5], toa[2], new DateTime(2020, 3, 7), new DateTime(2021, 1, 7)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[6], phong[6], toa[3], new DateTime(2020, 3, 12), new DateTime(2021, 6, 12)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[7], phong[6], toa[3], new DateTime(2020, 3, 17), new DateTime(2021, 6, 17)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[8], phong[6], toa[3], new DateTime(2020, 3, 24), new DateTime(2021, 1, 24)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[9], phong[6], toa[3], new DateTime(2020, 4, 21), new DateTime(2022, 4, 21)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[10], phong[8], toa[1], new DateTime(2020, 4, 24), new DateTime(2021, 4, 24)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[11], phong[8], toa[1], new DateTime(2020, 5, 7), new DateTime(2021, 5, 7)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[12], phong[8], toa[1], new DateTime(2020, 5, 8), new DateTime(2021, 5, 8)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[13], phong[8], toa[1], new DateTime(2020, 5, 18), new DateTime(2021, 5, 18)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[14], phong[1], toa[0], new DateTime(2020, 5, 28), new DateTime(2021, 1, 28)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[15], phong[1], toa[0], new DateTime(2020, 6, 6), new DateTime(2021, 2, 6)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[16], phong[2], toa[1], new DateTime(2020, 6, 9), new DateTime(2021, 2, 9)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[17], phong[2], toa[1], new DateTime(2020, 6, 17), new DateTime(2021, 2, 17)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[18], phong[2], toa[1], new DateTime(2020, 6, 24), new DateTime(2021, 2, 24)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[19], phong[10], toa[0], new DateTime(2020, 7, 21), new DateTime(2022, 7, 21)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[20], phong[10], toa[0], new DateTime(2020, 7, 28), new DateTime(2022, 7, 28)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[21], phong[10], toa[0], new DateTime(2020, 8, 5), new DateTime(2022, 8, 5)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[22], phong[10], toa[0], new DateTime(2020, 8, 12), new DateTime(2022, 8, 12)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[23], phong[11], toa[0], new DateTime(2020, 8, 28), new DateTime(2021, 8, 28)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[24], phong[11], toa[0], new DateTime(2020, 9, 17), new DateTime(2021, 9, 17)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[25], phong[11], toa[0], new DateTime(2020, 10, 12), new DateTime(2021, 9, 12)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[26], phong[11], toa[0], new DateTime(2020, 10, 22), new DateTime(2021, 10, 22)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[27], phong[12], toa[1], new DateTime(2020, 10, 26), new DateTime(2021, 2, 26)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[28], phong[12], toa[1], new DateTime(2020, 10, 30), new DateTime(2021, 3, 3)));
-            chiTiet_HD.Add(new ChiTietHopDong(hopDongThuePhong[29], phong[12], toa[1], new DateTime(2020, 10, 31), new DateTime(2021, 3, 3)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[0], phong[0], toa[0], new DateTime(2020, 1, 8), new DateTime(2021, 1, 8)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[1], phong[0], toa[0], new DateTime(2020, 1, 9), new DateTime(2021, 1, 9)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[2], phong[2], toa[1], new DateTime(2020, 2, 23), new DateTime(2021, 2, 23)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[3], phong[3], toa[1], new DateTime(2020, 2, 18), new DateTime(2021, 2, 18)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[4], phong[4], toa[2], new DateTime(2020, 3, 2), new DateTime(2021, 3, 2)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[5], phong[5], toa[2], new DateTime(2020, 3, 7), new DateTime(2021, 1, 7)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[6], phong[6], toa[3], new DateTime(2020, 3, 12), new DateTime(2021, 6, 12)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[7], phong[6], toa[3], new DateTime(2020, 3, 17), new DateTime(2021, 6, 17)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[8], phong[6], toa[3], new DateTime(2020, 3, 24), new DateTime(2021, 1, 24)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[9], phong[6], toa[3], new DateTime(2020, 4, 21), new DateTime(2022, 4, 21)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[10], phong[8], toa[1], new DateTime(2020, 4, 24), new DateTime(2021, 4, 24)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[11], phong[8], toa[1], new DateTime(2020, 5, 7), new DateTime(2021, 5, 7)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[12], phong[8], toa[1], new DateTime(2020, 5, 8), new DateTime(2021, 5, 8)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[13], phong[8], toa[1], new DateTime(2020, 5, 18), new DateTime(2021, 5, 18)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[14], phong[1], toa[0], new DateTime(2020, 5, 28), new DateTime(2021, 1, 28)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[15], phong[1], toa[0], new DateTime(2020, 6, 6), new DateTime(2021, 2, 6)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[16], phong[2], toa[1], new DateTime(2020, 6, 9), new DateTime(2021, 2, 9)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[17], phong[2], toa[1], new DateTime(2020, 6, 17), new DateTime(2021, 2, 17)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[18], phong[2], toa[1], new DateTime(2020, 6, 24), new DateTime(2021, 2, 24)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[19], phong[10], toa[0], new DateTime(2020, 7, 21), new DateTime(2022, 7, 21)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[20], phong[10], toa[0], new DateTime(2020, 7, 28), new DateTime(2022, 7, 28)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[21], phong[10], toa[0], new DateTime(2020, 8, 5), new DateTime(2022, 8, 5)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[22], phong[10], toa[0], new DateTime(2020, 8, 12), new DateTime(2022, 8, 12)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[23], phong[11], toa[0], new DateTime(2020, 8, 28), new DateTime(2021, 8, 28)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[24], phong[11], toa[0], new DateTime(2020, 9, 17), new DateTime(2021, 9, 17)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[25], phong[11], toa[0], new DateTime(2020, 10, 12), new DateTime(2021, 9, 12)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[26], phong[11], toa[0], new DateTime(2020, 10, 22), new DateTime(2021, 10, 22)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[27], phong[12], toa[1], new DateTime(2020, 10, 26), new DateTime(2021, 2, 26)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[28], phong[12], toa[1], new DateTime(2020, 10, 30), new DateTime(2021, 3, 3)));
+            dsChiTietHopDong.Add(new ChiTietHopDong(hopDongThuePhong[29], phong[12], toa[1], new DateTime(2020, 10, 31), new DateTime(2021, 3, 3)));
         }
         public static void TaoDanhSachHopDong()
         {
@@ -528,7 +528,7 @@ namespace OOP_QuanLyKTX
         public static void Linq18()
         {
             var danhSachThoiGianThue = from p in phong
-                         join hd in chiTiet_HD on p.maPhong equals hd.phong.maPhong
+                         join hd in dsChiTietHopDong on p.maPhong equals hd.phong.maPhong
                          select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong};
             var result = danhSachThoiGianThue.Min();
             Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
@@ -568,7 +568,6 @@ namespace OOP_QuanLyKTX
             TaoDanhSachHopDong();
             TaoDanhSachChiTiet_HD();
             TaoDanhSachDichVu();
-            TaoDanhSachBaoCao();
             Linq12();
             Console.ReadKey();
         }
