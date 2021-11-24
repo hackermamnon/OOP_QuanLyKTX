@@ -126,36 +126,36 @@ namespace OOP_QuanLyKTX
             dsHopDong.Add(new HopDongThuePhong("HD30", dsSinhVien[29].maSV, "Hop dong thue phong SV30", dsSinhVien[29]));
 
 
-            dsSinhVien[0].dshopdong.Add(dsHopDong[0]);
-            dsSinhVien[1].dshopdong.Add(dsHopDong[1]);
-            dsSinhVien[2].dshopdong.Add(dsHopDong[2]);
-            dsSinhVien[3].dshopdong.Add(dsHopDong[3]);
-            dsSinhVien[4].dshopdong.Add(dsHopDong[4]);
-            dsSinhVien[5].dshopdong.Add(dsHopDong[5]);
-            dsSinhVien[6].dshopdong.Add(dsHopDong[6]);
-            dsSinhVien[7].dshopdong.Add(dsHopDong[7]);
-            dsSinhVien[8].dshopdong.Add(dsHopDong[8]);
-            dsSinhVien[9].dshopdong.Add(dsHopDong[9]);
-            dsSinhVien[10].dshopdong.Add(dsHopDong[10]);
-            dsSinhVien[11].dshopdong.Add(dsHopDong[11]);
-            dsSinhVien[12].dshopdong.Add(dsHopDong[12]);
-            dsSinhVien[13].dshopdong.Add(dsHopDong[13]);
-            dsSinhVien[14].dshopdong.Add(dsHopDong[14]);
-            dsSinhVien[15].dshopdong.Add(dsHopDong[15]);
-            dsSinhVien[16].dshopdong.Add(dsHopDong[16]);
-            dsSinhVien[17].dshopdong.Add(dsHopDong[17]);
-            dsSinhVien[18].dshopdong.Add(dsHopDong[18]);
-            dsSinhVien[19].dshopdong.Add(dsHopDong[19]);
-            dsSinhVien[20].dshopdong.Add(dsHopDong[20]);
-            dsSinhVien[21].dshopdong.Add(dsHopDong[21]);
-            dsSinhVien[22].dshopdong.Add(dsHopDong[22]);
-            dsSinhVien[23].dshopdong.Add(dsHopDong[23]);
-            dsSinhVien[24].dshopdong.Add(dsHopDong[24]);
-            dsSinhVien[25].dshopdong.Add(dsHopDong[25]);
-            dsSinhVien[26].dshopdong.Add(dsHopDong[26]);
-            dsSinhVien[27].dshopdong.Add(dsHopDong[27]);
-            dsSinhVien[28].dshopdong.Add(dsHopDong[28]);
-            dsSinhVien[29].dshopdong.Add(dsHopDong[29]);
+            //dsSinhVien[0].dshopdong.Add(dsHopDong[0]);
+            //dsSinhVien[1].dshopdong.Add(dsHopDong[1]);
+            //dsSinhVien[2].dshopdong.Add(dsHopDong[2]);
+            //dsSinhVien[3].dshopdong.Add(dsHopDong[3]);
+            //dsSinhVien[4].dshopdong.Add(dsHopDong[4]);
+            //dsSinhVien[5].dshopdong.Add(dsHopDong[5]);
+            //dsSinhVien[6].dshopdong.Add(dsHopDong[6]);
+            //dsSinhVien[7].dshopdong.Add(dsHopDong[7]);
+            //dsSinhVien[8].dshopdong.Add(dsHopDong[8]);
+            //dsSinhVien[9].dshopdong.Add(dsHopDong[9]);
+            //dsSinhVien[10].dshopdong.Add(dsHopDong[10]);
+            //dsSinhVien[11].dshopdong.Add(dsHopDong[11]);
+            //dsSinhVien[12].dshopdong.Add(dsHopDong[12]);
+            //dsSinhVien[13].dshopdong.Add(dsHopDong[13]);
+            //dsSinhVien[14].dshopdong.Add(dsHopDong[14]);
+            //dsSinhVien[15].dshopdong.Add(dsHopDong[15]);
+            //dsSinhVien[16].dshopdong.Add(dsHopDong[16]);
+            //dsSinhVien[17].dshopdong.Add(dsHopDong[17]);
+            //dsSinhVien[18].dshopdong.Add(dsHopDong[18]);
+            //dsSinhVien[19].dshopdong.Add(dsHopDong[19]);
+            //dsSinhVien[20].dshopdong.Add(dsHopDong[20]);
+            //dsSinhVien[21].dshopdong.Add(dsHopDong[21]);
+            //dsSinhVien[22].dshopdong.Add(dsHopDong[22]);
+            //dsSinhVien[23].dshopdong.Add(dsHopDong[23]);
+            //dsSinhVien[24].dshopdong.Add(dsHopDong[24]);
+            //dsSinhVien[25].dshopdong.Add(dsHopDong[25]);
+            //dsSinhVien[26].dshopdong.Add(dsHopDong[26]);
+            //dsSinhVien[27].dshopdong.Add(dsHopDong[27]);
+            //dsSinhVien[28].dshopdong.Add(dsHopDong[28]);
+            //dsSinhVien[29].dshopdong.Add(dsHopDong[29]);
         }
         public static void TaoDanhSachLoaiNhanVien()
         {
@@ -163,7 +163,7 @@ namespace OOP_QuanLyKTX
             dsLoaiNhanVien.Add(new LoaiNhanVien("LNV02", "Phụ bếp", "Dọn dẹp nhà bếp", new List<NhanVien>()));
             dsLoaiNhanVien.Add(new LoaiNhanVien("LNV03", "Đầu bếp", "Nấu ăn", new List<NhanVien>()));
             dsLoaiNhanVien.Add(new LoaiNhanVien("LNV04", "Bảo vệ", "Canh cổng ra vào", new List<NhanVien>()));
-            dsLoaiNhanVien.Add(new LoaiNhanVien("LNV05", "Sửa điện", "Sửa điện", new List<NhanVien>()));
+            dsLoaiNhanVien.Add(new LoaiNhanVien("LNV05", "Sửa điện", "Xử lý vấn đề về điện", new List<NhanVien>()));
         }
         public static void TaoDanhSachNhanVien()
         {
@@ -396,78 +396,80 @@ namespace OOP_QuanLyKTX
         //1. Cho biết những phòng còn trống ở tòa A và C
         public static void Linq1()
         {
-
+            var result = from p in dsPhong
+                         where (p.trangThai == false) && (p.maToa == 'A' || p.maToa == 'C')
+                         select p;
+            Console.WriteLine("Danh sach cac phong con trong cua 'A' va 'C' la: ");
+            foreach (var p in result)
+                Console.WriteLine("Phong: {0}", p.maPhong);
         }
 
         //2. Cho biết nhân viên "Tran Phuong Thanh" đang làm việc ở tòa nhà nào
         public static void Linq2()
         {
-            var result = from nv in nhanVien
-                         join t in toa on nv.toa.maToa equals t.maToa
+            var result = from nv in dsNhanVien
                          where nv.tenNhanVien == "Tran Phuong Thanh"
                          select new { nv.tenNhanVien, nv.toa.maToa };
-            foreach(var nv in result)
+            foreach (var nv in result)
                 Console.WriteLine("Nhan vien {0} dang lam viec o toa {1}", nv.tenNhanVien, nv.maToa);
         }
 
-        //3. Cho biết các nhân viên mà Vu Duc Manh đang quản lý
-        //public static void Linq3()
-        //{
-        //    var nhanVienLamViec = from ql in quanLy 
-        //                   join t in toa on ql.toa.maToa equals t.maToa  
-        //                   join nv in nhanVien on ql.toa.maToa equals nv.toa.maToa
-        //                   where ql.tenQuanLy == "Vu Duc Manh"
-        //                   select new {nv.tenNhanVien};
-        //    Console.WriteLine("Danh sach nhan vien ma quan ly Vu Duc Manh dang quan ly:");
-        //    foreach (var nv in nhanVienLamViec)
-        //        Console.WriteLine("{0}", nv.tenNhanVien);
-        //}
+        //3. Cho biết các nhân viên đang làm ở vị trí "đầu bếp"
+        public static void Linq3()
+        {
+            var result = from nv in dsNhanVien
+                         where nv.loaiNhanVien.chucVu == "Đầu bếp"
+                         select nv;
+            Console.WriteLine("Danh sach nhan vien lam o vi tri dau bep la:");
+            foreach (var nv in result)
+                Console.WriteLine("{0}", nv.tenNhanVien);
+        }
 
-        //4. Danh sách những nhân viên đang giữ chức vụ Bao ve
+        //4. Danh sách những nhân viên đang giữ chức vụ Bảo vệ
         public static void Linq4()
         {
-            var result = from nv in nhanVien
-                         join lnv in loaiNhanVien on nv.loaiNhanVien.maLoaiNV equals lnv.maLoaiNV
-                         where lnv.chucVu == "Bao ve"
-                         select new { nv.maNV, nv.tenNhanVien, lnv.chucVu ,lnv.congViec };
+            var result = from nv in dsNhanVien
+                         where nv.loaiNhanVien.chucVu == "Bảo vệ"
+                         select nv;
             Console.WriteLine("Danh sach nhung nhan vien giu chuc vu Bao ve la: ");
             foreach (var nv in result)
-                Console.WriteLine("MaNV: {0}\nTen: {1}", nv.maNV, nv.tenNhanVien);
+                Console.WriteLine("{0} - {1}", nv.maNV, nv.tenNhanVien);
         }
 
-        //5. Cho biết tiền dịch vụ của phòng ...
-        public static void Linq5()
-        {
+        ////5. Cho biết tiền dịch vụ của phòng ...
+        //public static void Linq5()
+        //{
 
-        }
-        //6. Cho biết số lượng phòng chưa được thuê của tòa C
+        //}
+        //6. Cho biết số lượng phòng chưa được thuê của tòa D
         public static void Linq6()
         {
-            var result = from p in phong
-                         join t in toa on p.toa.maToa equals t.maToa
-                         where t.maToa == 'D' && p.trangThai == false
-                         select new { p.maPhong };
-            Console.WriteLine("So luong phong chua duoc thue cua toa C la: {0}", result.Count());
+            var result = from p in dsPhong
+                         where p.maToa == 'D' && p.trangThai == false
+                         select p;
+            Console.WriteLine("So luong phong chua duoc thue cua toa D la: {0}", result.Count());
+            foreach (var p in result)
+                Console.WriteLine("{0} - {1}", p.maPhong, p.loaiPhong.tenLoaiPhong);
         }
 
         //7. Cho biết những hợp đồng hết hạn trước ngày 21/04/2021
-        public static void Linq7()
-        {
+        //public static void Linq7()
+        //{
 
-        }
+        //}
 
         //8. Cho biết số lượng phòng máy lạnh đang được thuê ở tòa A
         public static void Linq8()
         {
-            var dsPhong = from p in phong
-                         join t in toa on p.toa.maToa equals t.maToa
-                         where p.loaiPhong.tenLoaiPhong.StartsWith("Phong may lanh") && t.maToa == 'A'
+            var result = from p in dsPhong
+                         where p.loaiPhong.tenLoaiPhong.StartsWith("Phòng máy lạnh") && p.maToa == 'A'
                          select p;
-            var result = dsPhong.Count();
-            Console.WriteLine("So luong phong may lanh duoc thue o toa A la: {0}", result);
+            Console.WriteLine("So luong phong may lanh duoc thue o toa A la: {0}", result.Count());
+            foreach (var p in result)
+                Console.WriteLine("Phong: {0}", p.maPhong);
         }
 
-        //9. Liệt kê sinh viên đang ở phòng
+        ////9. Liệt kê sinh viên đang ở phòng
         //public static void Linq9()
         //{
         //     var sinhVienP06 = from sv in sinhVien
@@ -476,46 +478,46 @@ namespace OOP_QuanLyKTX
         //                      select new { sv.tenSV };
         //}
         //10. Cho biết các phòng chưa thanh toán tiền dịch vụ
-        public static void Linq10()
-        {
-            var tongSoPhong = from p in phong
-                              select p.maPhong;
-            var phongDaDongTien = from dv in dichVu
-                                  select dv.phong.maPhong;
-            var result = from p in tongSoPhong.Except(phongDaDongTien)
-                         select p;
-            Console.WriteLine("Cac phong chua thanh toan tien dich vu la: ");
-            foreach (var r in result)
-                Console.WriteLine(r);
-        }
+        //public static void Linq10()
+        //{
+        //    var tongSoPhong = from p in phong
+        //                      select p.maPhong;
+        //    var phongDaDongTien = from dv in dichVu
+        //                          select dv.phong.maPhong;
+        //    var result = from p in tongSoPhong.Except(phongDaDongTien)
+        //                 select p;
+        //    Console.WriteLine("Cac phong chua thanh toan tien dich vu la: ");
+        //    foreach (var r in result)
+        //        Console.WriteLine(r);
+        //}
 
-        //11. Cho biết thời hạn hợp đồng của phòng
-        public static void Linq11()
-        {
+        ////11. Cho biết thời hạn hợp đồng của phòng
+        //public static void Linq11()
+        //{
 
-        }
+        //}
 
-        //12. Danh sách các báo cáo từ ngày 1/6/2020 đến nay
-        public static void Linq12()
-        {
-            var result = from bc in baoCaoThietBi
-                         //where bc.thoiGian <= new DateTime(2020, 6, 1)
-                         select bc;
-            Console.WriteLine("Ma bao cao\tPhong\t\tMo ta");
-            foreach (var r in result)
-                Console.WriteLine("{0}\t\t{1}\t\t{2}\n", r.maBaoCao, r.phong.maPhong, r.moTaBaoCao);
-        }
+        ////12. Danh sách các báo cáo từ ngày 1/6/2020 đến nay
+        //public static void Linq12()
+        //{
+        //    var result = from bc in baoCaoThietBi
+        //                     //where bc.thoiGian <= new DateTime(2020, 6, 1)
+        //                 select bc;
+        //    Console.WriteLine("Ma bao cao\tPhong\t\tMo ta");
+        //    foreach (var r in result)
+        //        Console.WriteLine("{0}\t\t{1}\t\t{2}\n", r.maBaoCao, r.phong.maPhong, r.moTaBaoCao);
+        //}
 
-        //13. Cho biết tòa đã được thuê hết phòng """
-        public static void Linq13()
-        {
+        ////13. Cho biết tòa đã được thuê hết phòng """
+        //public static void Linq13()
+        //{
 
-        }
+        //}
 
-        //14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
+        ////14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
         public static void Linq14()
         {
-            var result = from p in phong
+            var result = from p in dsPhong
                          where p.trangThai == true
                          orderby p.loaiPhong.giaPhong
                          select new { p.maPhong, p.loaiPhong.giaPhong };
@@ -523,76 +525,92 @@ namespace OOP_QuanLyKTX
             foreach (var p in result)
                 Console.WriteLine("Phong: {0} - Gia phong: {1} VND", p.maPhong, p.giaPhong);
         }
-
-        //15. Cho biết các sinh viên đang ở loại phòng ...
-        public static void Linq15()
-        {
-
-        }
-        //16. Cho biết tòa có số lượng SV nhiều nhất (*)
-        //public static void Linq16()
+        ////15. Cho biết các sinh viên đang ở loại phòng ...
+        //public static void Linq15()
         //{
-        //    var result = from sv in sinhVien
-        //                 join p in phong on sv.phong.maPhong equals p.maPhong
-        //                 join t in toa on p.toa.maToa equals t.maToa
-        //                 group p.maPhong by t.maToa into groups
-        //                 select new { groups};
-        //    //select new { sv.maSV, sv.phong.maPhong, p.toa.maToa };
-        //    Console.WriteLine("Danh sach sinh vien theo ma toa: ");
-        //    foreach (var r in result)
-        //        Console.WriteLine("Sinh vien {0}", r.groups);
+
+        //}
+        ////16. Cho biết tòa có số lượng SV nhiều nhất (*)
+        ////public static void Linq16()
+        ////{
+        ////    var result = from sv in sinhVien
+        ////                 join p in phong on sv.phong.maPhong equals p.maPhong
+        ////                 join t in toa on p.toa.maToa equals t.maToa
+        ////                 group p.maPhong by t.maToa into groups
+        ////                 select new { groups};
+        ////    //select new { sv.maSV, sv.phong.maPhong, p.toa.maToa };
+        ////    Console.WriteLine("Danh sach sinh vien theo ma toa: ");
+        ////    foreach (var r in result)
+        ////        Console.WriteLine("Sinh vien {0}", r.groups);
+        ////}
+
+        ////17. Cho biết phòng có tiền sử dụng dịch vụ cao nhất
+        //public static void Linq17()
+        //{
+
+        //}
+        ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
+        //public static void Linq18()
+        //{
+        //    var danhSachThoiGianThue = from p in phong
+        //                               join hd in dsChiTietHopDong on p.maPhong equals hd.phong.maPhong
+        //                               select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong };
+        //    var result = danhSachThoiGianThue.Min();
+        //    Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
+        //    Console.WriteLine("Danh sach thoi gian thue cua tung phong: ");
+        //    foreach (var ds in danhSachThoiGianThue)
+        //        Console.WriteLine("Phong {0} - Thoi gian thue {1}", ds.maPhong, ds.range);
         //}
 
-        //17. Cho biết phòng có tiền sử dụng dịch vụ cao nhất
-        public static void Linq17()
-        {
+        ////19. Cho biết những nhân viên đang làm ... có lương cao hơn trung bình ở tòa ... *
+        //public static void Linq19()
+        //{
 
-        }
-        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
-        public static void Linq18()
-        {
-            var danhSachThoiGianThue = from p in phong
-                         join hd in dsChiTietHopDong on p.maPhong equals hd.phong.maPhong
-                         select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong};
-            var result = danhSachThoiGianThue.Min();
-            Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
-            Console.WriteLine("Danh sach thoi gian thue cua tung phong: ");
-            foreach (var ds in danhSachThoiGianThue)
-                Console.WriteLine("Phong {0} - Thoi gian thue {1}", ds.maPhong, ds.range);
-        }
+        //}
 
-        //19. Cho biết những nhân viên đang làm ... có lương cao hơn trung bình ở tòa ... *
-        public static void Linq19()
-        {
+        ////20. Cho biết tiền sử dụng dịch vụ trung bình của tòa B/(từng tòa)
+        //public static void Linq20()
+        //{
+        //    var danhSachTongTien = from dv in dichVu
+        //                           join p in phong on dv.phong.maPhong equals p.maPhong
+        //                           join t in toa on p.toa.maToa equals t.maToa
+        //                           where t.maToa == 'B'
+        //                           select dv.tongTien;
+        //    var result = danhSachTongTien.Average();
+        //    Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
+        //}
 
-        }
 
-        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa B/(từng tòa)
-        public static void Linq20()
-        {
-            var danhSachTongTien = from dv in dichVu
-                         join p in phong on dv.phong.maPhong equals p.maPhong
-                         join t in toa on p.toa.maToa equals t.maToa
-                         where t.maToa == 'B'
-                         select dv.tongTien;
-            var result = danhSachTongTien.Average();
-            Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
-        }
-        
+        ////Test
+        //public static void Linq01()
+        //{
+        //    // lambda
+        //    var dsnhom = dsLoaiNhanVien.Select(nt => nt);
+        //    foreach (var nhom in dsnhom)
+        //    {
+        //        Console.WriteLine("{0} - {1} - {2} ",
+        //            nhom.maLoaiNV, nhom.chucVu, nhom.congViec);
+        //        foreach (var tho in nhom.dsnhanvien_loai)
+        //        {
+        //            Console.WriteLine("{0} - {1} - {2} - {3}",
+        //                tho.maNV, tho.tenNhanVien, tho.toa.maToa, tho.luong);
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
         static void Main(string[] args)
         {
-            
             TaoDanhSachLoaiPhong();
-            TaoDanhSachLoaiNhanVien();
             TaoDachSachToa();
-            
-            TaoDanhSachNhanVien();
             TaoDanhSachPhong();
+            TaoDanhSachLoaiNhanVien();
             TaoDanhSachSinhVien();
+            TaoDanhSachNhanVien();
             TaoDanhSachHopDong();
             TaoDanhSachChiTietHopDong();
             TaoDanhSachDichVu();
-            Linq12();
+            TaoDanhSachChiTietHoaDonDichVu();
+            Linq8(); //Test
             Console.ReadKey();
         }
     }
