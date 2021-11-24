@@ -10,7 +10,7 @@ namespace OOP_QuanLyKTX
         public bool gioiTinh { get; set; }
         public string soDienThoai { get; set; }
         //related = plural
-        public ICollection<HopDongThuePhong> dshopdong_sv { get; set; }
+        public ICollection<HopDongThuePhong> dshopdong { get; set; }
 
         //Constructor
         public SinhVien() { }
@@ -22,7 +22,7 @@ namespace OOP_QuanLyKTX
             this.tenSV = tenSV;
             this.gioiTinh = gioiTinh;
             this.soDienThoai = soDienThoai;
-            this.dshopdong_sv = dshopdong_sv;
+            this.dshopdong = dshopdong;
         }
         public SinhVien(SinhVien sv)
         {
@@ -30,7 +30,7 @@ namespace OOP_QuanLyKTX
             this.tenSV = sv.tenSV;
             this.gioiTinh = sv.gioiTinh;
             this.soDienThoai = sv.soDienThoai;
-            this.dshopdong_sv = dshopdong_sv;
+            this.dshopdong = dshopdong;
         }
     }
 }

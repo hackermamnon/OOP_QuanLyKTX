@@ -11,7 +11,7 @@ namespace OOP_QuanLyKTX
     {
         public string maNV { get; set; }
         public string maLoaiNV { get; set; }
-        public string maToa { get; set; }
+        public char maToa { get; set; }
         public string tenNhanVien { get; set; }
         public string soDienThoai { get; set; }
         public double luong { get; set; }
@@ -22,7 +22,7 @@ namespace OOP_QuanLyKTX
 
         //Constructor
         public NhanVien() { }
-        public NhanVien(string maNV, string maLoaiNV, string maToa, string tenNhanVien, 
+        public NhanVien(string maNV, string maLoaiNV, char maToa, string tenNhanVien, 
             string soDienThoai, double luong, LoaiNhanVien loaiNhanVien, Toa toa)
         {
             this.maNV = maNV;

@@ -10,7 +10,7 @@ namespace OOP_QuanLyKTX
     public class Phong
     {
         public string maPhong { get; set; }
-        public string maToa { get; set; }
+        public char maToa { get; set; }
         public string maLoaiPhong { get; set; }
         public bool trangThai { get; set; }
 
@@ -19,30 +19,30 @@ namespace OOP_QuanLyKTX
         public LoaiPhong loaiPhong { get; set; }
 
         //related = plural
-        public ICollection<SinhVien> dssv_phong { get; set; }
+        //public ICollection<SinhVien> dssv_phong { get; set; }
 
         //Constructor
         public Phong() { }
-        public Phong(string maPhong, string maToa, string maLoaiPhong,  Toa toa, LoaiPhong loaiPhong,
-            bool trangThai, ICollection<SinhVien> dssv_phong)
+        public Phong(string maPhong, char maToa, string maLoaiPhong, bool trangThai, 
+            Toa toa, LoaiPhong loaiPhong)//, ICollection<SinhVien> dssv_phong)
         {
             this.maPhong = maPhong;
-            this.maLoaiPhong = maLoaiPhong;
             this.maToa = maToa;
+            this.maLoaiPhong = maLoaiPhong;
+            this.trangThai = trangThai;
             this.toa = toa;
             this.loaiPhong = loaiPhong;
-            this.trangThai = trangThai;
-            this.dssv_phong = dssv_phong;
+            //this.dssv_phong = dssv_phong;
         }
         public Phong(Phong p)
         {
             this.maPhong = p.maPhong;
-            this.maLoaiPhong = p.maLoaiPhong;
             this.maToa = p.maToa;
+            this.maLoaiPhong = p.maLoaiPhong;
+            this.trangThai = p.trangThai;
             this.toa = p.toa;
             this.loaiPhong = p.loaiPhong;
-            this.trangThai = p.trangThai;
-            this.dssv_phong = p.dssv_phong;
+            //this.dssv_phong = p.dssv_phong;
         }
     }
 }

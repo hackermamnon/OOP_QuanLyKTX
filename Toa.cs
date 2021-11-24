@@ -19,22 +19,22 @@ namespace OOP_QuanLyKTX
 
         //Constructor
         public Toa() { }
-        public Toa(char maToa, int sucChua, int soPhong, 
-            ICollection<NhanVien> dsnhanvien_toa, ICollection<Phong> dsphong_toa)
+        public Toa(char maToa, int sucChua, int soPhong,
+            ICollection<Phong> dsphong_toa, ICollection<NhanVien> dsnhanvien_toa)
         {
             this.maToa = maToa;
             this.sucChua = sucChua;
             this.soPhong = soPhong;
-            this.dsnhanvien_toa = dsnhanvien_toa;
             this.dsphong_toa = dsphong_toa;
+            this.dsnhanvien_toa = dsnhanvien_toa;
         }
         public Toa(Toa t)
         {
             this.maToa = t.maToa;
             this.sucChua = t.sucChua;
             this.soPhong = t.soPhong;
-            this.dsnhanvien_toa = t.dsnhanvien_toa;
             this.dsphong_toa = dsphong_toa;
+            this.dsnhanvien_toa = t.dsnhanvien_toa;
         }
     }
 }

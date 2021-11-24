@@ -8,69 +8,32 @@ namespace OOP_QuanLyKTX
 {
     class Program
     {
-        static List<Toa> toa = new List<Toa>();
-        static List<SinhVien> sinhVien = new List<SinhVien>();
-        static List<ThietBi> thietBi = new List<ThietBi>();
-        static List<TrangBi> trangBi = new List<TrangBi>();
-        static List<Phong> phong = new List<Phong>();
-        static List<NhanVien> nhanVien = new List<NhanVien>();
-        static List<LoaiPhong> loaiPhong = new List<LoaiPhong>();
-        static List<LoaiNhanVien> loaiNhanVien = new List<LoaiNhanVien>();
-        static List<HopDongThuePhong> hopDongThuePhong = new List<HopDongThuePhong>();
-        static List<ChiTietHopDong> chiTiet_HD = new List<ChiTietHopDong>();
-        static List<DichVu> dichVu = new List<DichVu>();
-        static List<BaoCaoThietBi> baoCaoThietBi = new List<BaoCaoThietBi>();
+        public static List<Phong> dsPhong = new List<Phong>();
+        public static List<LoaiPhong> dsLoaiPhong = new List<LoaiPhong>();
+        public static List<Toa> dsToa = new List<Toa>();
+        public static List<SinhVien> dsSinhVien = new List<SinhVien>();
+        public static List<DichVu> dsDichVu = new List<DichVu>();
+        public static List<ChiTietHoaDonDichVu> dshoadon = new List<ChiTietHoaDonDichVu>();
+        public static List<LoaiNhanVien> dsLoaiNhanVien = new List<LoaiNhanVien>();
+        public static List<NhanVien> dsNhanVien = new List<NhanVien>();
+        public static List<ThietBi> dsThietBi = new List<ThietBi>();
+        public static List<TrangBi> dsTrangBi = new List<TrangBi>();
+        public static List<HopDongThuePhong> dsHopDong = new List<HopDongThuePhong>();
+        public static List<ChiTietHopDong> dsChiTietHopDong = new List<ChiTietHopDong>();
 
-        public static void TaoDanhSachBaoCao()
-        {
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC01", phong[0], new DateTime(2020, 1, 15), "Máy lạnh không hoạt động"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC02", phong[1], new DateTime(2020, 3, 16), "Vòi nước bị rò rỉ"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC03", phong[1], new DateTime(2020, 5, 1), "Quạt số 1 không thể đảo"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC04", phong[3], new DateTime(2020, 5, 16), "Vòi sen bị vỡ"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC05", phong[4], new DateTime(2020, 5, 23), "Chân giường số 1 bị gãy"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC06", phong[11], new DateTime(2020, 6, 16), "Tủ đựng đồ số 4 bị hư khóa"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC07", phong[11], new DateTime(2020, 8, 23), "Cửa phòng vệ sinh bị hư chốt"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC08", phong[27], new DateTime(2020, 8, 25), "Quạt số 2 bị hư động cơ"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC09", phong[18], new DateTime(2020, 9, 10), "Cửa sổ bị bung bản lề"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC10", phong[18], new DateTime(2020, 10, 12), "Cầu thang giường tầng số 1 bị gãy"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC11", phong[12], new DateTime(2020, 11, 13), "Bồn rửa tay bị sập"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC12", phong[17], new DateTime(2020, 12, 25), "Gương nhà tắm bị vỡ"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC13", phong[16], new DateTime(2021, 1, 16), "Điều khiển của máy lạnh bị hư"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC14", phong[15], new DateTime(2021, 2, 28), "Đèn phòng không hoạt động"));
-            baoCaoThietBi.Add(new BaoCaoThietBi("BC15", phong[25], new DateTime(2021, 4, 25), "Máy lạnh không hoạt động"));
-        }
         public static void TaoDanhSachDichVu()
         {
-            dichVu.Add(new DichVu("HD01", phong[0], 5360000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD02", phong[1], 7850000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD03", phong[2], 6250000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD04", phong[3], 4840000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD05", phong[4], 8940000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD06", phong[5], 5680000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD07", phong[6], 6520000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD08", phong[7], 7580000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD09", phong[8], 7120000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD10", phong[9], 6890000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD11", phong[10], 10540000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD12", phong[11], 7360000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD13", phong[12], 6360000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD14", phong[13], 8360000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD15", phong[14], 760000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD16", phong[15], 8960000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD17", phong[16], 5850000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD18", phong[17], 6560000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD19", phong[18], 7480000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD20", phong[19], 8590000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD21", phong[20], 8750000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD22", phong[21], 9890000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD23", phong[22], 9200000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD24", phong[23], 7200000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD25", phong[24], 9850000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD26", phong[25], 7540000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD27", phong[26], 6580000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD28", phong[27], 7540000, new DateTime(2020, 2, 1)));
-            dichVu.Add(new DichVu("HD29", phong[28], 7890000, new DateTime(2020, 2, 1)));
-            //dichVu.Add(new DichVu("HD30", phong[29], 8790000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV01", "Binh nuoc uong 20L", new List<ChiTietHoaDonDichVu>()));
+            dsDichVu.Add(new DichVu("DV02", "Tien dien luc", 7850000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV03", "Hoa don giat do", 6250000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV04", "Hoa don photocopy", 4840000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV05", "Hoa don ui do", 8940000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV06", "Hoa don Internet", 5680000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV07", phong[6], 6520000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV08", phong[7], 7580000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV09", phong[8], 7120000, new DateTime(2020, 2, 1)));
+            dsDichVu.Add(new DichVu("DV10", phong[9], 6890000, new DateTime(2020, 2, 1)));
+
         }
         public static void TaoDanhSachChiTiet_HD()
         {
@@ -107,159 +70,303 @@ namespace OOP_QuanLyKTX
         }
         public static void TaoDanhSachHopDong()
         {
-            hopDongThuePhong.Add(new HopDongThuePhong("HD01", sinhVien[0], "Hop dong thue phong SV01"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD02", sinhVien[1], "Hop dong thue phong SV02"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD03", sinhVien[2], "Hop dong thue phong SV03"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD04", sinhVien[3], "Hop dong thue phong SV04"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD05", sinhVien[4], "Hop dong thue phong SV05"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD06", sinhVien[5], "Hop dong thue phong SV06"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD07", sinhVien[6], "Hop dong thue phong SV07"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD08", sinhVien[7], "Hop dong thue phong SV08"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD09", sinhVien[8], "Hop dong thue phong SV09"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD10", sinhVien[9], "Hop dong thue phong SV10"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD11", sinhVien[10], "Hop dong thue phong SV11"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD12", sinhVien[11], "Hop dong thue phong SV12"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD13", sinhVien[12], "Hop dong thue phong SV13"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD14", sinhVien[13], "Hop dong thue phong SV14"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD15", sinhVien[14], "Hop dong thue phong SV15"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD16", sinhVien[15], "Hop dong thue phong SV16"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD17", sinhVien[16], "Hop dong thue phong SV17"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD18", sinhVien[17], "Hop dong thue phong SV18"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD19", sinhVien[18], "Hop dong thue phong SV19"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD20", sinhVien[19], "Hop dong thue phong SV20"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD21", sinhVien[20], "Hop dong thue phong SV21"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD22", sinhVien[21], "Hop dong thue phong SV22"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD23", sinhVien[22], "Hop dong thue phong SV23"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD24", sinhVien[23], "Hop dong thue phong SV24"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD25", sinhVien[24], "Hop dong thue phong SV25"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD26", sinhVien[25], "Hop dong thue phong SV26"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD27", sinhVien[26], "Hop dong thue phong SV27"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD28", sinhVien[27], "Hop dong thue phong SV28"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD29", sinhVien[28], "Hop dong thue phong SV29"));
-            hopDongThuePhong.Add(new HopDongThuePhong("HD30", sinhVien[29], "Hop dong thue phong SV30"));
+            dsHopDong.Add(new HopDongThuePhong("HD01", dsSinhVien[0].maSV, "Hop dong thue phong SV01", dsSinhVien[0]));
+            dsHopDong.Add(new HopDongThuePhong("HD02", dsSinhVien[1].maSV, "Hop dong thue phong SV02", dsSinhVien[1]));
+            dsHopDong.Add(new HopDongThuePhong("HD03", dsSinhVien[2].maSV, "Hop dong thue phong SV03", dsSinhVien[2]));
+            dsHopDong.Add(new HopDongThuePhong("HD04", dsSinhVien[3].maSV, "Hop dong thue phong SV04", dsSinhVien[3]));
+            dsHopDong.Add(new HopDongThuePhong("HD05", dsSinhVien[4].maSV, "Hop dong thue phong SV05", dsSinhVien[4]));
+            dsHopDong.Add(new HopDongThuePhong("HD06", dsSinhVien[5].maSV, "Hop dong thue phong SV06", dsSinhVien[5]));
+            dsHopDong.Add(new HopDongThuePhong("HD07", dsSinhVien[6].maSV, "Hop dong thue phong SV07", dsSinhVien[6]));
+            dsHopDong.Add(new HopDongThuePhong("HD08", dsSinhVien[7].maSV, "Hop dong thue phong SV08", dsSinhVien[7]));
+            dsHopDong.Add(new HopDongThuePhong("HD09", dsSinhVien[8].maSV, "Hop dong thue phong SV09", dsSinhVien[8]));
+            dsHopDong.Add(new HopDongThuePhong("HD10", dsSinhVien[9].maSV, "Hop dong thue phong SV10", dsSinhVien[9]));
+            dsHopDong.Add(new HopDongThuePhong("HD11", dsSinhVien[10].maSV, "Hop dong thue phong SV11", dsSinhVien[10]));
+            dsHopDong.Add(new HopDongThuePhong("HD12", dsSinhVien[11].maSV, "Hop dong thue phong SV12", dsSinhVien[11]));
+            dsHopDong.Add(new HopDongThuePhong("HD13", dsSinhVien[12].maSV, "Hop dong thue phong SV13", dsSinhVien[12]));
+            dsHopDong.Add(new HopDongThuePhong("HD14", dsSinhVien[13].maSV, "Hop dong thue phong SV14", dsSinhVien[13]));
+            dsHopDong.Add(new HopDongThuePhong("HD15", dsSinhVien[14].maSV, "Hop dong thue phong SV15", dsSinhVien[14]));
+            dsHopDong.Add(new HopDongThuePhong("HD16", dsSinhVien[15].maSV, "Hop dong thue phong SV16", dsSinhVien[15]));
+            dsHopDong.Add(new HopDongThuePhong("HD17", dsSinhVien[16].maSV, "Hop dong thue phong SV17", dsSinhVien[16]));
+            dsHopDong.Add(new HopDongThuePhong("HD18", dsSinhVien[17].maSV, "Hop dong thue phong SV18", dsSinhVien[17]));
+            dsHopDong.Add(new HopDongThuePhong("HD19", dsSinhVien[18].maSV, "Hop dong thue phong SV19", dsSinhVien[18]));
+            dsHopDong.Add(new HopDongThuePhong("HD20", dsSinhVien[19].maSV, "Hop dong thue phong SV20", dsSinhVien[19]));
+            dsHopDong.Add(new HopDongThuePhong("HD21", dsSinhVien[20].maSV, "Hop dong thue phong SV21", dsSinhVien[20]));
+            dsHopDong.Add(new HopDongThuePhong("HD22", dsSinhVien[21].maSV, "Hop dong thue phong SV22", dsSinhVien[21]));
+            dsHopDong.Add(new HopDongThuePhong("HD23", dsSinhVien[22].maSV, "Hop dong thue phong SV23", dsSinhVien[22]));
+            dsHopDong.Add(new HopDongThuePhong("HD24", dsSinhVien[23].maSV, "Hop dong thue phong SV24", dsSinhVien[23]));
+            dsHopDong.Add(new HopDongThuePhong("HD25", dsSinhVien[24].maSV, "Hop dong thue phong SV25", dsSinhVien[24]));
+            dsHopDong.Add(new HopDongThuePhong("HD26", dsSinhVien[25].maSV, "Hop dong thue phong SV26", dsSinhVien[25]));
+            dsHopDong.Add(new HopDongThuePhong("HD27", dsSinhVien[26].maSV, "Hop dong thue phong SV27", dsSinhVien[26]));
+            dsHopDong.Add(new HopDongThuePhong("HD28", dsSinhVien[27].maSV, "Hop dong thue phong SV28", dsSinhVien[27]));
+            dsHopDong.Add(new HopDongThuePhong("HD29", dsSinhVien[28].maSV, "Hop dong thue phong SV29", dsSinhVien[28]));
+            dsHopDong.Add(new HopDongThuePhong("HD30", dsSinhVien[29].maSV, "Hop dong thue phong SV30", dsSinhVien[29]));
+
+
+            dsSinhVien[0].dshopdong.Add(dsHopDong[0]);
+            dsSinhVien[1].dshopdong.Add(dsHopDong[1]);
+            dsSinhVien[2].dshopdong.Add(dsHopDong[2]);
+            dsSinhVien[3].dshopdong.Add(dsHopDong[3]);
+            dsSinhVien[4].dshopdong.Add(dsHopDong[4]);
+            dsSinhVien[5].dshopdong.Add(dsHopDong[5]);
+            dsSinhVien[6].dshopdong.Add(dsHopDong[6]);
+            dsSinhVien[7].dshopdong.Add(dsHopDong[7]);
+            dsSinhVien[8].dshopdong.Add(dsHopDong[8]);
+            dsSinhVien[9].dshopdong.Add(dsHopDong[9]);
+            dsSinhVien[10].dshopdong.Add(dsHopDong[10]);
+            dsSinhVien[11].dshopdong.Add(dsHopDong[11]);
+            dsSinhVien[12].dshopdong.Add(dsHopDong[12]);
+            dsSinhVien[13].dshopdong.Add(dsHopDong[13]);
+            dsSinhVien[14].dshopdong.Add(dsHopDong[14]);
+            dsSinhVien[15].dshopdong.Add(dsHopDong[15]);
+            dsSinhVien[16].dshopdong.Add(dsHopDong[16]);
+            dsSinhVien[17].dshopdong.Add(dsHopDong[17]);
+            dsSinhVien[18].dshopdong.Add(dsHopDong[18]);
+            dsSinhVien[19].dshopdong.Add(dsHopDong[19]);
+            dsSinhVien[20].dshopdong.Add(dsHopDong[20]);
+            dsSinhVien[21].dshopdong.Add(dsHopDong[21]);
+            dsSinhVien[22].dshopdong.Add(dsHopDong[22]);
+            dsSinhVien[23].dshopdong.Add(dsHopDong[23]);
+            dsSinhVien[24].dshopdong.Add(dsHopDong[24]);
+            dsSinhVien[25].dshopdong.Add(dsHopDong[25]);
+            dsSinhVien[26].dshopdong.Add(dsHopDong[26]);
+            dsSinhVien[27].dshopdong.Add(dsHopDong[27]);
+            dsSinhVien[28].dshopdong.Add(dsHopDong[28]);
+            dsSinhVien[29].dshopdong.Add(dsHopDong[29]);
         }
         public static void TaoDanhSachLoaiNhanVien()
         {
-            loaiNhanVien.Add(new LoaiNhanVien("LNV01", "Lao công", "Quét sân"));
-            loaiNhanVien.Add(new LoaiNhanVien("LNV02", "Phụ bếp", "Dọn dẹp nhà bếp"));
-            loaiNhanVien.Add(new LoaiNhanVien("LNV03", "Đầu bếp", "Nấu ăn"));
-            loaiNhanVien.Add(new LoaiNhanVien("LNV04", "Bảo vệ", "Canh cổng ra vào"));
-            loaiNhanVien.Add(new LoaiNhanVien("LNV05", "Sửa điện", "Sửa điện"));
+            dsLoaiNhanVien.Add(new LoaiNhanVien("LNV01", "Lao công", "Quét sân", new List<NhanVien>()));
+            dsLoaiNhanVien.Add(new LoaiNhanVien("LNV02", "Phụ bếp", "Dọn dẹp nhà bếp", new List<NhanVien>()));
+            dsLoaiNhanVien.Add(new LoaiNhanVien("LNV03", "Đầu bếp", "Nấu ăn", new List<NhanVien>()));
+            dsLoaiNhanVien.Add(new LoaiNhanVien("LNV04", "Bảo vệ", "Canh cổng ra vào", new List<NhanVien>()));
+            dsLoaiNhanVien.Add(new LoaiNhanVien("LNV05", "Sửa điện", "Sửa điện", new List<NhanVien>()));
         }
         public static void TaoDanhSachNhanVien()
         {
-            nhanVien.Add(new NhanVien("NV01", loaiNhanVien[0], toa[1], "Phan Quang Đạt", "0321550699", 12000000));
-            nhanVien.Add(new NhanVien("NV02", loaiNhanVien[0], toa[1], "Nguyễn Hoàng Hải", "0935538764", 10500000));
-            nhanVien.Add(new NhanVien("NV03", loaiNhanVien[1], toa[2], "Phan Ninh Thuật", "0375512722", 12500000));
-            nhanVien.Add(new NhanVien("NV04", loaiNhanVien[4], toa[2], "Văn Viết Hồng", "0933592539", 15500000));
-            nhanVien.Add(new NhanVien("NV05", loaiNhanVien[2], toa[3], "Vũ Hoàng Lâm", "0873562883", 11300000));
-            nhanVien.Add(new NhanVien("NV06", loaiNhanVien[2], toa[3], "Trần Văn Tài", "0376588314", 14800000));
-            nhanVien.Add(new NhanVien("NV07", loaiNhanVien[3], toa[3], "Nguyễn Thị Bích Châu", "0935543050", 18200000));
-            nhanVien.Add(new NhanVien("NV08", loaiNhanVien[3], toa[0], "Trần Hạnh Vy", "0835559895", 11500000));
-            nhanVien.Add(new NhanVien("NV09", loaiNhanVien[2], toa[1], "Trần Phương Thanh", "0855586047", 12000000));
-            nhanVien.Add(new NhanVien("NV10", loaiNhanVien[1], toa[2], "Ngô Ngọc Huế", "0935517709", 13500000));
-            nhanVien.Add(new NhanVien("NV11", loaiNhanVien[3], toa[1], "Khưu Hoài Bắc", "0952114939", 13000000));
-            nhanVien.Add(new NhanVien("NV12", loaiNhanVien[3], toa[1], "Tôn Yên Bình", "0933213448", 11500000));
-            nhanVien.Add(new NhanVien("NV13", loaiNhanVien[3], toa[2], "Nguyễn Nguyên Khôi", "0941527983", 13500000));
-            nhanVien.Add(new NhanVien("NV14", loaiNhanVien[3], toa[2], "Hoàng Hiệp Hà", "0992525872", 16500000));
-            nhanVien.Add(new NhanVien("NV15", loaiNhanVien[0], toa[3], "Lâm Phi Hùng", "0991204916", 12300000));
-            nhanVien.Add(new NhanVien("NV16", loaiNhanVien[4], toa[3], "Trần Tấn Nam", "0967537105", 15800000));
-            nhanVien.Add(new NhanVien("NV17", loaiNhanVien[4], toa[3], "Trần Minh Tiến", "0938910107", 19200000));
-            nhanVien.Add(new NhanVien("NV18", loaiNhanVien[4], toa[0], "Phạm Minh Thiện", "0921507874", 12500000));
-            nhanVien.Add(new NhanVien("NV19", loaiNhanVien[2], toa[1], "Hoàng Công Bằng", "0973125823", 13000000));
-            nhanVien.Add(new NhanVien("NV20", loaiNhanVien[2], toa[2], "Nguyễn Thành Công", "0931213547", 13500000));
-            nhanVien.Add(new NhanVien("NV21", loaiNhanVien[0], toa[1], "Bùi Trọng Kim", "0935181991", 12000000));
-            nhanVien.Add(new NhanVien("NV22", loaiNhanVien[0], toa[1], "Đào Phi Hải", "0912529277", 10500000));
-            nhanVien.Add(new NhanVien("NV23", loaiNhanVien[0], toa[2], "Trịnh Thiện Luân", "0987558119", 12500000));
-            nhanVien.Add(new NhanVien("NV24", loaiNhanVien[1], toa[2], "Nguyễn Quang Ninh", "0935502239", 15500000));
-            nhanVien.Add(new NhanVien("NV25", loaiNhanVien[1], toa[3], "Trần Minh Thạc", "0936457259", 10300000));
-            nhanVien.Add(new NhanVien("NV26", loaiNhanVien[1], toa[3], "Nguyễn Minh Thạc", "0935599247", 14800000));
-            nhanVien.Add(new NhanVien("NV27", loaiNhanVien[0], toa[3], "Trần Công Ân", "0912590004", 17200000));
-            nhanVien.Add(new NhanVien("NV28", loaiNhanVien[0], toa[0], "Mạnh Gia Bình", "0958974792", 9500000));
-            nhanVien.Add(new NhanVien("NV29", loaiNhanVien[0], toa[1], "Thịnh Bảo Lâm", "0915501907", 11000000));
-            nhanVien.Add(new NhanVien("NV30", loaiNhanVien[0], toa[2], "Nguyễn Cao Tiến", "0958585889", 12500000));
+            dsNhanVien.Add(new NhanVien("NV01", dsLoaiNhanVien[0].maLoaiNV, dsToa[1].maToa, "Phan Quang Đạt", "0321550699", 12000000, dsLoaiNhanVien[0], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV02", dsLoaiNhanVien[0].maLoaiNV, dsToa[1].maToa, "Nguyễn Hoàng Hải", "0935538764", 10500000, dsLoaiNhanVien[0], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV03", dsLoaiNhanVien[1].maLoaiNV, dsToa[2].maToa, "Phan Ninh Thuật", "0375512722", 12500000, dsLoaiNhanVien[1], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV04", dsLoaiNhanVien[4].maLoaiNV, dsToa[2].maToa, "Văn Viết Hồng", "0933592539", 15500000, dsLoaiNhanVien[4], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV05", dsLoaiNhanVien[2].maLoaiNV, dsToa[3].maToa, "Vũ Hoàng Lâm", "0873562883", 11300000, dsLoaiNhanVien[2], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV06", dsLoaiNhanVien[2].maLoaiNV, dsToa[3].maToa, "Trần Văn Tài", "0376588314", 14800000, dsLoaiNhanVien[2], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV07", dsLoaiNhanVien[3].maLoaiNV, dsToa[3].maToa, "Nguyễn Thị Bích Châu", "0935543050", 18200000, dsLoaiNhanVien[3], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV08", dsLoaiNhanVien[3].maLoaiNV, dsToa[0].maToa, "Trần Hạnh Vy", "0835559895", 11500000, dsLoaiNhanVien[3], dsToa[0]));
+            dsNhanVien.Add(new NhanVien("NV09", dsLoaiNhanVien[2].maLoaiNV, dsToa[1].maToa, "Trần Phương Thanh", "0855586047", 12000000, dsLoaiNhanVien[2], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV10", dsLoaiNhanVien[1].maLoaiNV, dsToa[2].maToa, "Ngô Ngọc Huế", "0935517709", 13500000, dsLoaiNhanVien[1], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV11", dsLoaiNhanVien[3].maLoaiNV, dsToa[1].maToa, "Khưu Hoài Bắc", "0952114939", 13000000, dsLoaiNhanVien[3], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV12", dsLoaiNhanVien[3].maLoaiNV, dsToa[1].maToa, "Tôn Yên Bình", "0933213448", 11500000, dsLoaiNhanVien[3], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV13", dsLoaiNhanVien[3].maLoaiNV, dsToa[2].maToa, "Nguyễn Nguyên Khôi", "0941527983", 13500000, dsLoaiNhanVien[3], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV14", dsLoaiNhanVien[3].maLoaiNV, dsToa[2].maToa, "Hoàng Hiệp Hà", "0992525872", 16500000, dsLoaiNhanVien[3], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV15", dsLoaiNhanVien[0].maLoaiNV, dsToa[3].maToa, "Lâm Phi Hùng", "0991204916", 12300000, dsLoaiNhanVien[0], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV16", dsLoaiNhanVien[4].maLoaiNV, dsToa[3].maToa, "Trần Tấn Nam", "0967537105", 15800000, dsLoaiNhanVien[4], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV17", dsLoaiNhanVien[4].maLoaiNV, dsToa[3].maToa, "Trần Minh Tiến", "0938910107", 19200000, dsLoaiNhanVien[4], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV18", dsLoaiNhanVien[4].maLoaiNV, dsToa[0].maToa, "Phạm Minh Thiện", "0921507874", 12500000, dsLoaiNhanVien[4], dsToa[0]));
+            dsNhanVien.Add(new NhanVien("NV19", dsLoaiNhanVien[2].maLoaiNV, dsToa[1].maToa, "Hoàng Công Bằng", "0973125823", 13000000, dsLoaiNhanVien[2], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV20", dsLoaiNhanVien[2].maLoaiNV, dsToa[2].maToa, "Nguyễn Thành Công", "0931213547", 13500000, dsLoaiNhanVien[2], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV21", dsLoaiNhanVien[0].maLoaiNV, dsToa[1].maToa, "Bùi Trọng Kim", "0935181991", 12000000, dsLoaiNhanVien[0], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV22", dsLoaiNhanVien[0].maLoaiNV, dsToa[1].maToa, "Đào Phi Hải", "0912529277", 10500000, dsLoaiNhanVien[0], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV23", dsLoaiNhanVien[0].maLoaiNV, dsToa[2].maToa, "Trịnh Thiện Luân", "0987558119", 12500000, dsLoaiNhanVien[0], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV24", dsLoaiNhanVien[1].maLoaiNV, dsToa[2].maToa, "Nguyễn Quang Ninh", "0935502239", 15500000, dsLoaiNhanVien[1], dsToa[2]));
+            dsNhanVien.Add(new NhanVien("NV25", dsLoaiNhanVien[1].maLoaiNV, dsToa[3].maToa, "Trần Minh Thạc", "0936457259", 10300000, dsLoaiNhanVien[1], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV26", dsLoaiNhanVien[1].maLoaiNV, dsToa[3].maToa, "Nguyễn Minh Thạc", "0935599247", 14800000, dsLoaiNhanVien[1], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV27", dsLoaiNhanVien[0].maLoaiNV, dsToa[3].maToa, "Trần Công Ân", "0912590004", 17200000, dsLoaiNhanVien[0], dsToa[3]));
+            dsNhanVien.Add(new NhanVien("NV28", dsLoaiNhanVien[0].maLoaiNV, dsToa[0].maToa, "Mạnh Gia Bình", "0958974792", 9500000, dsLoaiNhanVien[0], dsToa[0]));
+            dsNhanVien.Add(new NhanVien("NV29", dsLoaiNhanVien[0].maLoaiNV, dsToa[1].maToa, "Thịnh Bảo Lâm", "0915501907", 11000000, dsLoaiNhanVien[0], dsToa[1]));
+            dsNhanVien.Add(new NhanVien("NV30", dsLoaiNhanVien[0].maLoaiNV, dsToa[2].maToa, "Nguyễn Cao Tiến", "0958585889", 12500000, dsLoaiNhanVien[0], dsToa[2]));
+
+            //		dsLoaiPhong[5].dsphong_loai.Add(dsPhong[11));
+
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[0]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[1]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[14]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[20]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[21]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[22]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[26]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[27]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[28]);
+            dsLoaiNhanVien[0].dsnhanvien_loai.Add(dsNhanVien[29]);
+
+
+            dsLoaiNhanVien[1].dsnhanvien_loai.Add(dsNhanVien[2]);
+            dsLoaiNhanVien[1].dsnhanvien_loai.Add(dsNhanVien[9]);
+            dsLoaiNhanVien[1].dsnhanvien_loai.Add(dsNhanVien[23]);
+            dsLoaiNhanVien[1].dsnhanvien_loai.Add(dsNhanVien[24]);
+            dsLoaiNhanVien[1].dsnhanvien_loai.Add(dsNhanVien[25]);
+
+
+            dsLoaiNhanVien[2].dsnhanvien_loai.Add(dsNhanVien[4]);
+            dsLoaiNhanVien[2].dsnhanvien_loai.Add(dsNhanVien[5]);
+            dsLoaiNhanVien[2].dsnhanvien_loai.Add(dsNhanVien[8]);
+            dsLoaiNhanVien[2].dsnhanvien_loai.Add(dsNhanVien[18]);
+            dsLoaiNhanVien[2].dsnhanvien_loai.Add(dsNhanVien[19]);
+
+            dsLoaiNhanVien[3].dsnhanvien_loai.Add(dsNhanVien[6]);
+            dsLoaiNhanVien[3].dsnhanvien_loai.Add(dsNhanVien[7]);
+            dsLoaiNhanVien[3].dsnhanvien_loai.Add(dsNhanVien[10]);
+            dsLoaiNhanVien[3].dsnhanvien_loai.Add(dsNhanVien[11]);
+            dsLoaiNhanVien[3].dsnhanvien_loai.Add(dsNhanVien[12]);
+            dsLoaiNhanVien[3].dsnhanvien_loai.Add(dsNhanVien[13]);
+
+            dsLoaiNhanVien[4].dsnhanvien_loai.Add(dsNhanVien[3]);
+            dsLoaiNhanVien[4].dsnhanvien_loai.Add(dsNhanVien[15]);
+            dsLoaiNhanVien[4].dsnhanvien_loai.Add(dsNhanVien[16]);
+            dsLoaiNhanVien[4].dsnhanvien_loai.Add(dsNhanVien[17]);
         }
         public static void TaoDanhSachLoaiPhong()
         {
-            loaiPhong.Add(new LoaiPhong("PML04", "Phòng máy lạnh 4 người", 4000000));
-            loaiPhong.Add(new LoaiPhong("PML06", "Phòng máy lạnh 6 người", 5500000));
-            loaiPhong.Add(new LoaiPhong("PML08", "Phòng máy lạnh 8 người", 7500000));
-            loaiPhong.Add(new LoaiPhong("PQ04", "Phòng quạt 4 người", 2500000));
-            loaiPhong.Add(new LoaiPhong("PQ06", "Phong quạt 6 người", 3500000));
-            loaiPhong.Add(new LoaiPhong("PQ08", "Phòng quạt 8 người", 4500000));
+            dsLoaiPhong.Add(new LoaiPhong("PML04", "Phòng máy lạnh 4 người", 4000000, new List<Phong>()));
+            dsLoaiPhong.Add(new LoaiPhong("PML06", "Phòng máy lạnh 6 người", 5500000, new List<Phong>()));
+            dsLoaiPhong.Add(new LoaiPhong("PML08", "Phòng máy lạnh 8 người", 7500000, new List<Phong>()));
+            dsLoaiPhong.Add(new LoaiPhong("PQ04", "Phòng quạt 4 người", 2500000, new List<Phong>()));
+            dsLoaiPhong.Add(new LoaiPhong("PQ06", "Phòng quạt 6 người", 3500000, new List<Phong>()));
+            dsLoaiPhong.Add(new LoaiPhong("PQ08", "Phòng quạt 8 người", 4500000, new List<Phong>()));
         }
         public static void TaoDanhSachPhong()
         {
-            phong.Add(new Phong("P01", toa[0], loaiPhong[1], true));
-            phong.Add(new Phong("P02", toa[0], loaiPhong[1], true));
-            phong.Add(new Phong("P03", toa[1], loaiPhong[3], true));
-            phong.Add(new Phong("P04", toa[1], loaiPhong[3], true));
-            phong.Add(new Phong("P05", toa[2], loaiPhong[2], true));
-            phong.Add(new Phong("P06", toa[2], loaiPhong[2], true));
-            phong.Add(new Phong("P07", toa[3], loaiPhong[1], true));
-            phong.Add(new Phong("P08", toa[3], loaiPhong[3], false));
-            phong.Add(new Phong("P09", toa[1], loaiPhong[0], false));
-            phong.Add(new Phong("P10", toa[3], loaiPhong[0], false));
-            phong.Add(new Phong("P11", toa[0], loaiPhong[4], true));
-            phong.Add(new Phong("P12", toa[0], loaiPhong[5], true));
-            phong.Add(new Phong("P13", toa[1], loaiPhong[4], true));
-            phong.Add(new Phong("P14", toa[1], loaiPhong[5], false));
-            phong.Add(new Phong("P15", toa[2], loaiPhong[4], true));
-            phong.Add(new Phong("P16", toa[2], loaiPhong[5], true));
-            phong.Add(new Phong("P17", toa[3], loaiPhong[1], true));
-            phong.Add(new Phong("P18", toa[3], loaiPhong[1], true));
-            phong.Add(new Phong("P19", toa[1], loaiPhong[2], true));
-            phong.Add(new Phong("P20", toa[3], loaiPhong[2], false));
-            phong.Add(new Phong("P21", toa[0], loaiPhong[3], true));
-            phong.Add(new Phong("P22", toa[0], loaiPhong[3], false));
-            phong.Add(new Phong("P23", toa[1], loaiPhong[4], true));
-            phong.Add(new Phong("P24", toa[1], loaiPhong[4], true));
-            phong.Add(new Phong("P25", toa[2], loaiPhong[5], true));
-            phong.Add(new Phong("P26", toa[2], loaiPhong[5], true));
-            phong.Add(new Phong("P27", toa[3], loaiPhong[0], false));
-            phong.Add(new Phong("P28", toa[3], loaiPhong[0], true));
-            phong.Add(new Phong("P29", toa[1], loaiPhong[0], false));
-            phong.Add(new Phong("P30", toa[3], loaiPhong[0], false));
+            dsPhong.Add(new Phong("P01", dsToa[0].maToa, dsLoaiPhong[1].maLoaiPhong, true, dsToa[0], dsLoaiPhong[1]));
+            dsPhong.Add(new Phong("P02", dsToa[0].maToa, dsLoaiPhong[1].maLoaiPhong, true, dsToa[0], dsLoaiPhong[1]));
+            dsPhong.Add(new Phong("P03", dsToa[1].maToa, dsLoaiPhong[3].maLoaiPhong, true, dsToa[1], dsLoaiPhong[3]));
+            dsPhong.Add(new Phong("P04", dsToa[1].maToa, dsLoaiPhong[3].maLoaiPhong, true, dsToa[1], dsLoaiPhong[3]));
+            dsPhong.Add(new Phong("P05", dsToa[2].maToa, dsLoaiPhong[2].maLoaiPhong, true, dsToa[2], dsLoaiPhong[2]));
+            dsPhong.Add(new Phong("P06", dsToa[2].maToa, dsLoaiPhong[2].maLoaiPhong, true, dsToa[2], dsLoaiPhong[2]));
+            dsPhong.Add(new Phong("P07", dsToa[3].maToa, dsLoaiPhong[1].maLoaiPhong, true, dsToa[3], dsLoaiPhong[1]));
+            dsPhong.Add(new Phong("P08", dsToa[3].maToa, dsLoaiPhong[3].maLoaiPhong, false, dsToa[3], dsLoaiPhong[3]));
+            dsPhong.Add(new Phong("P09", dsToa[1].maToa, dsLoaiPhong[0].maLoaiPhong, false, dsToa[1], dsLoaiPhong[0]));
+            dsPhong.Add(new Phong("P10", dsToa[3].maToa, dsLoaiPhong[0].maLoaiPhong, false, dsToa[3], dsLoaiPhong[0]));
+            dsPhong.Add(new Phong("P11", dsToa[0].maToa, dsLoaiPhong[4].maLoaiPhong, true, dsToa[0], dsLoaiPhong[4]));
+            dsPhong.Add(new Phong("P12", dsToa[0].maToa, dsLoaiPhong[5].maLoaiPhong, true, dsToa[0], dsLoaiPhong[5]));
+            dsPhong.Add(new Phong("P13", dsToa[1].maToa, dsLoaiPhong[4].maLoaiPhong, true, dsToa[1], dsLoaiPhong[4]));
+            dsPhong.Add(new Phong("P14", dsToa[1].maToa, dsLoaiPhong[5].maLoaiPhong, false, dsToa[1], dsLoaiPhong[5]));
+            dsPhong.Add(new Phong("P15", dsToa[2].maToa, dsLoaiPhong[4].maLoaiPhong, true, dsToa[2], dsLoaiPhong[4]));
+            dsPhong.Add(new Phong("P16", dsToa[2].maToa, dsLoaiPhong[5].maLoaiPhong, true, dsToa[2], dsLoaiPhong[5]));
+            dsPhong.Add(new Phong("P17", dsToa[3].maToa, dsLoaiPhong[1].maLoaiPhong, true, dsToa[3], dsLoaiPhong[1]));
+            dsPhong.Add(new Phong("P18", dsToa[3].maToa, dsLoaiPhong[1].maLoaiPhong, true, dsToa[3], dsLoaiPhong[1]));
+            dsPhong.Add(new Phong("P19", dsToa[1].maToa, dsLoaiPhong[2].maLoaiPhong, true, dsToa[1], dsLoaiPhong[2]));
+            dsPhong.Add(new Phong("P20", dsToa[3].maToa, dsLoaiPhong[2].maLoaiPhong, false, dsToa[3], dsLoaiPhong[2]));
+            dsPhong.Add(new Phong("P21", dsToa[0].maToa, dsLoaiPhong[3].maLoaiPhong, true, dsToa[0], dsLoaiPhong[3]));
+            dsPhong.Add(new Phong("P22", dsToa[0].maToa, dsLoaiPhong[3].maLoaiPhong, false, dsToa[0], dsLoaiPhong[3]));
+            dsPhong.Add(new Phong("P23", dsToa[1].maToa, dsLoaiPhong[4].maLoaiPhong, true, dsToa[1], dsLoaiPhong[4]));
+            dsPhong.Add(new Phong("P24", dsToa[1].maToa, dsLoaiPhong[4].maLoaiPhong, true, dsToa[1], dsLoaiPhong[4]));
+            dsPhong.Add(new Phong("P25", dsToa[2].maToa, dsLoaiPhong[5].maLoaiPhong, true, dsToa[2], dsLoaiPhong[5]));
+            dsPhong.Add(new Phong("P26", dsToa[2].maToa, dsLoaiPhong[5].maLoaiPhong, true, dsToa[2], dsLoaiPhong[5]));
+            dsPhong.Add(new Phong("P27", dsToa[3].maToa, dsLoaiPhong[0].maLoaiPhong, false, dsToa[3], dsLoaiPhong[0]));
+            dsPhong.Add(new Phong("P28", dsToa[3].maToa, dsLoaiPhong[0].maLoaiPhong, true, dsToa[3], dsLoaiPhong[0]));
+            dsPhong.Add(new Phong("P29", dsToa[1].maToa, dsLoaiPhong[0].maLoaiPhong, false, dsToa[1], dsLoaiPhong[0]));
+            dsPhong.Add(new Phong("P30", dsToa[3].maToa, dsLoaiPhong[0].maLoaiPhong, false, dsToa[3], dsLoaiPhong[0]));
+
+
+            dsLoaiPhong[0].dsphong_loai.Add(dsPhong[8]);
+            dsLoaiPhong[0].dsphong_loai.Add(dsPhong[9]);
+            dsLoaiPhong[0].dsphong_loai.Add(dsPhong[26]);
+            dsLoaiPhong[0].dsphong_loai.Add(dsPhong[27]);
+            dsLoaiPhong[0].dsphong_loai.Add(dsPhong[28]);
+            dsLoaiPhong[0].dsphong_loai.Add(dsPhong[29]);
+
+            dsLoaiPhong[1].dsphong_loai.Add(dsPhong[0]);
+            dsLoaiPhong[1].dsphong_loai.Add(dsPhong[1]);
+            dsLoaiPhong[1].dsphong_loai.Add(dsPhong[6]);
+            dsLoaiPhong[1].dsphong_loai.Add(dsPhong[16]);
+            dsLoaiPhong[1].dsphong_loai.Add(dsPhong[17]);
+
+            dsLoaiPhong[2].dsphong_loai.Add(dsPhong[4]);
+            dsLoaiPhong[2].dsphong_loai.Add(dsPhong[5]);
+            dsLoaiPhong[2].dsphong_loai.Add(dsPhong[18]);
+            dsLoaiPhong[2].dsphong_loai.Add(dsPhong[19]);
+            dsLoaiPhong[2].dsphong_loai.Add(dsPhong[17]);
+
+            dsLoaiPhong[3].dsphong_loai.Add(dsPhong[2]);
+            dsLoaiPhong[3].dsphong_loai.Add(dsPhong[3]);
+            dsLoaiPhong[3].dsphong_loai.Add(dsPhong[7]);
+            dsLoaiPhong[3].dsphong_loai.Add(dsPhong[20]);
+            dsLoaiPhong[3].dsphong_loai.Add(dsPhong[11]);
+
+            dsLoaiPhong[4].dsphong_loai.Add(dsPhong[10]);
+            dsLoaiPhong[4].dsphong_loai.Add(dsPhong[12]);
+            dsLoaiPhong[4].dsphong_loai.Add(dsPhong[22]);
+            dsLoaiPhong[4].dsphong_loai.Add(dsPhong[23]);
+            dsLoaiPhong[4].dsphong_loai.Add(dsPhong[14]);
+
+            dsLoaiPhong[5].dsphong_loai.Add(dsPhong[11]);
+            dsLoaiPhong[5].dsphong_loai.Add(dsPhong[13]);
+            dsLoaiPhong[5].dsphong_loai.Add(dsPhong[15]);
+            dsLoaiPhong[5].dsphong_loai.Add(dsPhong[24]);
+            dsLoaiPhong[5].dsphong_loai.Add(dsPhong[25]);
+
+            dsToa[0].dsphong_toa.Add(dsPhong[0]);
+            dsToa[0].dsphong_toa.Add(dsPhong[1]);
+            dsToa[0].dsphong_toa.Add(dsPhong[10]);
+            dsToa[0].dsphong_toa.Add(dsPhong[11]);
+            dsToa[0].dsphong_toa.Add(dsPhong[20]);
+            dsToa[0].dsphong_toa.Add(dsPhong[21]);
+
+            dsToa[1].dsphong_toa.Add(dsPhong[2]);
+            dsToa[1].dsphong_toa.Add(dsPhong[3]);
+            dsToa[1].dsphong_toa.Add(dsPhong[8]);
+            dsToa[1].dsphong_toa.Add(dsPhong[12]);
+            dsToa[1].dsphong_toa.Add(dsPhong[13]);
+            dsToa[1].dsphong_toa.Add(dsPhong[18]);
+            dsToa[1].dsphong_toa.Add(dsPhong[22]);
+            dsToa[1].dsphong_toa.Add(dsPhong[23]);
+            dsToa[1].dsphong_toa.Add(dsPhong[28]);
+
+            dsToa[2].dsphong_toa.Add(dsPhong[4]);
+            dsToa[2].dsphong_toa.Add(dsPhong[5]);
+            dsToa[2].dsphong_toa.Add(dsPhong[14]);
+            dsToa[2].dsphong_toa.Add(dsPhong[15]);
+            dsToa[2].dsphong_toa.Add(dsPhong[24]);
+            dsToa[2].dsphong_toa.Add(dsPhong[25]);
+
+
+            dsToa[3].dsphong_toa.Add(dsPhong[6]);
+            dsToa[3].dsphong_toa.Add(dsPhong[7]);
+            dsToa[3].dsphong_toa.Add(dsPhong[9]);
+            dsToa[3].dsphong_toa.Add(dsPhong[16]);
+            dsToa[3].dsphong_toa.Add(dsPhong[17]);
+            dsToa[3].dsphong_toa.Add(dsPhong[19]);
+            dsToa[3].dsphong_toa.Add(dsPhong[26]);
+            dsToa[3].dsphong_toa.Add(dsPhong[27]);
+            dsToa[3].dsphong_toa.Add(dsPhong[29]);
         }
         public static void TaoDachSachToa()
         {
-            toa.Add(new Toa('A', 300, 45));
-            toa.Add(new Toa('B', 330, 50));
-            toa.Add(new Toa('C', 300, 45));
-            toa.Add(new Toa('D', 330, 50));
+            dsToa.Add(new Toa('A', 300, 45, new List<Phong>(), new List<NhanVien>()));
+            dsToa.Add(new Toa('B', 330, 50, new List<Phong>(), new List<NhanVien>()));
+            dsToa.Add(new Toa('C', 300, 45, new List<Phong>(), new List<NhanVien>()));
+            dsToa.Add(new Toa('D', 330, 50, new List<Phong>(), new List<NhanVien>()));
         }
         public static void TaoDanhSachSinhVien()
         {
-            sinhVien.Add(new SinhVien("SV01", "Văn Minh Anh", true, "0335573464"));
-            sinhVien.Add(new SinhVien("SV02", "Kha Sỹ Phú", true, "0955546106"));
-            sinhVien.Add(new SinhVien("SV03", "Phan Phúc Lâm", true, "0875516075"));
-            sinhVien.Add(new SinhVien("SV04", "Trần Trung Thế", true, "0335555459"));
-            sinhVien.Add(new SinhVien("SV05", "Cao Đăng Ngọc Quý", true, "0995578740"));
-            sinhVien.Add(new SinhVien("SV06", "Phạm Vĩnh Long", true, "0335558622"));
-            sinhVien.Add(new SinhVien("SV07", "Tạ Bạch Cúc", false, "0935505935"));
-            sinhVien.Add(new SinhVien("SV08", "Mai Kiều Hoa", false, "0855533475"));
-            sinhVien.Add(new SinhVien("SV09", "Mai Phương Thúy", false, "0955515045"));
-            sinhVien.Add(new SinhVien("SV10", "Hoàng Phương Thảo", false, "0895501461"));
-            sinhVien.Add(new SinhVien("SV11", "Trần Quang Bửu", true, "09732588394"));
-            sinhVien.Add(new SinhVien("SV12", "Nguyễn Quang Dũng", true, "03312598591"));
-            sinhVien.Add(new SinhVien("SV13", "Nguyễn Thiện Giang", true, "09331529049"));
-            sinhVien.Add(new SinhVien("SV14", "Nguyễn Trọng Khánh", true, "09556752852"));
-            sinhVien.Add(new SinhVien("SV15", "Phan Bảo Long", true, "03758710360"));
-            sinhVien.Add(new SinhVien("SV16", "Cao Khắc Minh", true, "03512548013"));
-            sinhVien.Add(new SinhVien("SV17", "Đoàn Kiên Trung", true, "09655516844"));
-            sinhVien.Add(new SinhVien("SV18", "Huỳnh Huy Cường", true, "03578507626"));
-            sinhVien.Add(new SinhVien("SV19", "Danh Hoàng Giang", true, "098559527928"));
-            sinhVien.Add(new SinhVien("SV20", "Đỗ Mỹ Loan", false, "03515538943"));
-            sinhVien.Add(new SinhVien("SV21", "Nguyễn Phương Lan", false, "09959743180"));
-            sinhVien.Add(new SinhVien("SV22", "Trịnh Thúy Anh", false, "03565533549"));
-            sinhVien.Add(new SinhVien("SV23", "Lương Bạch Loan", false, "09351210183"));
-            sinhVien.Add(new SinhVien("SV24", "Nghiêm Diệu Hà", false, "03364557138"));
-            sinhVien.Add(new SinhVien("SV25", "Nguyễn Hải Châu", false, "0333129573"));
-            sinhVien.Add(new SinhVien("SV26", "Vũ Bạch Yến", false, "0335979171"));
-            sinhVien.Add(new SinhVien("SV27", "Nguyễn Bích Thủy", false, "09915542642"));
-            sinhVien.Add(new SinhVien("SV28", "Việt Mỹ Kiều", false, "09532563250"));
-            sinhVien.Add(new SinhVien("SV29", "Nguyễn Linh Sương Sương", false, "09857975293"));
-            sinhVien.Add(new SinhVien("SV30", "Vũ Bích Vân", false, "03368595027"));
+            dsSinhVien.Add(new SinhVien("SV01", "Văn Minh Anh", true, "0335573464", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV02", "Kha Sỹ Phú", true, "0955546106", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV03", "Phan Phúc Lâm", true, "0875516075", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV04", "Trần Trung Thế", true, "0335555459", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV05", "Cao Đăng Ngọc Quý", true, "0995578740", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV06", "Phạm Vĩnh Long", true, "0335558622", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV07", "Tạ Bạch Cúc", false, "0935505935", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV08", "Mai Kiều Hoa", false, "0855533475", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV09", "Mai Phương Thúy", false, "0955515045", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV10", "Hoàng Phương Thảo", false, "0895501461", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV11", "Trần Quang Bửu", true, "09732588394", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV12", "Nguyễn Quang Dũng", true, "03312598591", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV13", "Nguyễn Thiện Giang", true, "09331529049", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV14", "Nguyễn Trọng Khánh", true, "09556752852", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV15", "Phan Bảo Long", true, "03758710360", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV16", "Cao Khắc Minh", true, "03512548013", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV17", "Đoàn Kiên Trung", true, "09655516844", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV18", "Huỳnh Huy Cường", true, "03578507626", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV19", "Danh Hoàng Giang", true, "098559527928", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV20", "Đỗ Mỹ Loan", false, "03515538943", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV21", "Nguyễn Phương Lan", false, "09959743180", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV22", "Trịnh Thúy Anh", false, "03565533549", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV23", "Lương Bạch Loan", false, "09351210183", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV24", "Nghiêm Diệu Hà", false, "03364557138", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV25", "Nguyễn Hải Châu", false, "0333129573", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV26", "Vũ Bạch Yến", false, "0335979171", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV27", "Nguyễn Bích Thủy", false, "09915542642", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV28", "Việt Mỹ Kiều", false, "09532563250", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV29", "Nguyễn Linh Sương Sương", false, "09857975293", new List<HopDongThuePhong>()));
+            dsSinhVien.Add(new SinhVien("SV30", "Vũ Bích Vân", false, "03368595027", new List<HopDongThuePhong>()));
         }
 
         //1. Cho biết những phòng còn trống ở tòa A và C
