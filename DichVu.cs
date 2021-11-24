@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace OOP_QuanLyKTX
 {
-    //Hóa đơn dịch vụ (Mã hóa đơn, Mã phòng, Tổng tiền, Ngày thanh toán) (1 hóa đơn/phòng nhưng thanh toán cho nhiều dịch vụ)
+    //DichVu(Mã dịch vụ, tên dịch vụ)
     public class DichVu
     {
-        public string maHoaDon { get; set; }
-        public Phong phong { get; set; }
-        public double tongTien { get; set; }
-        public DateTime ngayThanhToan { get; set; }
+        public string maDichVu { get; set; }
+        public string tenDichVu { get; set; }
+        //related plural
+        public ICollection<ChiTietHoaDonDichVu> hoadon { get; set; }
 
-        public DichVu(string maHoaDon, Phong phong, double tongTien, DateTime ngayThanhToan)
+        //Constructor
+        public DichVu() { }
+        public DichVu(string maDichVu, string tenDichVu, ICollection<ChiTietHoaDonDichVu> hoadon)
         {
-            this.maHoaDon = maHoaDon;
-            this.phong = phong;
-            this.tongTien = tongTien;
-            this.ngayThanhToan = ngayThanhToan;
+            this.maDichVu = maDichVu;
+            this.tenDichVu = tenDichVu;
+            this.hoadon = hoadon;
         }
         public DichVu(DichVu HoaDonDV)
         {
-            maHoaDon = HoaDonDV.maHoaDon;
-            phong = HoaDonDV.phong;
-            tongTien = HoaDonDV.tongTien;
-            ngayThanhToan = HoaDonDV.ngayThanhToan;
+            this.maDichVu = HoaDonDV.maDichVu;
+            this.tenDichVu = HoaDonDV.tenDichVu;
+            this.hoadon = HoaDonDV.hoadon;
         }
     }
 }

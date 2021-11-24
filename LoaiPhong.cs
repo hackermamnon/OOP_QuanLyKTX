@@ -14,19 +14,24 @@ namespace OOP_QuanLyKTX
         public double giaPhong { get; set; }
 
         // related = plural
-        public ICollection<Tho> dsphong_loai { get; set; }
+        public ICollection<Phong> dsphong_loai { get; set; }
 
-        public LoaiPhong(string maLoaiPhong, string tenLoaiPhong, double giaPhong)
+        //Constructor
+        public LoaiPhong() { }
+        public LoaiPhong(string maLoaiPhong, string tenLoaiPhong, double giaPhong, 
+            ICollection<Phong> dsphong_loai)
         {
             this.maLoaiPhong = maLoaiPhong;
             this.tenLoaiPhong = tenLoaiPhong;
             this.giaPhong = giaPhong;
+            this.dsphong_loai = dsphong_loai;
         }
         public LoaiPhong(LoaiPhong lp)
         {
-            maLoaiPhong = lp.maLoaiPhong;
-            tenLoaiPhong = lp.tenLoaiPhong;
-            giaPhong = lp.giaPhong;
+            this.maLoaiPhong = lp.maLoaiPhong;
+            this.tenLoaiPhong = lp.tenLoaiPhong;
+            this.giaPhong = lp.giaPhong;
+            this.dsphong_loai = lp.dsphong_loai;
         }
     }
 }

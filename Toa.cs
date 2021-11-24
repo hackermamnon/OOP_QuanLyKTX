@@ -13,17 +13,28 @@ namespace OOP_QuanLyKTX
         public int sucChua { get; set; }
         public int soPhong { get; set; }
 
-        public Toa(char maToa, int sucChua, int soPhong)
+        //related = plural
+        public ICollection<NhanVien> dsnhanvien_toa { get; set; }
+        public ICollection<Phong> dsphong_toa { get; set; }
+
+        //Constructor
+        public Toa() { }
+        public Toa(char maToa, int sucChua, int soPhong, 
+            ICollection<NhanVien> dsnhanvien_toa, ICollection<Phong> dsphong_toa)
         {
             this.maToa = maToa;
             this.sucChua = sucChua;
             this.soPhong = soPhong;
+            this.dsnhanvien_toa = dsnhanvien_toa;
+            this.dsphong_toa = dsphong_toa;
         }
         public Toa(Toa t)
         {
-            maToa = t.maToa;
-            sucChua = t.sucChua;
-            soPhong = t.soPhong;
+            this.maToa = t.maToa;
+            this.sucChua = t.sucChua;
+            this.soPhong = t.soPhong;
+            this.dsnhanvien_toa = t.dsnhanvien_toa;
+            this.dsphong_toa = dsphong_toa;
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace OOP_QuanLyKTX
 {
@@ -13,20 +9,28 @@ namespace OOP_QuanLyKTX
         public string tenSV { get; set; }
         public bool gioiTinh { get; set; }
         public string soDienThoai { get; set; }
+        //related = plural
+        public ICollection<HopDongThuePhong> dshopdong_sv { get; set; }
 
-        public SinhVien(string maSV, string tenSV, bool gioiTinh, string soDienThoai)
+        //Constructor
+        public SinhVien() { }
+
+        public SinhVien(string maSV, string tenSV, bool gioiTinh, string soDienThoai,
+            ICollection<HopDongThuePhong> dshopdong_sv)
         {
             this.maSV = maSV;
             this.tenSV = tenSV;
             this.gioiTinh = gioiTinh;
             this.soDienThoai = soDienThoai;
+            this.dshopdong_sv = dshopdong_sv;
         }
         public SinhVien(SinhVien sv)
         {
-            maSV = sv.maSV;
-            tenSV = sv.tenSV;
-            gioiTinh = sv.gioiTinh;
-            soDienThoai = sv.soDienThoai;
+            this.maSV = sv.maSV;
+            this.tenSV = sv.tenSV;
+            this.gioiTinh = sv.gioiTinh;
+            this.soDienThoai = sv.soDienThoai;
+            this.dshopdong_sv = dshopdong_sv;
         }
     }
 }

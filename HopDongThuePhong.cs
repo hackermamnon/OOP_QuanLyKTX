@@ -10,20 +10,28 @@ namespace OOP_QuanLyKTX
     public class HopDongThuePhong
     {
         public string maHopDong { get; set; }
-        public SinhVien sinhVien { get; set; }
+        public string maSinhVien { get; set; }
         public string tenHopDong { get; set; }
 
-        public HopDongThuePhong(string maHopDong, SinhVien sinhVien, string tenHopDong)
+        //related = singular
+        public SinhVien sinhVien { get; set; }
+
+        //Constructor
+        public HopDongThuePhong() { }
+
+        public HopDongThuePhong(string maHopDong, string maSinhVien, string tenHopDong, SinhVien sinhvien)
         {
             this.maHopDong = maHopDong;
-            this.sinhVien = sinhVien;
+            this.maSinhVien = maSinhVien;
             this.tenHopDong = tenHopDong;
+            this.sinhVien = sinhVien;
         }
         public HopDongThuePhong(HopDongThuePhong hd)
         {
-            maHopDong = hd.maHopDong;
-            sinhVien = hd.sinhVien;
-            tenHopDong = hd.tenHopDong;
+            this.maHopDong = hd.maHopDong;
+            this.maSinhVien = hd.maSinhVien;
+            this.tenHopDong = hd.tenHopDong;
+            this.sinhVien = hd.sinhVien;
         }
     }
 }

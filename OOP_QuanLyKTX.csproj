@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoThietBi.cs" />
-    <Compile Include="ChiTiet_HD.cs" />
+    <Compile Include="ChiTietHoaDonDichVu.cs" />
+    <Compile Include="ChiTietHopDong.cs" />
     <Compile Include="DichVu.cs" />
     <Compile Include="HopDongThuePhong.cs" />
     <Compile Include="LoaiNhanVien.cs" />
