@@ -663,7 +663,7 @@ namespace OOP_QuanLyKTX
             TaoDanhSachLoaiPhong();
             TaoDachSachToa();
             TaoDanhSachPhong();
-            TaodanhSachTrangBi();
+            TaoDanhSachTrangBi();
             TaoDanhSachThietBi();
             TaoDanhSachLoaiNhanVien();
             TaoDanhSachNhanVien();
