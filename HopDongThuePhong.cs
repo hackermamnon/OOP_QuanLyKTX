@@ -19,7 +19,7 @@ namespace OOP_QuanLyKTX
         //Constructor
         public HopDongThuePhong() { }
 
-        public HopDongThuePhong(string maHopDong, string maSinhVien, DateTime ngayKyHopDong,  SinhVien sinhVien)
+        public HopDongThuePhong(string maHopDong, string maSinhVien, DateTime ngayKyHopDong, SinhVien sinhVien)
         {
             this.maHopDong = maHopDong;
             this.maSinhVien = maSinhVien;

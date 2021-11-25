@@ -8,8 +8,7 @@ namespace OOP_QuanLyKTX
 {
     public class TrangBi
     {
-        public string maPhong { get; set; }
-        public string maThietBi { get; set; }
+        public string maLoaiPhong { get; set; }
 
         //related = singular
         public LoaiPhong loaiPhong { get; set; }
@@ -18,17 +17,15 @@ namespace OOP_QuanLyKTX
         public ICollection<ThietBi> dsthietbi_loaiphong { get; set; }
 
         public TrangBi() { }
-        public TrangBi(string maPhong, string maThietBi, LoaiPhong loaiPhong, ICollection<ThietBi> dsthietbi_loaiphong)
+        public TrangBi(string maLoaiPhong, LoaiPhong loaiPhong, ICollection<ThietBi> dsthietbi_loaiphong)
         {
-            this.maPhong = maPhong;
-            this.maThietBi = maThietBi;
+            this.maLoaiPhong = maLoaiPhong;
             this.loaiPhong = loaiPhong;
             this.dsthietbi_loaiphong = dsthietbi_loaiphong;
         }
         public TrangBi(TrangBi trb)
         {
-            this.maPhong = trb.maPhong;
-            this.maThietBi = trb.maThietBi;
+            this.maLoaiPhong = trb.maLoaiPhong;
             this.loaiPhong = trb.loaiPhong;
             this.dsthietbi_loaiphong = trb.dsthietbi_loaiphong;
         }

@@ -16,6 +16,9 @@ namespace OOP_QuanLyKTX
         //related = plural
         public ICollection<NhanVien> dsnhanvien_loai { get; set; }
 
+        //related = singular
+        public NhanVien quanLy { get; set; }
+
         //Constructor
         public LoaiNhanVien() { }
         public LoaiNhanVien(string maLoaiNV, string chucVu, string congViec,
