@@ -16,7 +16,7 @@ namespace OOP_QuanLyKTX
         public SinhVien() { }
 
         public SinhVien(string maSV, string tenSV, bool gioiTinh, string soDienThoai,
-            ICollection<HopDongThuePhong> dshopdong_sv)
+            ICollection<HopDongThuePhong> dshopdong)
         {
             this.maSV = maSV;
             this.tenSV = tenSV;

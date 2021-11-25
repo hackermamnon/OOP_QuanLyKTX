@@ -126,36 +126,36 @@ namespace OOP_QuanLyKTX
             dsHopDong.Add(new HopDongThuePhong("HD30", dsSinhVien[29].maSV, "Hop dong thue phong SV30", dsSinhVien[29]));
 
 
-            //dsSinhVien[0].dshopdong.Add(dsHopDong[0]);
-            //dsSinhVien[1].dshopdong.Add(dsHopDong[1]);
-            //dsSinhVien[2].dshopdong.Add(dsHopDong[2]);
-            //dsSinhVien[3].dshopdong.Add(dsHopDong[3]);
-            //dsSinhVien[4].dshopdong.Add(dsHopDong[4]);
-            //dsSinhVien[5].dshopdong.Add(dsHopDong[5]);
-            //dsSinhVien[6].dshopdong.Add(dsHopDong[6]);
-            //dsSinhVien[7].dshopdong.Add(dsHopDong[7]);
-            //dsSinhVien[8].dshopdong.Add(dsHopDong[8]);
-            //dsSinhVien[9].dshopdong.Add(dsHopDong[9]);
-            //dsSinhVien[10].dshopdong.Add(dsHopDong[10]);
-            //dsSinhVien[11].dshopdong.Add(dsHopDong[11]);
-            //dsSinhVien[12].dshopdong.Add(dsHopDong[12]);
-            //dsSinhVien[13].dshopdong.Add(dsHopDong[13]);
-            //dsSinhVien[14].dshopdong.Add(dsHopDong[14]);
-            //dsSinhVien[15].dshopdong.Add(dsHopDong[15]);
-            //dsSinhVien[16].dshopdong.Add(dsHopDong[16]);
-            //dsSinhVien[17].dshopdong.Add(dsHopDong[17]);
-            //dsSinhVien[18].dshopdong.Add(dsHopDong[18]);
-            //dsSinhVien[19].dshopdong.Add(dsHopDong[19]);
-            //dsSinhVien[20].dshopdong.Add(dsHopDong[20]);
-            //dsSinhVien[21].dshopdong.Add(dsHopDong[21]);
-            //dsSinhVien[22].dshopdong.Add(dsHopDong[22]);
-            //dsSinhVien[23].dshopdong.Add(dsHopDong[23]);
-            //dsSinhVien[24].dshopdong.Add(dsHopDong[24]);
-            //dsSinhVien[25].dshopdong.Add(dsHopDong[25]);
-            //dsSinhVien[26].dshopdong.Add(dsHopDong[26]);
-            //dsSinhVien[27].dshopdong.Add(dsHopDong[27]);
-            //dsSinhVien[28].dshopdong.Add(dsHopDong[28]);
-            //dsSinhVien[29].dshopdong.Add(dsHopDong[29]);
+            dsSinhVien[0].dshopdong.Add(dsHopDong[0]);
+            dsSinhVien[1].dshopdong.Add(dsHopDong[1]);
+            dsSinhVien[2].dshopdong.Add(dsHopDong[2]);
+            dsSinhVien[3].dshopdong.Add(dsHopDong[3]);
+            dsSinhVien[4].dshopdong.Add(dsHopDong[4]);
+            dsSinhVien[5].dshopdong.Add(dsHopDong[5]);
+            dsSinhVien[6].dshopdong.Add(dsHopDong[6]);
+            dsSinhVien[7].dshopdong.Add(dsHopDong[7]);
+            dsSinhVien[8].dshopdong.Add(dsHopDong[8]);
+            dsSinhVien[9].dshopdong.Add(dsHopDong[9]);
+            dsSinhVien[10].dshopdong.Add(dsHopDong[10]);
+            dsSinhVien[11].dshopdong.Add(dsHopDong[11]);
+            dsSinhVien[12].dshopdong.Add(dsHopDong[12]);
+            dsSinhVien[13].dshopdong.Add(dsHopDong[13]);
+            dsSinhVien[14].dshopdong.Add(dsHopDong[14]);
+            dsSinhVien[15].dshopdong.Add(dsHopDong[15]);
+            dsSinhVien[16].dshopdong.Add(dsHopDong[16]);
+            dsSinhVien[17].dshopdong.Add(dsHopDong[17]);
+            dsSinhVien[18].dshopdong.Add(dsHopDong[18]);
+            dsSinhVien[19].dshopdong.Add(dsHopDong[19]);
+            dsSinhVien[20].dshopdong.Add(dsHopDong[20]);
+            dsSinhVien[21].dshopdong.Add(dsHopDong[21]);
+            dsSinhVien[22].dshopdong.Add(dsHopDong[22]);
+            dsSinhVien[23].dshopdong.Add(dsHopDong[23]);
+            dsSinhVien[24].dshopdong.Add(dsHopDong[24]);
+            dsSinhVien[25].dshopdong.Add(dsHopDong[25]);
+            dsSinhVien[26].dshopdong.Add(dsHopDong[26]);
+            dsSinhVien[27].dshopdong.Add(dsHopDong[27]);
+            dsSinhVien[28].dshopdong.Add(dsHopDong[28]);
+            dsSinhVien[29].dshopdong.Add(dsHopDong[29]);
         }
         public static void TaoDanhSachLoaiNhanVien()
         {
