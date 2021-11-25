@@ -10,25 +10,22 @@ namespace OOP_QuanLyKTX
     {
         public string maThietBi { get; set; }
         public string tenThietBi { get; set; }
-        public bool trangThai { get; set; }
         //related = singular
-        public TrangBi trangBi { get; set; }
+        //public TrangBi trangBi { get; set; }
 
         //Constructor
         public ThietBi() { }
-        public ThietBi(string maThietBi, string tenThietBi, bool trangThai, TrangBi trangBi)
+        public ThietBi(string maThietBi, string tenThietBi)//, TrangBi trangBi)
         {
             this.maThietBi = maThietBi;
             this.tenThietBi = tenThietBi;
-            this.trangThai = trangThai;
-            this.trangBi = trangBi;
+            //this.trangBi = trangBi;
         }
         public ThietBi(ThietBi tb)
         {
             this.maThietBi = tb.maThietBi;
             this.tenThietBi = tb.tenThietBi;
-            this.trangThai = tb.trangThai;
-            this.trangBi = tb.trangBi;
+            //this.trangBi = tb.trangBi;
         }
     }
 }

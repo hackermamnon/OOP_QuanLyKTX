@@ -23,40 +23,81 @@ namespace OOP_QuanLyKTX
 
         public static void TaoDanhSachDichVu()
         {
+            dsDichVu.Add(new DichVu("DV01", "Binh nuoc uong 20L", new List<ChiTietHoaDonDichVu>()));
+            dsDichVu.Add(new DichVu("DV02", "Giat do", new List<ChiTietHoaDonDichVu>()));
+            dsDichVu.Add(new DichVu("DV03", "Photocopy", new List<ChiTietHoaDonDichVu>()));
+            dsDichVu.Add(new DichVu("DV04", "Internet", new List<ChiTietHoaDonDichVu>()));
+            dsDichVu.Add(new DichVu("DV05", "Giu xe", new List<ChiTietHoaDonDichVu>()));
+        }
 
+        public static void TaoDanhSachTrangBi()
+        {
+            dsTrangBi.Add(new TrangBi(dsPhong[1].maPhong, dsThietBi[1].maThietBi, dsPhong[1], new List<ThietBi>()));
+            dsTrangBi.Add(new TrangBi(dsPhong[1].maPhong, dsThietBi[1].maThietBi, dsPhong[1], new List<ThietBi>()));
+            dsTrangBi.Add(new TrangBi(dsPhong[1].maPhong, dsThietBi[1].maThietBi, dsPhong[0], new List<ThietBi>()));
+            dsTrangBi.Add(new TrangBi(dsPhong[2].maPhong, dsThietBi[2].maThietBi, dsPhong[0], new List<ThietBi>()));
+            dsTrangBi.Add(new TrangBi(dsPhong[3].maPhong, dsThietBi[3].maThietBi, dsPhong[0], new List<ThietBi>()));
+            dsTrangBi.Add(new TrangBi(dsPhong[4].maPhong, dsThietBi[4].maThietBi, dsPhong[0], new List<ThietBi>()));
+            dsTrangBi.Add(new TrangBi(dsPhong[5].maPhong, dsThietBi[5].maThietBi, dsPhong[0], new List<ThietBi>()));
+
+        }
+        public static void TaoDanhSachThietBi()
+        {
+            dsThietBi.Add(new ThietBi("QT", "Quạt treo"));
+            dsThietBi.Add(new ThietBi("ML", "Máy lạnh"));
+            dsThietBi.Add(new ThietBi("QĐ", "Quạt đứng"));
+            dsThietBi.Add(new ThietBi("BH", "Bàn học"));
+            dsThietBi.Add(new ThietBi("ĐH", "Đèn học"));
+            dsThietBi.Add(new ThietBi("QTr", "Quạt trần"));
+            dsThietBi.Add(new ThietBi("TĐ", "Tủ đồ cá nhân"));
+            dsThietBi.Add(new ThietBi("Ghe", "Ghế ngồi"));
+            dsThietBi.Add(new ThietBi("MTD", "Móc treo đồ"));
+            dsThietBi.Add(new ThietBi("OCD", "Ổ cắm điện"));
+
+            dsTrangBi[0].thietBi.Add(dsThietBi[0]);
+            dsTrangBi[1].thietBi.Add(dsThietBi[1]);
+            dsTrangBi[2].thietBi.Add(dsThietBi[2]);
+            dsTrangBi[3].thietBi.Add(dsThietBi[3]);
+            dsTrangBi[4].thietBi.Add(dsThietBi[4]);
+            dsTrangBi[5].thietBi.Add(dsThietBi[5]);
+            dsTrangBi[6].thietBi.Add(dsThietBi[6]);
+            dsTrangBi[7].thietBi.Add(dsThietBi[7]);
+            dsTrangBi[8].thietBi.Add(dsThietBi[8]);
+            dsTrangBi[9].thietBi.Add(dsThietBi[9]);
         }
         public static void TaoDanhSachChiTietHoaDonDichVu()
         {
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD01", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[0], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD02", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[1], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD03", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[2], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD04", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[3], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD05", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[4], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD06", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[5], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD07", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[6], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD08", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[7], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD09", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[8], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD10", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[9], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD11", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[10], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD12", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[11], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD13", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[12], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD14", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[13], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD15", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[14], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD16", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[15], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD17", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[16], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD18", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[17], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD19", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[18], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD20", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[19], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD21", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[20], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD22", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[21], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD23", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[22], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD24", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[23], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD25", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[24], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD26", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[25], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD27", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[26], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD28", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[27], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD29", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[28], new List<DichVu>()));
-            dshoadon.Add(new ChiTietHoaDonDichVu("HD30", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[29], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV01", dsPhong[0].maPhong, 4000000, new DateTime(2020, 2, 1), dsChiTietHopDong[0], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV02", dsPhong[5].maPhong, 35000000, new DateTime(2020, 2, 3), dsChiTietHopDong[1], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV03", dsPhong[10].maPhong, 34500000, new DateTime(2020, 2, 3), dsChiTietHopDong[2], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV04", dsPhong[15].maPhong, 41250000, new DateTime(2020, 2, 4), dsChiTietHopDong[3], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV05", dsPhong[20].maPhong, 4870000, new DateTime(2020, 2, 4), dsChiTietHopDong[4], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV06", dsPhong[25].maPhong, 47500000, new DateTime(2020, 2, 4), dsChiTietHopDong[5], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV07", dsPhong[3].maPhong, 52100000, new DateTime(2020, 2, 6), dsChiTietHopDong[6], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV08", dsPhong[6].maPhong, 38900000, new DateTime(2020, 2, 6), dsChiTietHopDong[7], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV09", dsPhong[9].maPhong, 37400000, new DateTime(2020, 2, 7), dsChiTietHopDong[8], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV10", dsPhong[12].maPhong, 39900000, new DateTime(2020, 2, 8), dsChiTietHopDong[9], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV11", dsPhong[16].maPhong, 42500000, new DateTime(2020, 2, 8), dsChiTietHopDong[10], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV12", dsPhong[2].maPhong, 3700000, new DateTime(2020, 2, 10), dsChiTietHopDong[11], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV13", dsPhong[21].maPhong, 51200000, new DateTime(2020, 2, 10), dsChiTietHopDong[12], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV14", dsPhong[26].maPhong, 41000000, new DateTime(2020, 2, 10), dsChiTietHopDong[13], new List<DichVu>()));
+            dshoadon.Add(new ChiTietHoaDonDichVu("DV15", dsPhong[8].maPhong, 5300000, new DateTime(2020, 2, 10), dsChiTietHopDong[14], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV16", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[15], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV17", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[16], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV18", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[17], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV19", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[18], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV20", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[19], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV21", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[20], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV22", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[21], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV23", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[22], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV24", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[23], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV25", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[24], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV26", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[25], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV27", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[26], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV28", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[27], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV29", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[28], new List<DichVu>()));
+            //dshoadon.Add(new ChiTietHoaDonDichVu("DV30", dsPhong[0].maPhong, 12000000, new DateTime(2020, 2, 1), dsChiTietHopDong[29], new List<DichVu>()));
+
         }
         public static void TaoDanhSachChiTietHopDong()
         {
@@ -453,10 +494,17 @@ namespace OOP_QuanLyKTX
         }
 
         //7. Cho biết những hợp đồng hết hạn trước ngày 21/04/2021
-        //public static void Linq7()
-        //{
-
-        //}
+        public static void Linq7()
+        {
+            var result = from hd in dsChiTietHopDong
+                         where hd.ngayKetThuc <= new DateTime(2021, 04, 21)
+                         select hd;
+            Console.WriteLine("Cac hop dong het han truoc ngay 21/04/2021 la: ");
+            foreach (var hd in result)
+                Console.WriteLine("Hop dong " +
+                    "{0} cua sinh vien {1} - {2} dang o phong {3}", 
+                    hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
+        }
 
         //8. Cho biết số lượng phòng máy lạnh đang được thuê ở tòa A
         public static void Linq8()
@@ -469,14 +517,14 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Phong: {0}", p.maPhong);
         }
 
-        ////9. Liệt kê sinh viên đang ở phòng
-        //public static void Linq9()
-        //{
-        //     var sinhVienP06 = from sv in sinhVien
-        //                      join p in phong on sv.phong.maPhong equals p.maPhong
-        //                      where p.maPhong == "P06"
-        //                      select new { sv.tenSV };
-        //}
+        ////9. Liệt kê sinh viên đang ở phòng P06
+        public static void Linq9()
+        {
+            var sinhVienP06 = from sv in dsSinhVien
+                              //join p in phong on sv.phong.maPhong equals p.maPhong
+                              where sv.dshopdong. == "P06"
+                              select new { sv.tenSV };
+        }
         //10. Cho biết các phòng chưa thanh toán tiền dịch vụ
         //public static void Linq10()
         //{
@@ -610,7 +658,9 @@ namespace OOP_QuanLyKTX
             TaoDanhSachChiTietHopDong();
             TaoDanhSachDichVu();
             TaoDanhSachChiTietHoaDonDichVu();
-            Linq8(); //Test
+            TaoDanhSachTrangBi();
+            TaoDanhSachThietBi();
+            Linq7(); //Test
             Console.ReadKey();
         }
     }
