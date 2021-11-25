@@ -127,21 +127,25 @@ namespace OOP_QuanLyKTX
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV05 - PHOTO", dsPhong[4].maPhong, 100000, new DateTime(2020, 12, 16), dsDichVu[2]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV05 - INT", dsPhong[4].maPhong, 400000, new DateTime(2020, 12, 16), dsDichVu[3]));
 
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV06 - INT", dsPhong[5].maPhong, 200000, DateTime.MinValue, dsDichVu[3]));
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV06 - PHOTO", dsPhong[5].maPhong, 60000, DateTime.MinValue, dsDichVu[2]));
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV06 - GD", dsPhong[5].maPhong, 150000, new DateTime(2020, 12, 25), dsDichVu[4]));
+            
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV07 - BNU", dsPhong[6].maPhong, 240000, new DateTime(2020, 12, 23), dsDichVu[0]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV07 - PHOTO", dsPhong[6].maPhong, 60000, new DateTime(2020, 12, 20), dsDichVu[2]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV07 - GD", dsPhong[6].maPhong, 150000, new DateTime(2020, 12, 25), dsDichVu[4]));
 
-            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV11 - GT", dsPhong[10].maPhong, 120000, default, dsDichVu[1]));
-            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV11 - INT", dsPhong[10].maPhong, 200000, default, dsDichVu[3]));
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV11 - GT", dsPhong[10].maPhong, 120000, DateTime.MinValue, dsDichVu[1]));
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV11 - INT", dsPhong[10].maPhong, 200000, DateTime.MinValue, dsDichVu[3]));
 
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV12 - BNU", dsPhong[11].maPhong, 40000, new DateTime(2020, 12, 18), dsDichVu[0]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV12 - GD", dsPhong[11].maPhong, 60000, new DateTime(2020, 12, 8), dsDichVu[1]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV12 - PHOTO", dsPhong[11].maPhong, 40000, new DateTime(2020, 12, 20), dsDichVu[2]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV12 - INT", dsPhong[11].maPhong, 200000, new DateTime(2020, 12, 3), dsDichVu[3]));
 
-            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV13 - GD", dsPhong[12].maPhong, 60000, new DateTime(2020, 12, 12), dsDichVu[1]));
-            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV13 - INT", dsPhong[12].maPhong, 200000, new DateTime(2020, 12, 15), dsDichVu[3]));
-            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV13 - GX", dsPhong[12].maPhong, 300000, new DateTime(2020, 12, 18), dsDichVu[4]));
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV13 - GD", dsPhong[12].maPhong, 60000, DateTime.MinValue, dsDichVu[1]));
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV13 - INT", dsPhong[12].maPhong, 200000, DateTime.MinValue, dsDichVu[3]));
+            dsHoaDon.Add(new ChiTietHoaDonDichVu("DV13 - GX", dsPhong[12].maPhong, 300000, DateTime.MinValue, dsDichVu[4]));
 
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV15 - BNU", dsPhong[14].maPhong, 80000, new DateTime(2020, 12, 19), dsDichVu[0]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV15 - PHOTO", dsPhong[14].maPhong, 20000, new DateTime(2020, 12, 20), dsDichVu[2]));
@@ -543,6 +547,11 @@ namespace OOP_QuanLyKTX
             Console.WriteLine();
         }
 
+        ////3. Cho biết số lượng sinh viên từng phòng, sắp xếp tăng dần
+        //public static void Linq3()
+        //{
+        //    Console.WriteLine("Linq3");
+        //    Console.WriteLine("Số lượng sinh viên theo từng phòng");
         //3. Cho biết số lượng sinh viên từng phòng,
         //sắp xếp tăng dần theo số lượng sinh viên
         public static void Linq3()
@@ -554,6 +563,11 @@ namespace OOP_QuanLyKTX
                .Select(y => new { ID = y.Key, SoLuongSV = y.Count() })
                .OrderBy(e => e.SoLuongSV);
 
+        //   // var groupTheoToa = dsphongTrong
+        //       .GroupBy(p => p.maToa)
+        //       .Select(y => new { ID = y.Key, Phong = y });
+
+        //}
             foreach (var a in SLSVTheoPhong)
                 Console.WriteLine("Phòng {0}: {1} sinh viên", a.ID, a.SoLuongSV);
             Console.WriteLine();
@@ -568,7 +582,7 @@ namespace OOP_QuanLyKTX
                 .GroupBy(p => p.maPhong)
                 .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
             foreach (var t in groupTheoPhong)
-                Console.WriteLine("Phòng {0}:  {1}VNĐ", t.maPhong, t.tien);
+                Console.WriteLine("Phòng {0}: {1}VNĐ", t.maPhong, t.tien);
             Console.WriteLine();
         }
 
@@ -584,13 +598,13 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Mã SV: {0} - Họ tên: {1} - Giới tính {2} - SĐT: {3}", sv.MaSV, sv.Ten, sv.Gioi ? "Nam" : "Nữ", sv.SDT);
 
         }
-        //6. Cho biết số lượng phòng chưa được thuê của tòa D
-        public static void Linq6()
+        //6. Cho biết số lượng phòng chưa được thuê của tòa ...
+        public static void Linq6(char t)
         {
             var result = from p in dsPhong
-                         where p.maToa == 'D' && p.trangThai == false
+                         where p.maToa == t && p.trangThai == false
                          select p;
-            Console.WriteLine("So luong phong chua duoc thue cua toa D la: {0}", result.Count());
+            Console.WriteLine("Số lượng phòng chưa được thuê của tòa {0} là: {1}", t, result.Count());
             foreach (var p in result)
                 Console.WriteLine("{0} - {1}", p.maPhong, p.loaiPhong.tenLoaiPhong);
         }
@@ -598,6 +612,14 @@ namespace OOP_QuanLyKTX
         //7. Cho biết nhân viên có mức lương cao nhất và thấp nhấp mỗi loại nhân viên
         public static void Linq7()
         {
+            var result = from hd in dsChiTietHopDong
+                         where hd.ngayKetThuc <= new DateTime(2021, 04, 21)
+                         select hd;
+            Console.WriteLine("Các hợp đồng hết hạn trước ngày 21/04/2021 là: ");
+            foreach (var hd in result)
+                Console.WriteLine("Hợp đồng " +
+                    "{0} của sinh viên {1} - {2} đang ở phòng {3}", 
+                    hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
             Console.WriteLine("Linq7");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
@@ -620,13 +642,13 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Mã loại: {0} - Công việc: {1} - Họ tên: {2} - Lương {3} VNĐ", i.maLoaiNV, i.loaiNhanVien.congViec, i.tenNhanVien, double.Parse(i.luong.ToString()).ToString("#,###", cul.NumberFormat));
         }
 
-        //8. Cho biết số lượng phòng máy lạnh đang được thuê ở tòa A
-        public static void Linq8()
+        //8. Cho biết số lượng phòng máy lạnh đang được thuê ở tòa ...
+        public static void Linq8(char t)
         {
             var result = from p in dsPhong
-                         where p.loaiPhong.tenLoaiPhong.StartsWith("Phòng máy lạnh") && p.maToa == 'A'
+                         where p.loaiPhong.tenLoaiPhong.StartsWith("Phòng máy lạnh") && p.maToa == t
                          select p;
-            Console.WriteLine("So luong phong may lanh duoc thue o toa A la: {0}", result.Count());
+            Console.WriteLine("Số lượng máy lạnh được thuê ở tòa {0} là: {1}", t, result.Count());
             foreach (var p in result)
                 Console.WriteLine("Phong: {0}", p.maPhong);
         }
@@ -680,19 +702,21 @@ namespace OOP_QuanLyKTX
         //                      where sv.dshopdong. == "P06"
         //                      select new { sv.tenSV };
         //}
-        //10. Cho biết các phòng chưa thanh toán tiền dịch vụ
-        //public static void Linq10()
-        //{
-        //    var tongSoPhong = from p in dsPhong
-        //                      select p.maPhong;
-        //    var phongDaDongTien = from dv in dsDichVu
-        //                          select dv.;
-        //    var result = from p in tongSoPhong.Except(phongDaDongTien)
-        //                 select p;
-        //    Console.WriteLine("Cac phong chua thanh toan tien dich vu la: ");
-        //    foreach (var r in result)
-        //        Console.WriteLine(r);
-        //}
+        //10. Cho biết các phòng chưa thanh toán hóa đơn dịch vụ nào cả
+        public static void Linq10()
+        {
+            var tongSoPhong = from p in dsPhong
+                              where p.trangThai == true
+                              select p.maPhong;
+            var phongDaDongTien = from hd in dsHoaDon
+                                  where hd.ngayThanhToan != DateTime.MinValue
+                                  select hd.maPhong;
+            var result = from p in tongSoPhong.Except(phongDaDongTien)
+                         select p;
+            Console.WriteLine("Các phòng chưa thanh toán hóa đơn dịch vụ nào là: ");
+            foreach (var r in result)
+                Console.WriteLine(r);
+        }
 
         ////11. Cho biết thời hạn hợp đồng của phòng
         //public static void Linq11()
@@ -701,15 +725,6 @@ namespace OOP_QuanLyKTX
         //}
 
         ////12. Danh sách các báo cáo từ ngày 1/6/2020 đến nay
-        //public static void Linq12()
-        //{
-        //    var result = from bc in baoCaoThietBi
-        //                     //where bc.thoiGian <= new DateTime(2020, 6, 1)
-        //                 select bc;
-        //    Console.WriteLine("Ma bao cao\tPhong\t\tMo ta");
-        //    foreach (var r in result)
-        //        Console.WriteLine("{0}\t\t{1}\t\t{2}\n", r.maBaoCao, r.phong.maPhong, r.moTaBaoCao);
-        //}
 
         //13. Sắp xếp tông tiền sử dụng dịch vụ từ cao xuống thấp
         public static void Linq13()
@@ -723,15 +738,51 @@ namespace OOP_QuanLyKTX
             var result = from p in dsPhong
                          where p.trangThai == true
                          orderby p.loaiPhong.giaPhong
-                         select new { p.maPhong, p.loaiPhong.giaPhong };
-            Console.WriteLine("Danh sach cac phong dang duoc thue theo thu tu tang dan cua gia phong: ");
+                         select new { p.maPhong, p.loaiPhong.giaPhong, p.loaiPhong.tenLoaiPhong };
+            Console.WriteLine("Danh sách các phòng đang được thuê theo thứ tự tăng dần của giá phòng: ");
             foreach (var p in result)
-                Console.WriteLine("Phong: {0} - Gia phong: {1} VND", p.maPhong, p.giaPhong);
+                Console.WriteLine("Loại phòng: {0} - Phòng: {1} - Giá phòng: {2} VND", 
+                    p.tenLoaiPhong, p.maPhong, p.giaPhong);
         }
         //15. Cho biết thông tin 3 nhân viên đầu tiên có mức lương cao hơn mức lương trung bình của mọi nhân viên
         public static void Linq15()
         {
 
+        //}
+        /*
+         public static void Linq1()
+        {
+            Console.WriteLine("Linq1");
+            Console.WriteLine("Danh sách những phòng còn trống theo tòa");
+            var dsphongTrong = dsPhong
+                .Where(p => !p.trangThai);
+
+            var groupTheoToa = dsphongTrong
+                .GroupBy(p => p.maToa)
+                .Select(y => new { ID = y.Key, Phong = y });
+            foreach (var t in groupTheoToa)
+            {
+                Console.WriteLine("Tòa {0}:", t.ID);
+                foreach (var p in t.Phong)
+                {
+                    Console.WriteLine("Mã phòng: {0} - Mã loại phòng: {1}", p.maPhong, p.maLoaiPhong);
+                }
+            }
+         */
+        //16. Cho biết tòa có số lượng SV nhiều nhất (*) in progress
+        public static void Linq16()
+        {
+            var soLuongSV = dsSinhVien;
+            var groupTheoToa = soLuongSV
+                .GroupBy(sv => sv.phong.maToa)
+                .Select(y => new { ID = y.Key, sinhVien = y });
+            foreach (var t in groupTheoToa)
+            {
+                Console.WriteLine("Tòa {0}: ", t.ID);
+                foreach (var sv in t.sinhVien)
+                    Console.WriteLine("Mã sinh viên: {0} - Tên sinh viên: {1}", sv.maSV, sv.tenSV);
+            }
+        }
         }
         ////16. Cho biết tòa có số lượng SV nhiều nhất (*)
         ////public static void Linq16()
@@ -751,12 +802,14 @@ namespace OOP_QuanLyKTX
         public static void Linq17()
         {
 
+        //}
+        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         }
         ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         //public static void Linq18()
         //{
-        //    var danhSachThoiGianThue = from p in phong
-        //                               join hd in dsChiTietHopDong on p.maPhong equals hd.phong.maPhong
+        //    var danhSachThoiGianThue = from p in dsPhong
+        //                               where p.loaiPhong
         //                               select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong };
         //    var result = danhSachThoiGianThue.Min();
         //    Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
@@ -782,7 +835,6 @@ namespace OOP_QuanLyKTX
         //    var result = danhSachTongTien.Average();
         //    Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
         //}
-
         static void Main(string[] args)
         {
 
@@ -802,6 +854,13 @@ namespace OOP_QuanLyKTX
 
             Console.OutputEncoding = Encoding.UTF8;
             //Linq1();
+            //Linq2("NV12");
+            //Linq6('D');
+            //Linq10();
+            //Linq14();
+            //Linq16();in progress
+            //Linq18();in progress
+            //Linq20();in progress
             //Linq3();
             //Linq5("P06");
             //Linq7();
