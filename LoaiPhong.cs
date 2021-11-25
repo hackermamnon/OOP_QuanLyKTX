@@ -13,17 +13,19 @@ namespace OOP_QuanLyKTX
         public string tenLoaiPhong { get; set; }
         public double giaPhong { get; set; }
 
+        //related = singular
+        public TrangBi trangbi;
         // related = plural
         public ICollection<Phong> dsphong_loai { get; set; }
 
         //Constructor
         public LoaiPhong() { }
-        public LoaiPhong(string maLoaiPhong, string tenLoaiPhong, double giaPhong, 
-            ICollection<Phong> dsphong_loai)
+        public LoaiPhong(string maLoaiPhong, string tenLoaiPhong, double giaPhong, TrangBi trangbi, ICollection<Phong> dsphong_loai)
         {
             this.maLoaiPhong = maLoaiPhong;
             this.tenLoaiPhong = tenLoaiPhong;
             this.giaPhong = giaPhong;
+            this.trangbi = trangbi;
             this.dsphong_loai = dsphong_loai;
         }
         public LoaiPhong(LoaiPhong lp)
@@ -31,6 +33,7 @@ namespace OOP_QuanLyKTX
             this.maLoaiPhong = lp.maLoaiPhong;
             this.tenLoaiPhong = lp.tenLoaiPhong;
             this.giaPhong = lp.giaPhong;
+            this.trangbi = lp.trangbi;
             this.dsphong_loai = lp.dsphong_loai;
         }
     }

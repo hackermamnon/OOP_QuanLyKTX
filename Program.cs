@@ -21,8 +21,18 @@ namespace OOP_QuanLyKTX
         public static List<HopDongThuePhong> dsHopDong = new List<HopDongThuePhong>();
         public static List<ChiTietHopDong> dsChiTietHopDong = new List<ChiTietHopDong>();
 
-        public static void TaoDanhSachDichVu()
+        public static void TaoDanhSachThietBi()
         {
+
+            dsThietBi.Add(new ThietBi("QT", "Quạt treo"));
+            dsThietBi.Add(new ThietBi("ML", "Máy lạnh"));
+            dsThietBi.Add(new ThietBi("QD", "Quat dung"));
+
+            dsTrangBi[0].dsthietbi_loaiphong.Add(dsThietBi[0]);
+            dsTrangBi[0].dsthietbi_loaiphong.Add(dsThietBi[2]);
+
+            dsTrangBi[1].dsthietbi_loaiphong.Add(dsThietBi[1]);
+            dsTrangBi[1].dsthietbi_loaiphong.Add(dsThietBi[2]);
 
         }
         public static void TaoDanhSachChiTietHoaDonDichVu()

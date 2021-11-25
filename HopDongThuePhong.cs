@@ -11,7 +11,7 @@ namespace OOP_QuanLyKTX
     {
         public string maHopDong { get; set; }
         public string maSinhVien { get; set; }
-        public string tenHopDong { get; set; }
+        public DateTime ngayKyHopDong { get; set; }
 
         //related = singular
         public SinhVien sinhVien { get; set; }
@@ -19,18 +19,18 @@ namespace OOP_QuanLyKTX
         //Constructor
         public HopDongThuePhong() { }
 
-        public HopDongThuePhong(string maHopDong, string maSinhVien, string tenHopDong, SinhVien sinhvien)
+        public HopDongThuePhong(string maHopDong, string maSinhVien, DateTime ngayKyHopDong,  SinhVien sinhvien)
         {
             this.maHopDong = maHopDong;
             this.maSinhVien = maSinhVien;
-            this.tenHopDong = tenHopDong;
+            this.ngayKyHopDong = ngayKyHopDong;
             this.sinhVien = sinhVien;
         }
         public HopDongThuePhong(HopDongThuePhong hd)
         {
             this.maHopDong = hd.maHopDong;
             this.maSinhVien = hd.maSinhVien;
-            this.tenHopDong = hd.tenHopDong;
+            this.ngayKyHopDong = hd.ngayKyHopDong;
             this.sinhVien = hd.sinhVien;
         }
     }

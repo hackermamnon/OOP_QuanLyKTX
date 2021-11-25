@@ -11,22 +11,18 @@ namespace OOP_QuanLyKTX
     {
         public string maDichVu { get; set; }
         public string tenDichVu { get; set; }
-        //related plural
-        public ICollection<ChiTietHoaDonDichVu> hoadon { get; set; }
-
+        
         //Constructor
         public DichVu() { }
-        public DichVu(string maDichVu, string tenDichVu, ICollection<ChiTietHoaDonDichVu> hoadon)
+        public DichVu(string maDichVu, string tenDichVu)
         {
             this.maDichVu = maDichVu;
             this.tenDichVu = tenDichVu;
-            this.hoadon = hoadon;
         }
         public DichVu(DichVu HoaDonDV)
         {
             this.maDichVu = HoaDonDV.maDichVu;
             this.tenDichVu = HoaDonDV.tenDichVu;
-            this.hoadon = HoaDonDV.hoadon;
         }
     }
 }

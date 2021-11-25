@@ -19,12 +19,12 @@ namespace OOP_QuanLyKTX
         public LoaiPhong loaiPhong { get; set; }
 
         //related = plural
-        //public ICollection<SinhVien> dssv_phong { get; set; }
+        public ICollection<SinhVien> dssv_phong { get; set; }
 
         //Constructor
         public Phong() { }
         public Phong(string maPhong, char maToa, string maLoaiPhong, bool trangThai, 
-            Toa toa, LoaiPhong loaiPhong)//, ICollection<SinhVien> dssv_phong)
+            Toa toa, LoaiPhong loaiPhong, ICollection<SinhVien> dssv_phong)
         {
             this.maPhong = maPhong;
             this.maToa = maToa;
@@ -32,7 +32,7 @@ namespace OOP_QuanLyKTX
             this.trangThai = trangThai;
             this.toa = toa;
             this.loaiPhong = loaiPhong;
-            //this.dssv_phong = dssv_phong;
+            this.dssv_phong = dssv_phong;
         }
         public Phong(Phong p)
         {
@@ -42,7 +42,7 @@ namespace OOP_QuanLyKTX
             this.trangThai = p.trangThai;
             this.toa = p.toa;
             this.loaiPhong = p.loaiPhong;
-            //this.dssv_phong = p.dssv_phong;
+            this.dssv_phong = p.dssv_phong;
         }
     }
 }

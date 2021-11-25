@@ -14,22 +14,17 @@ namespace OOP_QuanLyKTX
         public DateTime ngayThanhToan { get; set; }
         
         //related = singular
-        public ChiTietHopDong chitiethopdong { get; set; }
-        
-        //related = plural
-        public ICollection<DichVu> dsdichvu { get; set; }
+        public DichVu dichvu { get; set; }
 
         //Constructor
         public ChiTietHoaDonDichVu() { }
-        public ChiTietHoaDonDichVu(string maHoaDon, string maPhong, double tongTien, DateTime ngayThanhToan,
-            ChiTietHopDong chitiethopdong, ICollection<DichVu> dsdichvu)
+        public ChiTietHoaDonDichVu(string maHoaDon, string maPhong, double tongTien, DateTime ngayThanhToan, DichVu dichvu)
         {
             this.maHoaDon = maHoaDon;
             this.maPhong = maPhong;
             this.tongTien = tongTien;
             this.ngayThanhToan = ngayThanhToan;
-            this.chitiethopdong = chitiethopdong;
-            this.dsdichvu = dsdichvu;
+            this.dichvu = dichvu;
         }
         public ChiTietHoaDonDichVu(ChiTietHoaDonDichVu cthd)
         {
@@ -37,8 +32,7 @@ namespace OOP_QuanLyKTX
             this.maPhong = cthd.maPhong;
             this.tongTien = cthd.tongTien;
             this.ngayThanhToan = cthd.ngayThanhToan;
-            this.chitiethopdong = cthd.chitiethopdong;
-            this.dsdichvu = cthd.dsdichvu;
+            this.dichvu = cthd.dichvu;
         }
     }
 }

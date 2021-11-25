@@ -12,26 +12,28 @@ namespace OOP_QuanLyKTX
         public string maLoaiNV { get; set; }
         public string chucVu { get; set; }
         public string congViec { get; set; }
-
+        public string maQuanLy { get; set; }
         //related = plural
         public ICollection<NhanVien> dsnhanvien_loai { get; set; }
 
         //Constructor
         public LoaiNhanVien() { }
         public LoaiNhanVien(string maLoaiNV, string chucVu, string congViec,
-            ICollection<NhanVien> dsnhanvien_loai)
+            ICollection<NhanVien> dsnhanvien_loai, string maQuanLy)
         {
             this.maLoaiNV = maLoaiNV;
             this.chucVu = chucVu;
             this.congViec = congViec;
             this.dsnhanvien_loai = dsnhanvien_loai;
+            this.maQuanLy = maQuanLy;
         }
         public LoaiNhanVien(LoaiNhanVien lnv)
         {
-            maLoaiNV = lnv.maLoaiNV;
-            chucVu = lnv.chucVu;
-            congViec = lnv.congViec;
-            dsnhanvien_loai = lnv.dsnhanvien_loai;
+            this.maLoaiNV = lnv.maLoaiNV;
+            this.chucVu = lnv.chucVu;
+            this.congViec = lnv.congViec;
+            this.dsnhanvien_loai = lnv.dsnhanvien_loai;
+            this.maQuanLy = lnv.maQuanLy;
         }
     }
 }

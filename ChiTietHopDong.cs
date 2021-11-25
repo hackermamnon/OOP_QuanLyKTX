@@ -18,13 +18,10 @@ namespace OOP_QuanLyKTX
         public HopDongThuePhong hopDong { get; set; }
         public Phong phong { get; set; }
 
-        //related - plural
-        public ICollection<ChiTietHoaDonDichVu> dshoadon_phong { get; set; }
-
         //Constructor
         public ChiTietHopDong() { }
         public ChiTietHopDong(string maHopDong, string maPhong, DateTime ngayBatDau, DateTime ngayKetThuc,
-            HopDongThuePhong hopDong, Phong phong, ICollection<ChiTietHoaDonDichVu> dshoadon_phong)
+            HopDongThuePhong hopDong, Phong phong)
         {
             this.maHopDong = maHopDong;
             this.maPhong = maPhong;
@@ -32,7 +29,6 @@ namespace OOP_QuanLyKTX
             this.ngayKetThuc = ngayKetThuc;
             this.hopDong = hopDong;
             this.phong = phong;
-            this.dshoadon_phong = dshoadon_phong;
         }
         public ChiTietHopDong(ChiTietHopDong ct)
         {
@@ -42,7 +38,6 @@ namespace OOP_QuanLyKTX
             this.ngayKetThuc = ct.ngayKetThuc;
             this.hopDong = ct.hopDong;
             this.phong = ct.phong;
-            this.dshoadon_phong = ct.dshoadon_phong;
         }
     }
 }

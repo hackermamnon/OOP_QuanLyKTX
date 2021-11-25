@@ -12,24 +12,25 @@ namespace OOP_QuanLyKTX
         public string maThietBi { get; set; }
 
         //related = singular
-        public Phong phong { get; set; }
-        //related = plural
-        public ICollection<ThietBi> thietBi { get; set; }
-        public TrangBi() { }
+        public LoaiPhong loaiPhong { get; set; }
 
-        public TrangBi(string maPhong, string maThietBi, Phong phong, ICollection<ThietBi> thietBi)
+        //related = plural
+        public ICollection<ThietBi> dsthietbi_loaiphong { get; set; }
+
+        public TrangBi() { }
+        public TrangBi(string maPhong, string maThietBi, LoaiPhong loaiPhong, ICollection<ThietBi> dsthietbi_loaiphong)
         {
             this.maPhong = maPhong;
             this.maThietBi = maThietBi;
-            this.phong = phong;
-            this.thietBi = thietBi;
+            this.loaiPhong = loaiPhong;
+            this.dsthietbi_loaiphong = dsthietbi_loaiphong;
         }
         public TrangBi(TrangBi trb)
         {
             this.maPhong = trb.maPhong;
             this.maThietBi = trb.maThietBi;
-            this.phong = trb.phong;
-            this.thietBi = trb.thietBi;
+            this.loaiPhong = trb.loaiPhong;
+            this.dsthietbi_loaiphong = trb.dsthietbi_loaiphong;
         }
     }
 }
