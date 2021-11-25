@@ -663,17 +663,18 @@ namespace OOP_QuanLyKTX
             TaoDanhSachLoaiPhong();
             TaoDachSachToa();
             TaoDanhSachPhong();
+            TaodanhSachTrangBi();
+            TaoDanhSachThietBi();
             TaoDanhSachLoaiNhanVien();
-            TaoDanhSachSinhVien();
             TaoDanhSachNhanVien();
+            TaoDanhSachSinhVien();
+            TaoDanhSachDichVu();
             TaoDanhSachHopDong();
             TaoDanhSachChiTietHopDong();
-            TaoDanhSachDichVu();
             TaoDanhSachChiTietHoaDonDichVu();
-            TaoDanhSachTrangBi();
-            TaoDanhSachThietBi();
-            Linq7(); //Test
-            Console.ReadKey();
+
+
+            Console.OutputEncoding = Encoding.UTF8;
         }
     }
 }
