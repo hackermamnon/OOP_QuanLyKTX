@@ -9,6 +9,7 @@ namespace OOP_QuanLyKTX
         public string tenSV { get; set; }
         public bool gioiTinh { get; set; }
         public string soDienThoai { get; set; }
+
         //related = plural
         public ICollection<HopDongThuePhong> dshopdong { get; set; }
 
