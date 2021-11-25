@@ -530,32 +530,29 @@ namespace OOP_QuanLyKTX
             Console.WriteLine();
         }
 
-        //2. Cho biết thông tin nhân viên
-        public static void Linq2(string a)
+        //2. Cho biết thông tin quản lý của nhân viên 
+        public static void Linq2(string ma)
         {
             Console.WriteLine("Linq2");
 
             NhanVien nv = dsNhanVien
-                .Where(t => t.maNV == a)
+                .Where(t => t.maNV == ma)
                 .FirstOrDefault();
-            Console.WriteLine("Nhân viên {0} đang làm ở tòa {1} giữ chức vụ {2} có mức lương {3} VNĐ", nv.tenNhanVien, nv.maToa, nv.loaiNhanVien.chucVu, nv.luong);
+            Console.WriteLine("Mã nhân viên: {0} - Họ tên: {1} đang quản lý loại nhân viên có {2}" ,
+                nv.loaiNhanVien.maQuanLy, nv.loaiNhanVien.quanLy.tenNhanVien, nv.loaiNhanVien.maLoaiNV);
             Console.WriteLine();
         }
 
-        //3. Liệt kê các phòng theo loại phòng
+        //3. Cho biết số lượng sinh viên từng phòng, sắp xếp tăng dần
         public static void Linq3()
         {
             Console.WriteLine("Linq3");
-            foreach (var lp in dsLoaiPhong)
-            {
-                Console.WriteLine("Mã loại phòng: {0} - Tên loại phòng: {1}", lp.maLoaiPhong, lp.tenLoaiPhong);
-                foreach (var p in lp.dsphong_loai)
-                {
-                    Console.WriteLine("Mã phòng: {0}", p.maPhong);
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
+            Console.WriteLine("Số lượng sinh viên theo từng phòng");
+
+           // var groupTheoToa = dsphongTrong
+               .GroupBy(p => p.maToa)
+               .Select(y => new { ID = y.Key, Phong = y });
+
         }
 
         //4. Cho biết tổng tiền sử dụng dịch vụ của mỗi phòng 
@@ -763,8 +760,9 @@ namespace OOP_QuanLyKTX
 
 
             Console.OutputEncoding = Encoding.UTF8;
-            Linq1();
-            Linq2("NV04");
+            //Linq1();
+            //Linq2("NV12");
+            Linq6();
             Console.ReadKey();
         }
     }
