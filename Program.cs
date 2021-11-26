@@ -599,15 +599,6 @@ namespace OOP_QuanLyKTX
         //7. Cho biết nhân viên có mức lương cao nhất và thấp nhấp mỗi loại nhân viên
         public static void Linq7()
         {
-            Console.WriteLine("Linq12");
-            var result = from hd in dsChiTietHopDong
-                         where hd.ngayKetThuc <= new DateTime(2021, 04, 21)
-                         select hd;
-            Console.WriteLine("Các hợp đồng hết hạn trước ngày 21/04/2021 là: ");
-            foreach (var hd in result)
-                Console.WriteLine("Hợp đồng " +
-                    "{0} của sinh viên {1} - {2} đang ở phòng {3}", 
-                    hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
             Console.WriteLine("Linq7");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
@@ -698,19 +689,7 @@ namespace OOP_QuanLyKTX
                     "{0} cua sinh vien {1} - {2} dang o phong {3}",
                     hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
         }
-        ////11. Cho biết thời hạn hợp đồng của phòng
-        //public static void Linq11()
-        //{
-
-        //}
-
-        ////12. Danh sách các báo cáo từ ngày 1/6/2020 đến nay
-
-        //13. Sắp xếp tông tiền sử dụng dịch vụ từ cao xuống thấp
-        //public static void Linq13()
-        //{
-
-        //}
+       
 
         ////14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
         public static void Linq14()
@@ -730,6 +709,7 @@ namespace OOP_QuanLyKTX
         {
 
         }
+        
         //16. Cho biết tòa có số lượng SV nhiều nhất (*) in progress
         public static void Linq16()
         {
@@ -755,11 +735,11 @@ namespace OOP_QuanLyKTX
         public static void Linq20()
         {
             Console.WriteLine("Linq20");
-            var groupTheoToa = dsHoaDon
-                .GroupBy(p => p.)
+            //var groupTheoToa = dsHoaDon
+            //    .GroupBy(p => p.)
             //where t.maselect dv.tongTien;Toa == 'B'
             //var result = danhSachTongTien.Average();
-            Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
+           // Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
         }
         static void Main(string[] args)
         {
