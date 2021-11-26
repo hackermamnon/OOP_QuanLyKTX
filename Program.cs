@@ -587,9 +587,10 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Mã SV: {0} - Họ tên: {1} - Giới tính {2} - SĐT: {3}", sv.MaSV, sv.Ten, sv.Gioi ? "Nam" : "Nữ", sv.SDT);
 
         }
-        //6. Cho biết số lượng phòng chưa được thuê của tòa ...
+        //6. Cho biết số lượng và danh sách các phòng chưa được thuê của tòa ...
         public static void Linq6(char t)
         {
+            Console.WriteLine("Linq6");
             var result = from p in dsPhong
                          where p.maToa == t && p.trangThai == false
                          select p;
@@ -601,6 +602,7 @@ namespace OOP_QuanLyKTX
         //7. Cho biết nhân viên có mức lương cao nhất và thấp nhấp mỗi loại nhân viên
         public static void Linq7()
         {
+            Console.WriteLine("Linq12");
             var result = from hd in dsChiTietHopDong
                          where hd.ngayKetThuc <= new DateTime(2021, 04, 21)
                          select hd;
@@ -634,6 +636,7 @@ namespace OOP_QuanLyKTX
         //8. Cho biết số lượng phòng máy lạnh đang được thuê ở tòa ...
         public static void Linq8(char t)
         {
+            Console.WriteLine("Linq8");
             var result = from p in dsPhong
                          where p.loaiPhong.tenLoaiPhong.StartsWith("Phòng máy lạnh") && p.maToa == t
                          select p;
@@ -694,6 +697,7 @@ namespace OOP_QuanLyKTX
         //10. Cho biết các phòng chưa thanh toán hóa đơn dịch vụ nào cả
         public static void Linq10()
         {
+            Console.WriteLine("Linq10");
             var tongSoPhong = from p in dsPhong
                               where p.trangThai == true
                               select p.maPhong;
@@ -724,6 +728,7 @@ namespace OOP_QuanLyKTX
         ////14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
         public static void Linq14()
         {
+            Console.WriteLine("Linq14");
             var result = from p in dsPhong
                          where p.trangThai == true
                          orderby p.loaiPhong.giaPhong
@@ -761,8 +766,8 @@ namespace OOP_QuanLyKTX
         //16. Cho biết tòa có số lượng SV nhiều nhất (*) in progress
         public static void Linq16()
         {
-            var soLuongSV = dsSinhVien;
-            var groupTheoToa = soLuongSV
+            Console.WriteLine("Linq16");
+            var groupTheoToa = dsSinhVien
                 .GroupBy(sv => sv.phong.maToa)
                 .Select(y => new { ID = y.Key, sinhVien = y });
             foreach (var t in groupTheoToa)
@@ -797,6 +802,7 @@ namespace OOP_QuanLyKTX
         ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         //public static void Linq18()
         //{
+        //    Console.WriteLine("Linq18");
         //    var danhSachThoiGianThue = from p in dsPhong
         //                               where p.loaiPhong
         //                               select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong };
@@ -813,17 +819,16 @@ namespace OOP_QuanLyKTX
 
         }
 
-        ////20. Cho biết tiền sử dụng dịch vụ trung bình của tòa B/(từng tòa)
-        //public static void Linq20()
-        //{
-        //    var danhSachTongTien = from dv in dichVu
-        //                           join p in phong on dv.phong.maPhong equals p.maPhong
-        //                           join t in toa on p.toa.maToa equals t.maToa
-        //                           where t.maToa == 'B'
-        //                           select dv.tongTien;
-        //    var result = danhSachTongTien.Average();
-        //    Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
-        //}
+        ////20. Cho biết tiền sử dụng dịch vụ trung bình của tòa .../(từng tòa)
+        public static void Linq20()
+        {
+            Console.WriteLine("Linq20");
+            var groupTheoToa = dsHoaDon
+                .GroupBy(p => p.)
+            //where t.maselect dv.tongTien;Toa == 'B'
+            //var result = danhSachTongTien.Average();
+            Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
+        }
         static void Main(string[] args)
         {
 
