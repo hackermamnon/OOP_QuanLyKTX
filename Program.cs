@@ -602,15 +602,6 @@ namespace OOP_QuanLyKTX
         //7. Cho biết nhân viên có mức lương cao nhất và thấp nhấp mỗi loại nhân viên
         public static void Linq7()
         {
-            Console.WriteLine("Linq12");
-            var result = from hd in dsChiTietHopDong
-                         where hd.ngayKetThuc <= new DateTime(2021, 04, 21)
-                         select hd;
-            Console.WriteLine("Các hợp đồng hết hạn trước ngày 21/04/2021 là: ");
-            foreach (var hd in result)
-                Console.WriteLine("Hợp đồng " +
-                    "{0} của sinh viên {1} - {2} đang ở phòng {3}", 
-                    hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
             Console.WriteLine("Linq7");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
@@ -742,7 +733,7 @@ namespace OOP_QuanLyKTX
         public static void Linq15()
         {
 
-        //}
+        }
         /*
          public static void Linq1()
         {
@@ -796,9 +787,9 @@ namespace OOP_QuanLyKTX
         public static void Linq17()
         {
 
-        //}
-        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         }
+        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
+        
         ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         //public static void Linq18()
         //{
