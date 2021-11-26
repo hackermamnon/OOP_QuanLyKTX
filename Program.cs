@@ -745,7 +745,7 @@ namespace OOP_QuanLyKTX
             }
         }
 
-        //17. Cho biết nhwung mức luowg được trả (không tính trùng) 
+        //17. Cho biết những mức lương được trả (không tính trùng) 
         //public static void Linq17()
         //{
 
@@ -753,15 +753,7 @@ namespace OOP_QuanLyKTX
         ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         //public static void Linq18()
         //{
-        //    Console.WriteLine("Linq18");
-        //    var danhSachThoiGianThue = from p in dsPhong
-        //                               where p.loaiPhong
-        //                               select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong };
-        //    var result = danhSachThoiGianThue.Min();
-        //    Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
-        //    Console.WriteLine("Danh sach thoi gian thue cua tung phong: ");
-        //    foreach (var ds in danhSachThoiGianThue)
-        //        Console.WriteLine("Phong {0} - Thoi gian thue {1}", ds.maPhong, ds.range);
+
         //}
 
         //19. phòng sử dụng dịch vụ nhiều nhất và ít nhất
