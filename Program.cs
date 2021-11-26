@@ -739,7 +739,7 @@ namespace OOP_QuanLyKTX
             //    .GroupBy(p => p.)
             //where t.maselect dv.tongTien;Toa == 'B'
             //var result = danhSachTongTien.Average();
-           // Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
+            // Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
         }
         static void Main(string[] args)
         {
