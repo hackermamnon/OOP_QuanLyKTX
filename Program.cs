@@ -533,7 +533,6 @@ namespace OOP_QuanLyKTX
             }
             Console.WriteLine();
         }
-
         //2. Cho biết thông tin quản lý của nhân viên 
         public static void Linq2(string ma)
         {
@@ -546,9 +545,7 @@ namespace OOP_QuanLyKTX
                 nv.loaiNhanVien.maQuanLy, nv.loaiNhanVien.quanLy.tenNhanVien, nv.loaiNhanVien.maLoaiNV);
             Console.WriteLine();
         }
-
         ////3. Cho biết số lượng sinh viên từng phòng, sắp xếp tăng dần
-        
         public static void Linq3()
         {
             Console.WriteLine("Linq3");
@@ -732,27 +729,6 @@ namespace OOP_QuanLyKTX
         public static void Linq15()
         {
 
-            //}
-            /*
-             public static void Linq1()
-            {
-                Console.WriteLine("Linq1");
-                Console.WriteLine("Danh sách những phòng còn trống theo tòa");
-                var dsphongTrong = dsPhong
-                    .Where(p => !p.trangThai);
-
-                var groupTheoToa = dsphongTrong
-                    .GroupBy(p => p.maToa)
-                    .Select(y => new { ID = y.Key, Phong = y });
-                foreach (var t in groupTheoToa)
-                {
-                    Console.WriteLine("Tòa {0}:", t.ID);
-                    foreach (var p in t.Phong)
-                    {
-                        Console.WriteLine("Mã phòng: {0} - Mã loại phòng: {1}", p.maPhong, p.maLoaiPhong);
-                    }
-                }
-             */
         }
         //16. Cho biết tòa có số lượng SV nhiều nhất (*) in progress
         public static void Linq16()
