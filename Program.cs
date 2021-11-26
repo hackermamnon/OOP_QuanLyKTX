@@ -671,6 +671,22 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine();
             }
         }
+        //10. Cho biết các phòng chưa thanh toán hóa đơn dịch vụ nào cả
+        public static void Linq10()
+        {
+            Console.WriteLine("Linq10");
+            var tongSoPhong = from p in dsPhong
+                              where p.trangThai == true
+                              select p.maPhong;
+            var phongDaDongTien = from hd in dsHoaDon
+                                  where hd.ngayThanhToan != DateTime.MinValue
+                                  select hd.maPhong;
+            var result = from p in tongSoPhong.Except(phongDaDongTien)
+                         select p;
+            Console.WriteLine("Các phòng chưa thanh toán hóa đơn dịch vụ nào là: ");
+            foreach (var r in result)
+                Console.WriteLine(r);
+        }
         //11. Cho biết thông tin sinh viên ký hợp đồng thuê KTX từ ngày 15/04/2020 đến 15/05/2020
         public static void Linq11()
         {
@@ -696,32 +712,6 @@ namespace OOP_QuanLyKTX
                     "{0} cua sinh vien {1} - {2} dang o phong {3}",
                     hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
         }
-
-        ////9. Liệt kê sinh viên đang ở phòng P06
-        //public static void Linq9()
-        //{
-        //    var sinhVienP06 = from sv in dsSinhVien
-        //                      //join p in phong on sv.phong.maPhong equals p.maPhong
-        //                      where sv.dshopdong. == "P06"
-        //                      select new { sv.tenSV };
-        //}
-        //10. Cho biết các phòng chưa thanh toán hóa đơn dịch vụ nào cả
-        public static void Linq10()
-        {
-            Console.WriteLine("Linq10");
-            var tongSoPhong = from p in dsPhong
-                              where p.trangThai == true
-                              select p.maPhong;
-            var phongDaDongTien = from hd in dsHoaDon
-                                  where hd.ngayThanhToan != DateTime.MinValue
-                                  select hd.maPhong;
-            var result = from p in tongSoPhong.Except(phongDaDongTien)
-                         select p;
-            Console.WriteLine("Các phòng chưa thanh toán hóa đơn dịch vụ nào là: ");
-            foreach (var r in result)
-                Console.WriteLine(r);
-        }
-
         ////11. Cho biết thời hạn hợp đồng của phòng
         //public static void Linq11()
         //{
@@ -731,10 +721,10 @@ namespace OOP_QuanLyKTX
         ////12. Danh sách các báo cáo từ ngày 1/6/2020 đến nay
 
         //13. Sắp xếp tông tiền sử dụng dịch vụ từ cao xuống thấp
-        public static void Linq13()
-        {
+        //public static void Linq13()
+        //{
 
-        }
+        //}
 
         ////14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
         public static void Linq14()
@@ -753,27 +743,28 @@ namespace OOP_QuanLyKTX
         public static void Linq15()
         {
 
-        //}
-        /*
-         public static void Linq1()
-        {
-            Console.WriteLine("Linq1");
-            Console.WriteLine("Danh sách những phòng còn trống theo tòa");
-            var dsphongTrong = dsPhong
-                .Where(p => !p.trangThai);
-
-            var groupTheoToa = dsphongTrong
-                .GroupBy(p => p.maToa)
-                .Select(y => new { ID = y.Key, Phong = y });
-            foreach (var t in groupTheoToa)
+            //}
+            /*
+             public static void Linq1()
             {
-                Console.WriteLine("Tòa {0}:", t.ID);
-                foreach (var p in t.Phong)
+                Console.WriteLine("Linq1");
+                Console.WriteLine("Danh sách những phòng còn trống theo tòa");
+                var dsphongTrong = dsPhong
+                    .Where(p => !p.trangThai);
+
+                var groupTheoToa = dsphongTrong
+                    .GroupBy(p => p.maToa)
+                    .Select(y => new { ID = y.Key, Phong = y });
+                foreach (var t in groupTheoToa)
                 {
-                    Console.WriteLine("Mã phòng: {0} - Mã loại phòng: {1}", p.maPhong, p.maLoaiPhong);
+                    Console.WriteLine("Tòa {0}:", t.ID);
+                    foreach (var p in t.Phong)
+                    {
+                        Console.WriteLine("Mã phòng: {0} - Mã loại phòng: {1}", p.maPhong, p.maLoaiPhong);
+                    }
                 }
-            }
-         */
+             */
+        }
         //16. Cho biết tòa có số lượng SV nhiều nhất (*) in progress
         public static void Linq16()
         {
@@ -788,28 +779,12 @@ namespace OOP_QuanLyKTX
                     Console.WriteLine("Mã sinh viên: {0} - Tên sinh viên: {1}", sv.maSV, sv.tenSV);
             }
         }
-        }
-        ////16. Cho biết tòa có số lượng SV nhiều nhất (*)
-        ////public static void Linq16()
-        ////{
-        ////    var result = from sv in sinhVien
-        ////                 join p in phong on sv.phong.maPhong equals p.maPhong
-        ////                 join t in toa on p.toa.maToa equals t.maToa
-        ////                 group p.maPhong by t.maToa into groups
-        ////                 select new { groups};
-        ////    //select new { sv.maSV, sv.phong.maPhong, p.toa.maToa };
-        ////    Console.WriteLine("Danh sach sinh vien theo ma toa: ");
-        ////    foreach (var r in result)
-        ////        Console.WriteLine("Sinh vien {0}", r.groups);
-        ////}
 
         //17. Cho biết nhwung mức luowg được trả (không tính trùng) 
-        public static void Linq17()
-        {
+        //public static void Linq17()
+        //{
 
         //}
-        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
-        }
         ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
         //public static void Linq18()
         //{
