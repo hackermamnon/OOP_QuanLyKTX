@@ -704,6 +704,13 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Loại phòng: {0} - Phòng: {1} - Giá phòng: {2} VND", 
                     p.tenLoaiPhong, p.maPhong, p.giaPhong);
         }
+
+        //13. Sắp xếp tông tiền sử dụng dịch vụ từ cao xuống thấp
+        public static void Linq13()
+        {
+
+        }
+
         //15. Cho biết thông tin 3 nhân viên đầu tiên có mức lương cao hơn mức lương trung bình của mọi nhân viên
         public static void Linq15()
         {
@@ -723,6 +730,25 @@ namespace OOP_QuanLyKTX
                 foreach (var sv in t.sinhVien)
                     Console.WriteLine("Mã sinh viên: {0} - Tên sinh viên: {1}", sv.maSV, sv.tenSV);
             }
+        }
+
+        //17.Cho biết những mức lương được trả (không tính trùng) 
+
+        public static void Linq17()
+        {
+
+        }
+        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
+        public static void Linq18()
+        {
+            var danhSachThoiGianThue = from p in phong
+                                       join hd in dsChiTietHopDong on p.maPhong equals hd.phong.maPhong
+                                       select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong };
+            var result = danhSachThoiGianThue.Min();
+            Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
+            Console.WriteLine("Danh sach thoi gian thue cua tung phong: ");
+            foreach (var ds in danhSachThoiGianThue)
+                Console.WriteLine("Phong {0} - Thoi gian thue {1}", ds.maPhong, ds.range);
         }
 
         //19. phòng sử dụng dịch vụ nhiều nhất và ít nhất
