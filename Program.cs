@@ -745,17 +745,6 @@ namespace OOP_QuanLyKTX
             }
         }
 
-        //17. Cho biết những mức lương được trả (không tính trùng) 
-        //public static void Linq17()
-        //{
-
-        //}
-        ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
-        //public static void Linq18()
-        //{
-
-        //}
-
         //19. phòng sử dụng dịch vụ nhiều nhất và ít nhất
         public static void Linq19()
         {
