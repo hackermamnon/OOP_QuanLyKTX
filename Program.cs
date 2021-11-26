@@ -152,7 +152,6 @@ namespace OOP_QuanLyKTX
 
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV16 - GD", dsPhong[15].maPhong, 60000, new DateTime(2020, 12, 21), dsDichVu[1]));
             dsHoaDon.Add(new ChiTietHoaDonDichVu("DV16 - PHOTO", dsPhong[15].maPhong, 80000, new DateTime(2020, 12, 21), dsDichVu[2]));
-
         }
         public static void TaoDanhSachChiTietHopDong()
         {
@@ -186,7 +185,6 @@ namespace OOP_QuanLyKTX
             dsChiTietHopDong.Add(new ChiTietHopDong(dsHopDong[27].maHopDong, dsPhong[15].maPhong, new DateTime(2020, 10, 26), new DateTime(2021, 10, 26), dsHopDong[27], dsPhong[15]));
             dsChiTietHopDong.Add(new ChiTietHopDong(dsHopDong[28].maHopDong, dsPhong[15].maPhong, new DateTime(2020, 10, 30), new DateTime(2021, 10, 3), dsHopDong[28], dsPhong[15]));
             dsChiTietHopDong.Add(new ChiTietHopDong(dsHopDong[29].maHopDong, dsPhong[15].maPhong, new DateTime(2020, 10, 31), new DateTime(2021, 10, 31), dsHopDong[29], dsPhong[15]));
-
         }
         public static void TaoDanhSachHopDong()
         {
