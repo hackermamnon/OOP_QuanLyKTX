@@ -548,12 +548,7 @@ namespace OOP_QuanLyKTX
         }
 
         ////3. Cho biết số lượng sinh viên từng phòng, sắp xếp tăng dần
-        //public static void Linq3()
-        //{
-        //    Console.WriteLine("Linq3");
-        //    Console.WriteLine("Số lượng sinh viên theo từng phòng");
-        //3. Cho biết số lượng sinh viên từng phòng,
-        //sắp xếp tăng dần theo số lượng sinh viên
+        
         public static void Linq3()
         {
             Console.WriteLine("Linq3");
@@ -562,12 +557,6 @@ namespace OOP_QuanLyKTX
                .GroupBy(p => p.phong.maPhong)
                .Select(y => new { ID = y.Key, SoLuongSV = y.Count() })
                .OrderBy(e => e.SoLuongSV);
-
-        //   // var groupTheoToa = dsphongTrong
-        //       .GroupBy(p => p.maToa)
-        //       .Select(y => new { ID = y.Key, Phong = y });
-
-        //}
             foreach (var a in SLSVTheoPhong)
                 Console.WriteLine("Phòng {0}: {1} sinh viên", a.ID, a.SoLuongSV);
             Console.WriteLine();
