@@ -521,11 +521,11 @@ namespace OOP_QuanLyKTX
             var groupTheoToa = dsPhong
                 .Where(p => !p.trangThai)
                 .GroupBy(p => p.maToa)
-                .Select(y => new { ID = y.Key, Phong = y });
+                .Select(y => new { MaToa = y.Key, Phong = y });
 
             foreach (var t in groupTheoToa)
             {
-                Console.WriteLine("Tòa {0}:", t.ID);
+                Console.WriteLine("Tòa {0}:", t.MaToa);
                 foreach (var p in t.Phong)
                 {
                     Console.WriteLine("Mã phòng: {0} - Mã loại phòng: {1}", p.maPhong, p.maLoaiPhong);
@@ -552,10 +552,10 @@ namespace OOP_QuanLyKTX
             Console.WriteLine("Số lượng sinh viên theo từng phòng");
             var SLSVTheoPhong = dsSinhVien
                .GroupBy(p => p.phong.maPhong)
-               .Select(y => new { ID = y.Key, SoLuongSV = y.Count() })
+               .Select(y => new { MaPhong = y.Key, SoLuongSV = y.Count() })
                .OrderBy(e => e.SoLuongSV);
             foreach (var a in SLSVTheoPhong)
-                Console.WriteLine("Phòng {0}: {1} sinh viên", a.ID, a.SoLuongSV);
+                Console.WriteLine("Phòng {0}: {1} sinh viên", a.MaPhong, a.SoLuongSV);
             Console.WriteLine();
         }
 
@@ -741,22 +741,35 @@ namespace OOP_QuanLyKTX
             }
         }
         
-        //16. Cho biết tòa có số lượng SV nhiều nhất (*) in progress
+        //16. Cho biết số lượng sinh viên trong mỗi phòng đang được thuê theo từng tòa
         public static void Linq16()
         {
             Console.WriteLine("Linq16");
-            var groupTheoToa = dsSinhVien
-                .GroupBy(sv => sv.phong.maToa)
-                .Select(y => new { ID = y.Key, sinhVien = y });
-            foreach (var t in groupTheoToa)
-            {
-                Console.WriteLine("Tòa {0}: ", t.ID);
-                foreach (var sv in t.sinhVien)
-                    Console.WriteLine("Mã sinh viên: {0} - Tên sinh viên: {1}", sv.maSV, sv.tenSV);
-            }
-        }
 
-        //17. Cho biết hóa đơn dịch vụ có gía trị cao nhất và thấp nhấttừng phòng
+            var groupTheoToa = dsPhong
+                .Where(p => p.trangThai)
+                .GroupBy(t => t.maToa)
+                .Select(y => new { MaToa = y.Key, Phong = y });
+
+            var SLSVTheoPhong = dsSinhVien
+                .GroupBy(p => p.phong.maPhong)
+                .Select(y => new { MaPhong = y.Key, SoLuongSV = y.Count() });
+
+            foreach (var i in groupTheoToa)
+            {
+                Console.WriteLine("Mã tòa: {0}", i.MaToa);
+                foreach (var j in i.Phong)
+                { 
+                    Console.WriteLine("Mã phòng: {0}", j.maPhong);
+                    foreach (var k in SLSVTheoPhong)
+                    {
+                        if (j.maPhong == k.MaPhong)
+                        Console.WriteLine("Số lượng sinh viên: {0}", k.SoLuongSV);
+                    }
+                }
+            }   
+        }
+        //17.Cho biết những mức lương được trả (không tính trùng) 
         public static void Linq17()
         {
             Console.WriteLine("Linq17");
@@ -782,38 +795,48 @@ namespace OOP_QuanLyKTX
 
 
         }
-        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
+        //18. Cho biết thời gian thuê phòng của từng sinh viên
         public static void Linq18()
         {
-            //var danhSachThoiGianThue = from p in phong
-            //                           join hd in dsChiTietHopDong on p.maPhong equals hd.phong.maPhong
-            //                           select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong };
-            //var result = danhSachThoiGianThue.Min();
-            //Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
-            //Console.WriteLine("Danh sach thoi gian thue cua tung phong: ");
-            //foreach (var ds in danhSachThoiGianThue)
-            //    Console.WriteLine("Phong {0} - Thoi gian thue {1}", ds.maPhong, ds.range);
+            Console.WriteLine("Linq18");
+            var DanhSachThoiGianThue = dsChiTietHopDong
+                .Select(p => 
+                new { range = p.ngayKetThuc - p.ngayBatDau, p.hopDong.maSinhVien, p.hopDong.sinhVien.tenSV });
+            foreach (var tg in DanhSachThoiGianThue)
+            {
+                int years = (tg.range.Days) / 365;
+                int months = (tg.range.Days - years * 365) / 30;
+                int days = (tg.range.Days - years * 365 - months * 30);
+                if (years == 0)
+                    Console.WriteLine("Hợp đồng của {0} - {1} có thời hạn: {2} tháng {3} ngày", 
+                        tg.maSinhVien, tg.tenSV, months, days);
+                else
+                    Console.WriteLine("Hợp đồng của {0} - {1} có thời hạn: {2} năm {3} tháng {4} ngày",
+                        tg.maSinhVien, tg.tenSV, years, months, days);
+            }
         }
-
         //19. phòng sử dụng dịch vụ nhiều nhất và ít nhất
         public static void Linq19()
         {
 
         }
-
-        ////20. Cho biết tiền sử dụng dịch vụ trung bình của tòa .../(từng tòa)
-        public static void Linq20()
-        {
-            Console.WriteLine("Linq20");
-            //var groupTheoToa = dsHoaDon
-            //    .GroupBy(p => p.)
-            //where t.maselect dv.tongTien;Toa == 'B'
-            //var result = danhSachTongTien.Average();
-           // Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
-        }
+        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa .../(từng tòa)
+        //public static void Linq20()
+        //{
+        //    Console.WriteLine("Linq20");
+        //    var groupTheoPhong = dsHoaDon
+        //        .GroupBy(p => p.maPhong)
+        //        .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
+        //    var groupTheoToa = dsToa
+        //        .GroupBy(p => p.maToa)
+        //        .Select(y => new { groupTheoPhong });
+        //    foreach(var avg in groupTheoPhong)
+        //    {
+               
+        //    }
+        //}
         static void Main(string[] args)
         {
-
             TaoDanhSachLoaiPhong();
             TaoDachSachToa();
             TaoDanhSachPhong();
@@ -827,12 +850,13 @@ namespace OOP_QuanLyKTX
             TaoDanhSachDichVu();
             TaoDanhSachChiTietHoaDonDichVu();
 
-
             Console.OutputEncoding = Encoding.UTF8;
-            //Linq1();
-            //Linq2("NV12");
-            //Linq6('D');
+            //Linq2();
+            //Linq4();
+            //Linq6();
+            //Linq8();
             //Linq10();
+            //Linq12();
             //Linq14();
             //Linq16();in progress
             //Linq18();in progress
@@ -845,6 +869,9 @@ namespace OOP_QuanLyKTX
             //Linq13();
             //Linq15();
             Linq17();
+            //Linq16();
+            //Linq18();
+            //Linq20();
             Console.ReadKey();
         }
     }
