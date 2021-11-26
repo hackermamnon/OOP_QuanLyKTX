@@ -548,7 +548,6 @@ namespace OOP_QuanLyKTX
         }
 
         ////3. Cho biết số lượng sinh viên từng phòng, sắp xếp tăng dần
-        
         public static void Linq3()
         {
             Console.WriteLine("Linq3");
@@ -692,19 +691,7 @@ namespace OOP_QuanLyKTX
                     "{0} cua sinh vien {1} - {2} dang o phong {3}",
                     hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
         }
-        ////11. Cho biết thời hạn hợp đồng của phòng
-        //public static void Linq11()
-        //{
-
-        //}
-
-        ////12. Danh sách các báo cáo từ ngày 1/6/2020 đến nay
-
-        //13. Sắp xếp tông tiền sử dụng dịch vụ từ cao xuống thấp
-        //public static void Linq13()
-        //{
-
-        //}
+       
 
         ////14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
         public static void Linq14()
@@ -724,35 +711,7 @@ namespace OOP_QuanLyKTX
         {
 
         }
-        /*
-         public static void Linq1()
-        {
-            Console.WriteLine("Linq1");
-            Console.WriteLine("Danh sách những phòng còn trống theo tòa");
-            var dsphongTrong = dsPhong
-                .Where(p => !p.trangThai);
-            //}
-            /*
-             public static void Linq1()
-            {
-                Console.WriteLine("Linq1");
-                Console.WriteLine("Danh sách những phòng còn trống theo tòa");
-                var dsphongTrong = dsPhong
-                    .Where(p => !p.trangThai);
-
-                var groupTheoToa = dsphongTrong
-                    .GroupBy(p => p.maToa)
-                    .Select(y => new { ID = y.Key, Phong = y });
-                foreach (var t in groupTheoToa)
-                {
-                    Console.WriteLine("Tòa {0}:", t.ID);
-                    foreach (var p in t.Phong)
-                    {
-                        Console.WriteLine("Mã phòng: {0} - Mã loại phòng: {1}", p.maPhong, p.maLoaiPhong);
-                    }
-                }
-             */
-        }
+        
         //16. Cho biết tòa có số lượng SV nhiều nhất (*) in progress
         public static void Linq16()
         {
@@ -768,28 +727,6 @@ namespace OOP_QuanLyKTX
             }
         }
 
-        //17. Cho biết nhwung mức luowg được trả (không tính trùng) 
-        //public static void Linq17()
-        //{
-
-        }
-        //18. Cho biết phòng có thời gian thuê ngắn nhất (*)
-        
-        //}
-        ////18. Cho biết phòng có thời gian thuê ngắn nhất (*)
-        //public static void Linq18()
-        //{
-        //    Console.WriteLine("Linq18");
-        //    var danhSachThoiGianThue = from p in dsPhong
-        //                               where p.loaiPhong
-        //                               select new { range = (hd.ngayKetThuc - hd.ngayBatDau), p.maPhong };
-        //    var result = danhSachThoiGianThue.Min();
-        //    Console.WriteLine("Phong co thoi gian thue ngan nhat la: {0} - ", result);
-        //    Console.WriteLine("Danh sach thoi gian thue cua tung phong: ");
-        //    foreach (var ds in danhSachThoiGianThue)
-        //        Console.WriteLine("Phong {0} - Thoi gian thue {1}", ds.maPhong, ds.range);
-        //}
-
         //19. phòng sử dụng dịch vụ nhiều nhất và ít nhất
         public static void Linq19()
         {
@@ -800,11 +737,11 @@ namespace OOP_QuanLyKTX
         public static void Linq20()
         {
             Console.WriteLine("Linq20");
-            var groupTheoToa = dsHoaDon
-                .GroupBy(p => p.)
+            //var groupTheoToa = dsHoaDon
+            //    .GroupBy(p => p.)
             //where t.maselect dv.tongTien;Toa == 'B'
             //var result = danhSachTongTien.Average();
-            Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
+           // Console.WriteLine("Tien su dung dich vu trung binh cua toa B la: {0} VND", result);
         }
         static void Main(string[] args)
         {
