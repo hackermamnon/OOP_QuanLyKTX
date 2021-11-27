@@ -543,7 +543,7 @@ namespace OOP_QuanLyKTX
                 nv.loaiNhanVien.maQuanLy, nv.loaiNhanVien.quanLy.tenNhanVien, nv.loaiNhanVien.maLoaiNV);
             Console.WriteLine();
         }
-        ////3. Cho biết số lượng sinh viên từng phòng, sắp xếp tăng dần
+        //3. Sắp xếp tăng dần số lượng sinh viên theo từng phòng
         public static void Linq3()
         {
             Console.WriteLine("Linq3");
@@ -594,7 +594,7 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("{0} - {1}", p.maPhong, p.loaiPhong.tenLoaiPhong);
         }
 
-        //7. Cho biết nhân viên có mức lương cao nhất và thấp nhấp mỗi loại nhân viên
+        //7. Cho biết thông tin nhân viên có mức lương cao nhất và thấp nhấp theo mỗi loại nhân viên
         public static void Linq7()
         {
             Console.WriteLine("Linq7");
@@ -631,7 +631,7 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Phong: {0}", p.maPhong);
         }
 
-        //9. In ra những thiết bị theo từng loại phòng
+        //9. Liệt kê những thiết bị theo từng loại phòng
         public static void Linq9()
         {
             Console.WriteLine("Linq9");
@@ -767,7 +767,7 @@ namespace OOP_QuanLyKTX
                 }
             }   
         }
-        //17.Cho biết những mức lương được trả (không tính trùng) 
+        //17.Chó biết thông tin hóa đơn thấp nhất và cao nhất mỗi phòng
         public static void Linq17()
         {
             Console.WriteLine("Linq17");
@@ -813,7 +813,7 @@ namespace OOP_QuanLyKTX
                         tg.maSinhVien, tg.tenSV, years, months, days);
             }
         }
-        //19. phòng sử dụng dịch vụ nhiều nhất và ít nhất
+        //19. Cho biết phòng sử dụng dịch vụ nhiều nhất và ít nhất
         public static void Linq19()
         {
 
