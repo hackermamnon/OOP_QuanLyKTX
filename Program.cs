@@ -813,24 +813,36 @@ namespace OOP_QuanLyKTX
                         tg.maSinhVien, tg.tenSV, years, months, days);
             }
         }
-        //19. Cho biết phòng sử dụng dịch vụ nhiều nhất và ít nhất
+        //19. Cho biết sức chứa từng tòa và sắp xếp số lượng SV đang ở từng tòa giảm dần
         public static void Linq19()
         {
+            Console.WriteLine("Linq19");
+            var svDangThue = dsSinhVien
+               .GroupBy(t => t.phong.toa.maToa)
+               .Select(y => new { MaToa = y.Key, SLSVThue = y.Count() })
+               .OrderByDescending(t => t.SLSVThue);
 
+            Console.WriteLine("Sức chứa từng tòa");
+            foreach (var i in dsToa)
+                Console.WriteLine("Toa {0}: {1}", i.maToa, i.sucChua);
+            foreach(var i in svDangThue)
+                Console.WriteLine("Số lượng SV đang ở tòa {0}: {1}",i.MaToa, i.SLSVThue);
         }
-        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa .../(từng tòa)
+        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa.../(từng tòa)
         //public static void Linq20()
         //{
         //    Console.WriteLine("Linq20");
+        //    var groupTheoToa = dsHoaDon
+        //        .GroupBy(p => p.)
+        //        .Select(y => new { groupTheoPhong });
+
         //    var groupTheoPhong = dsHoaDon
         //        .GroupBy(p => p.maPhong)
         //        .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
-        //    var groupTheoToa = dsToa
-        //        .GroupBy(p => p.maToa)
-        //        .Select(y => new { groupTheoPhong });
-        //    foreach(var avg in groupTheoPhong)
+            
+        //    foreach (var avg in groupTheoPhong)
         //    {
-               
+
         //    }
         //}
         static void Main(string[] args)
@@ -856,6 +868,7 @@ namespace OOP_QuanLyKTX
             //Linq10();
             //Linq12();
             //Linq14();
+            //Linq14();
             //Linq16();in progress
             //Linq18();in progress
             //Linq20();in progress
@@ -866,9 +879,10 @@ namespace OOP_QuanLyKTX
             //Linq11();
             //Linq13();
             //Linq15();
-            Linq17();
+            //Linq17();
             //Linq16();
             //Linq18();
+            Linq19();
             //Linq20();
             Console.ReadKey();
         }
