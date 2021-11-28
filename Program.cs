@@ -885,14 +885,14 @@ namespace OOP_QuanLyKTX
             Linq10();
             Linq11();
             Linq12();
-            //Linq13();
+            Linq13();
             Linq14();
-            //Linq15();
-            //Linq17();
-            //Linq16();
-            //Linq18();
+            Linq15();
+            Linq17();
+            Linq16();
+            Linq18();
             Linq19();
-            //Linq20();
+            Linq20('C');
             Console.ReadKey();
         }
     }
