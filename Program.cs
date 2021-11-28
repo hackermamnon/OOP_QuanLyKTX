@@ -565,7 +565,7 @@ namespace OOP_QuanLyKTX
                 .GroupBy(p => p.maPhong)
                 .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
             foreach (var t in groupTheoPhong)
-                Console.WriteLine("Phòng {0}: {1}VNĐ", t.maPhong, t.tien);
+                Console.WriteLine("Phòng {0}: {1} VNĐ", t.maPhong, t.tien);
             Console.WriteLine();
         }
 
@@ -629,7 +629,7 @@ namespace OOP_QuanLyKTX
                          select p;
             Console.WriteLine("Số lượng phòng máy lạnh được thuê ở tòa {0} là: {1}", t, result.Count());
             foreach (var p in result)
-                Console.WriteLine("Phong: {0}", p.maPhong);
+                Console.WriteLine("Phòng: {0}", p.maPhong);
             Console.WriteLine();
         }
 
@@ -665,7 +665,7 @@ namespace OOP_QuanLyKTX
                          select p;
             Console.WriteLine("Các phòng chưa thanh toán hóa đơn dịch vụ nào là: ");
             foreach (var r in result)
-                Console.WriteLine(r);
+                Console.WriteLine("Phòng: {0}", r);
             Console.WriteLine();
         }
 
@@ -859,6 +859,7 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Phòng: {0} - Tiền: {1} VND", avg.maPhong, avg.tien);
             }
             Console.WriteLine("Số tiền dịch vụ trung bình của tòa {0} là: {1} VND", ma, average);
+            Console.WriteLine();
         }
 
         public static void Main(string[] args)
@@ -875,6 +876,7 @@ namespace OOP_QuanLyKTX
             TaoDanhSachChiTietHopDong();
             TaoDanhSachDichVu();
             TaoDanhSachChiTietHoaDonDichVu();
+            //Format tiền: Linq04, 13, 14 20
 
             Console.OutputEncoding = Encoding.UTF8;
             Linq1();
@@ -882,6 +884,7 @@ namespace OOP_QuanLyKTX
             Linq3();
             Linq4();
             Linq5("P02");
+            Linq7();
             Linq6('C');
             Linq8('B');
             Linq9();
