@@ -665,7 +665,7 @@ namespace OOP_QuanLyKTX
                          select p;
             Console.WriteLine("Các phòng chưa thanh toán hóa đơn dịch vụ nào là: ");
             foreach (var r in result)
-                Console.WriteLine(r);
+                Console.WriteLine("Phòng: {0}", r);
             Console.WriteLine();
         }
         //11. Cho biết thông tin sinh viên ký hợp đồng thuê KTX từ ngày 15/04/2020 đến 15/05/2020
