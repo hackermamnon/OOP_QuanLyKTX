@@ -560,12 +560,13 @@ namespace OOP_QuanLyKTX
         public static void Linq4()
         {
             Console.WriteLine("Linq4");
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             Console.WriteLine("Tiền dịch vụ của mỗi phòng");
             var groupTheoPhong = dsHoaDon
                 .GroupBy(p => p.maPhong)
                 .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
             foreach (var t in groupTheoPhong)
-                Console.WriteLine("Phòng {0}: {1} VNĐ", t.maPhong, t.tien);
+                Console.WriteLine("Phòng {0}: {1} VNĐ", t.maPhong, double.Parse(t.tien.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
         }
 
@@ -703,6 +704,7 @@ namespace OOP_QuanLyKTX
         public static void Linq13()
         {
             Console.WriteLine("Linq13");
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             var tongTienDichVu = dsHoaDon
             .GroupBy(x => x.maPhong)
             .Select(y => new { MaPhong = y.Key, TienDV = y.Sum(z => z.tongTien) });
@@ -711,14 +713,15 @@ namespace OOP_QuanLyKTX
                 .OrderByDescending(x => x.TienDV);
 
             foreach (var i in sapXepTien)
-                Console.WriteLine("Phòng: {0} - Tiền: {1} VNĐ", i.MaPhong, i.TienDV);
-
+                Console.WriteLine("Phòng: {0} - Tiền: {1} VNĐ", i.MaPhong, double.Parse(i.TienDV.ToString()).ToString("#,###", cul.NumberFormat));
+            Console.WriteLine();
         }
 
         //14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
         public static void Linq14()
         {
             Console.WriteLine("Linq14");
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             var result = from p in dsPhong
                          where p.trangThai == true
                          orderby p.loaiPhong.giaPhong
@@ -726,7 +729,7 @@ namespace OOP_QuanLyKTX
             Console.WriteLine("Danh sách các phòng đang được thuê theo thứ tự tăng dần của giá phòng: ");
             foreach (var p in result)
                 Console.WriteLine("Loại phòng: {0} - Phòng: {1} - Giá phòng: {2} VND", 
-                    p.tenLoaiPhong, p.maPhong, p.giaPhong);
+                    p.tenLoaiPhong, p.maPhong, double.Parse(p.giaPhong.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
         }
 
@@ -801,6 +804,7 @@ namespace OOP_QuanLyKTX
             Console.WriteLine("Danh sách hóa đơn cao nhất mỗi phòng");
             foreach (var i in hoaDonCaoNhat)
                 Console.WriteLine("Phòng {0} - Hóa đơn: {1} - Giá trị hóa đơn: {2} VNĐ", i.maPhong, i.maHoaDon, double.Parse(i.tongTien.ToString()).ToString("#,###", cul.NumberFormat));
+            Console.WriteLine();
         }
 
         //18. Cho biết thời gian thuê phòng của từng sinh viên
@@ -839,12 +843,14 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Toa {0}: {1}", i.maToa, i.sucChua);
             foreach(var i in svDangThue)
                 Console.WriteLine("Số lượng SV đang ở tòa {0}: {1}",i.MaToa, i.SLSVThue);
+            Console.WriteLine();
         }
 
         //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa ...
         public static void Linq20(char ma)
         {
             Console.WriteLine("Linq20");
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             var tienTungPhong = dsHoaDon
                 .GroupBy(p => p.maPhong)
                 .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
@@ -856,9 +862,9 @@ namespace OOP_QuanLyKTX
             Console.WriteLine("Danh sách tiền dịch vụ theo từng phòng của tòa {0}: ", ma);
             foreach (var avg in result)
             {
-                Console.WriteLine("Phòng: {0} - Tiền: {1} VND", avg.maPhong, avg.tien);
+                Console.WriteLine("Phòng: {0} - Tiền: {1} VND", avg.maPhong, double.Parse(avg.tien.ToString()).ToString("#,###", cul.NumberFormat));
             }
-            Console.WriteLine("Số tiền dịch vụ trung bình của tòa {0} là: {1} VND", ma, average);
+            Console.WriteLine("Số tiền dịch vụ trung bình của tòa {0} là: {1} VND", ma, double.Parse(average.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
         }
 
@@ -884,8 +890,8 @@ namespace OOP_QuanLyKTX
             Linq3();
             Linq4();
             Linq5("P02");
-            Linq7();
             Linq6('C');
+            Linq7();
             Linq8('B');
             Linq9();
             Linq10();
