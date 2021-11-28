@@ -543,7 +543,7 @@ namespace OOP_QuanLyKTX
                 nv.loaiNhanVien.maQuanLy, nv.loaiNhanVien.quanLy.tenNhanVien, nv.loaiNhanVien.maLoaiNV);
             Console.WriteLine();
         }
-        ////3. Cho biết số lượng sinh viên từng phòng, sắp xếp tăng dần
+        //3. Sắp xếp tăng dần số lượng sinh viên theo từng phòng
         public static void Linq3()
         {
             Console.WriteLine("Linq3");
@@ -595,7 +595,7 @@ namespace OOP_QuanLyKTX
             Console.WriteLine();
         }
 
-        //7. Cho biết nhân viên có mức lương cao nhất và thấp nhấp mỗi loại nhân viên
+        //7. Cho biết thông tin nhân viên có mức lương cao nhất và thấp nhấp theo mỗi loại nhân viên
         public static void Linq7()
         {
             Console.WriteLine("Linq7");
@@ -634,7 +634,7 @@ namespace OOP_QuanLyKTX
             Console.WriteLine();
         }
 
-        //9. In ra những thiết bị theo từng loại phòng
+        //9. Liệt kê những thiết bị theo từng loại phòng
         public static void Linq9()
         {
             Console.WriteLine("Linq9");
@@ -713,16 +713,39 @@ namespace OOP_QuanLyKTX
             Console.WriteLine();
         }
 
-        //13. Sắp xếp tông tiền sử dụng dịch vụ từ cao xuống thấp
+        //13. Sắp xếp tổng tiền sử dụng dịch vụ từ cao xuống thấp
         public static void Linq13()
         {
+            Console.WriteLine("Linq13");
+            var tongTienDichVu = dsHoaDon
+            .GroupBy(x => x.maPhong)
+            .Select(y => new { MaPhong = y.Key, TienDV = y.Sum(z => z.tongTien) });
+
+            var sapXepTien = tongTienDichVu
+                .OrderByDescending(x => x.TienDV);
+
+            foreach (var i in sapXepTien)
+                Console.WriteLine("Phòng: {0} - Tiền: {1}", i.MaPhong, i.TienDV);
 
         }
 
-        //15. Cho biết thông tin 3 nhân viên đầu tiên có mức lương cao hơn mức lương trung bình của mọi nhân viên
+        //15. Cho biết danh sách thông tin từng phòng theo loại phòng
         public static void Linq15()
         {
-
+            Console.WriteLine("Linq15");
+            //Format tiền Việt
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            foreach (var loai in dsLoaiPhong)
+            {
+                Console.WriteLine("{0} - {1} - {2} VNĐ ",
+                   loai.maLoaiPhong, loai.tenLoaiPhong, double.Parse(loai.giaPhong.ToString()).ToString("#,###", cul.NumberFormat));
+                foreach (var phong in loai.dsphong_loai)
+                {
+                    Console.WriteLine("{0} -Tòa {1} - {2}",
+                        phong.maPhong, phong.maToa, phong.trangThai ? "Được thuê" : "Trống");
+                }
+                Console.WriteLine();
+            }
         }
         
         //16. Cho biết số lượng sinh viên trong mỗi phòng đang được thuê theo từng tòa
@@ -754,9 +777,30 @@ namespace OOP_QuanLyKTX
             }
             Console.WriteLine();
         }
-        //17.Cho biết những mức lương được trả (không tính trùng) 
+        //17.Chó biết thông tin hóa đơn thấp nhất và cao nhất mỗi phòng
         public static void Linq17()
         {
+            Console.WriteLine("Linq17");
+            //Format tiền Việt
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+
+            var hoaDonThapNhat = dsHoaDon
+                .GroupBy(x => x.maPhong)
+                .Select(nv => nv.OrderBy(x => x.tongTien))
+                .Select(x => x.First());
+
+            var hoaDonCaoNhat = dsHoaDon
+                .GroupBy(x => x.maPhong)
+                .Select(nv => nv.OrderByDescending(x => x.tongTien))
+                .Select(x => x.First());
+            Console.WriteLine("Danh sách hóa đơn thấp nhất mỗi phòng");
+            foreach (var i in hoaDonThapNhat)
+                Console.WriteLine("Phòng {0} - Hóa đơn: {1} - Giá trị hóa đơn: {2} VNĐ", i.maPhong, i.maHoaDon, double.Parse(i.tongTien.ToString()).ToString("#,###", cul.NumberFormat));
+            Console.WriteLine();
+            Console.WriteLine("Danh sách hóa đơn cao nhất mỗi phòng");
+            foreach (var i in hoaDonCaoNhat)
+                Console.WriteLine("Phòng {0} - Hóa đơn: {1} - Giá trị hóa đơn: {2} VNĐ", i.maPhong, i.maHoaDon, double.Parse(i.tongTien.ToString()).ToString("#,###", cul.NumberFormat));
+
 
         }
         //18. Cho biết thời gian thuê phòng của từng sinh viên
@@ -780,7 +824,7 @@ namespace OOP_QuanLyKTX
             }
             Console.WriteLine();
         }
-        //19. phòng sử dụng dịch vụ nhiều nhất và ít nhất
+        //19. Cho biết phòng sử dụng dịch vụ nhiều nhất và ít nhất
         public static void Linq19()
         {
 
