@@ -839,23 +839,25 @@ namespace OOP_QuanLyKTX
             foreach(var i in svDangThue)
                 Console.WriteLine("Số lượng SV đang ở tòa {0}: {1}",i.MaToa, i.SLSVThue);
         }
-        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa.../(từng tòa)
-        //public static void Linq20()
-        //{
-        //    Console.WriteLine("Linq20");
-        //    var groupTheoToa = dsHoaDon
-        //        .GroupBy(p => p.)
-        //        .Select(y => new { groupTheoPhong });
-
-        //    var groupTheoPhong = dsHoaDon
-        //        .GroupBy(p => p.maPhong)
-        //        .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
-            
-        //    foreach (var avg in groupTheoPhong)
-        //    {
-
-        //    }
-        //}
+        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa ...
+        public static void Linq20(char ma)
+        {
+            Console.WriteLine("Linq20");
+            var tienTungPhong = dsHoaDon
+                .GroupBy(p => p.maPhong)
+                .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
+            var dsPhongTheoToa = dsPhong
+                .Where(p => p.maToa == ma)
+                .Select(t => t.maPhong);
+            var result = tienTungPhong.Join(dsPhongTheoToa, p => p.maPhong, t => t, (p, t) => p);
+            double average = result.Average(p => p.tien);
+            Console.WriteLine("Danh sách tiền dịch vụ theo từng phòng của tòa {0}: ", ma);
+            foreach (var avg in result)
+            {
+                Console.WriteLine("Phòng: {0} - Tiền: {1} VND", avg.maPhong, avg.tien);
+            }
+            Console.WriteLine("Số tiền dịch vụ trung bình của tòa {0} là: {1} VND", ma, average);
+        }
         static void Main(string[] args)
         {
             TaoDanhSachLoaiPhong();
