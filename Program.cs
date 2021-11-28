@@ -882,7 +882,6 @@ namespace OOP_QuanLyKTX
             TaoDanhSachChiTietHopDong();
             TaoDanhSachDichVu();
             TaoDanhSachChiTietHoaDonDichVu();
-            //Format tiền: Linq04, 13, 14 20
 
             Console.OutputEncoding = Encoding.UTF8;
             Linq1();
