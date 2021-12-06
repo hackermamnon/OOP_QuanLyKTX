@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_QuanLyKTX
 {
-    //Loại nhân viên (Mã loại NV, Chức vụ, Công việc)
+    //Loại nhân viên (Mã loại NV, Chức vụ, Công việc Mã quản lý)
     public class LoaiNhanVien
     {
         public string maLoaiNV { get; set; }
