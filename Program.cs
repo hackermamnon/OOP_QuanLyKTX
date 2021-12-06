@@ -510,10 +510,189 @@ namespace OOP_QuanLyKTX
             dsPhong[15].dssv_phong.Add(dsSinhVien[29]);
         }
 
-        //1. Cho biết thông tin phòng còn trống ở mỗi tòa
-        public static void Linq1()
+        //1. Cho biết thông tin quản lý của nhân viên 
+        public static void Linq1(string ma)
         {
             Console.WriteLine("Linq1");
+            NhanVien nv = dsNhanVien
+                .Where(t => t.maNV == ma)
+                .FirstOrDefault();
+            Console.WriteLine("Mã nhân viên: {0} - Họ tên: {1} đang quản lý loại nhân viên có {2}",
+                nv.loaiNhanVien.maQuanLy, nv.loaiNhanVien.quanLy.tenNhanVien, nv.loaiNhanVien.maLoaiNV);
+            Console.WriteLine();
+        }
+
+        //2. Cho biết tổng tiền sử dụng dịch vụ của mỗi phòng 
+        public static void Linq2()
+        {
+            Console.WriteLine("Linq2");
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            Console.WriteLine("Tiền dịch vụ của mỗi phòng");
+            var groupTheoPhong = dsHoaDon
+                .GroupBy(p => p.maPhong)
+                .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
+            foreach (var t in groupTheoPhong)
+                Console.WriteLine("Phòng {0}: {1} VNĐ", t.maPhong,
+                    double.Parse(t.tien.ToString()).ToString("#,###", cul.NumberFormat));
+            Console.WriteLine();
+        }
+
+        //3. Cho biết số lượng và danh sách các phòng chưa được thuê của tòa ...
+        public static void Linq3(char t)
+        {
+            Console.WriteLine("Linq3");
+            var result = from p in dsPhong
+                         where p.maToa == t && p.trangThai == false
+                         select p;
+            Console.WriteLine("Số lượng phòng chưa được thuê của tòa {0} là: {1}", t, result.Count());
+            foreach (var p in result)
+                Console.WriteLine("{0} - {1}", p.maPhong, p.loaiPhong.tenLoaiPhong);
+            Console.WriteLine();
+        }
+
+        //4. Cho biết số lượng phòng máy lạnh đang được thuê ở tòa ...
+        public static void Linq4(char t)
+        {
+            Console.WriteLine("Linq4");
+            var result = from p in dsPhong
+                         where p.loaiPhong.tenLoaiPhong.StartsWith("Phòng máy lạnh") && p.maToa == t
+                         select p;
+            Console.WriteLine("Số lượng phòng máy lạnh được thuê ở tòa {0} là: {1}", t, result.Count());
+            foreach (var p in result)
+                Console.WriteLine("Phòng: {0}", p.maPhong);
+            Console.WriteLine();
+        }
+
+        //5. Cho biết các phòng chưa thanh toán hóa đơn dịch vụ nào cả
+        public static void Linq5()
+        {
+            Console.WriteLine("Linq5");
+            var tongSoPhong = from p in dsPhong
+                              where p.trangThai == true
+                              select p.maPhong;
+            var phongDaDongTien = from hd in dsHoaDon
+                                  where hd.ngayThanhToan != DateTime.MinValue
+                                  select hd.maPhong;
+            var result = from p in tongSoPhong.Except(phongDaDongTien)
+                         select p;
+            Console.WriteLine("Các phòng chưa thanh toán hóa đơn dịch vụ nào là: ");
+            foreach (var r in result)
+                Console.WriteLine("Phòng: {0}", r);
+            Console.WriteLine();
+        }
+
+        //6. Cho biết những hợp đồng hết hạn trước ngày 21/04/2021
+        public static void Linq6()
+        {
+            Console.WriteLine("Linq6");
+            var result = from hd in dsChiTietHopDong
+                         where hd.ngayKetThuc <= new DateTime(2021, 04, 21)
+                         select hd;
+            Console.WriteLine("Các hợp đồng hết hạn trước ngày 21/04/2021 là: ");
+            foreach (var hd in result)
+                Console.WriteLine("Hợp đồng " +
+                    "{0} của sinh viên {1} - {2} đang ở phòng {3}",
+                    hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
+            Console.WriteLine();
+        }
+
+        //7. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
+        public static void Linq7()
+        {
+            Console.WriteLine("Linq7");
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            var result = from p in dsPhong
+                         where p.trangThai == true
+                         orderby p.loaiPhong.giaPhong
+                         select new { p.maPhong, p.loaiPhong.giaPhong, p.loaiPhong.tenLoaiPhong };
+            Console.WriteLine("Danh sách các phòng đang được thuê theo thứ tự tăng dần của giá phòng: ");
+            foreach (var p in result)
+                Console.WriteLine("Loại phòng: {0} - Phòng: {1} - Giá phòng: {2} VND",
+                    p.tenLoaiPhong, p.maPhong,
+                    double.Parse(p.giaPhong.ToString()).ToString("#,###", cul.NumberFormat));
+            Console.WriteLine();
+        }
+
+        //8. Cho biết số lượng sinh viên trong mỗi phòng đang được thuê theo từng tòa
+        public static void Linq8()
+        {
+            Console.WriteLine("Linq8");
+
+            var groupTheoToa = dsPhong
+                .Where(p => p.trangThai)
+                .GroupBy(t => t.maToa)
+                .Select(y => new { MaToa = y.Key, Phong = y });
+
+            var SLSVTheoPhong = dsSinhVien
+                .GroupBy(p => p.phong.maPhong)
+                .Select(y => new { MaPhong = y.Key, SoLuongSV = y.Count() });
+
+            foreach (var i in groupTheoToa)
+            {
+                Console.WriteLine("Mã tòa: {0}", i.MaToa);
+                foreach (var j in i.Phong)
+                {
+                    Console.Write("Mã phòng: {0} - ", j.maPhong);
+                    foreach (var k in SLSVTheoPhong)
+                    {
+                        if (j.maPhong == k.MaPhong)
+                            Console.WriteLine("Số lượng sinh viên: {0}", k.SoLuongSV);
+                    }
+                }
+            }
+            Console.WriteLine();
+        }
+
+        //9. Cho biết thời gian thuê phòng của từng sinh viên
+        public static void Linq9()
+        {
+            Console.WriteLine("Linq9");
+            var DanhSachThoiGianThue = dsChiTietHopDong
+                .Select(p =>
+                new { range = p.ngayKetThuc - p.ngayBatDau, p.hopDong.maSinhVien, p.hopDong.sinhVien.tenSV });
+            foreach (var tg in DanhSachThoiGianThue)
+            {
+                int years = (tg.range.Days) / 365;
+                int months = (tg.range.Days - years * 365) / 30;
+                int days = (tg.range.Days - years * 365 - months * 30);
+                if (years == 0)
+                    Console.WriteLine("Hợp đồng của {0} - {1} có thời hạn: {2} tháng {3} ngày",
+                        tg.maSinhVien, tg.tenSV, months, days);
+                else
+                    Console.WriteLine("Hợp đồng của {0} - {1} có thời hạn: {2} năm {3} tháng {4} ngày",
+                        tg.maSinhVien, tg.tenSV, years, months, days);
+            }
+            Console.WriteLine();
+        }
+
+        //10. Cho biết tiền sử dụng dịch vụ trung bình của tòa ...
+        public static void Linq10(char ma)
+        {
+            Console.WriteLine("Linq10");
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            var tienTungPhong = dsHoaDon
+                .GroupBy(p => p.maPhong)
+                .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
+            var dsPhongTheoToa = dsPhong
+                .Where(p => p.maToa == ma)
+                .Select(t => t.maPhong);
+            var result = tienTungPhong.Join(dsPhongTheoToa, p => p.maPhong, t => t, (p, t) => p);
+            double average = result.Average(p => p.tien);
+            Console.WriteLine("Danh sách tiền dịch vụ theo từng phòng của tòa {0}: ", ma);
+            foreach (var avg in result)
+            {
+                Console.WriteLine("Phòng: {0} - Tiền: {1} VND",
+                    avg.maPhong, double.Parse(avg.tien.ToString()).ToString("#,###", cul.NumberFormat));
+            }
+            Console.WriteLine("Số tiền dịch vụ trung bình của tòa {0} là: {1} VND",
+                ma, double.Parse(average.ToString()).ToString("#,###", cul.NumberFormat));
+            Console.WriteLine();
+        }
+
+        //11. Cho biết thông tin phòng còn trống ở mỗi tòa
+        public static void Linq11()
+        {
+            Console.WriteLine("Linq11");
             Console.WriteLine("Danh sách những phòng còn trống theo tòa");
 
             var groupTheoToa = dsPhong
@@ -531,21 +710,11 @@ namespace OOP_QuanLyKTX
             }
             Console.WriteLine();
         }
-        //2. Cho biết thông tin quản lý của nhân viên 
-        public static void Linq2(string ma)
+
+        //12. Sắp xếp tăng dần số lượng sinh viên theo từng phòng
+        public static void Linq12()
         {
-            Console.WriteLine("Linq2");
-            NhanVien nv = dsNhanVien
-                .Where(t => t.maNV == ma)
-                .FirstOrDefault();
-            Console.WriteLine("Mã nhân viên: {0} - Họ tên: {1} đang quản lý loại nhân viên có {2}",
-                nv.loaiNhanVien.maQuanLy, nv.loaiNhanVien.quanLy.tenNhanVien, nv.loaiNhanVien.maLoaiNV);
-            Console.WriteLine();
-        }
-        //3. Sắp xếp tăng dần số lượng sinh viên theo từng phòng
-        public static void Linq3()
-        {
-            Console.WriteLine("Linq3");
+            Console.WriteLine("Linq12");
             Console.WriteLine("Số lượng sinh viên theo từng phòng");
             var SLSVTheoPhong = dsSinhVien
                .GroupBy(p => p.phong.maPhong)
@@ -556,24 +725,10 @@ namespace OOP_QuanLyKTX
             Console.WriteLine();
         }
 
-        //4. Cho biết tổng tiền sử dụng dịch vụ của mỗi phòng 
-        public static void Linq4()
+        //13. Liệt kê thông tin các sinh viên đang ở phòng " "
+        public static void Linq13(string maph)
         {
-            Console.WriteLine("Linq4");
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-            Console.WriteLine("Tiền dịch vụ của mỗi phòng");
-            var groupTheoPhong = dsHoaDon
-                .GroupBy(p => p.maPhong)
-                .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
-            foreach (var t in groupTheoPhong)
-                Console.WriteLine("Phòng {0}: {1} VNĐ", t.maPhong, double.Parse(t.tien.ToString()).ToString("#,###", cul.NumberFormat));
-            Console.WriteLine();
-        }
-
-        //5. Liệt kê thông tin các sinh viên đang ở phòng " "
-        public static void Linq5(string maph)
-        {
-            Console.WriteLine("Linq5");
+            Console.WriteLine("Linq13");
             Console.WriteLine("Thông tin sinh viên đang sống ở phòng {0}", maph);
             var SVTheoPhong = dsSinhVien
                .Where(t => t.phong.maPhong == maph)
@@ -582,23 +737,11 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Mã SV: {0} - Họ tên: {1} - Giới tính: {2} - SĐT: {3}", sv.MaSV, sv.Ten, sv.Gioi ? "Nam" : "Nữ", sv.SDT);
             Console.WriteLine();
         }
-        //6. Cho biết số lượng và danh sách các phòng chưa được thuê của tòa ...
-        public static void Linq6(char t)
-        {
-            Console.WriteLine("Linq6");
-            var result = from p in dsPhong
-                         where p.maToa == t && p.trangThai == false
-                         select p;
-            Console.WriteLine("Số lượng phòng chưa được thuê của tòa {0} là: {1}", t, result.Count());
-            foreach (var p in result)
-                Console.WriteLine("{0} - {1}", p.maPhong, p.loaiPhong.tenLoaiPhong);
-            Console.WriteLine();
-        }
 
-        //7. Cho biết thông tin nhân viên có mức lương cao nhất và thấp nhấp theo mỗi loại nhân viên
-        public static void Linq7()
+        //14. Cho biết thông tin nhân viên có mức lương cao nhất và thấp nhấp theo mỗi loại nhân viên
+        public static void Linq14()
         {
-            Console.WriteLine("Linq7");
+            Console.WriteLine("Linq14");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
 
@@ -613,36 +756,26 @@ namespace OOP_QuanLyKTX
                .Select(x => x.First());
             Console.WriteLine("Danh sách nhân viên lương thấp nhất mỗi loại nhân viên");
             foreach (var i in luongThapTheoLoai)
-                Console.WriteLine("Mã loại: {0} - Công việc: {1} - Họ tên: {2} - Lương {3} VNĐ", i.maLoaiNV, i.loaiNhanVien.congViec, i.tenNhanVien, double.Parse(i.luong.ToString()).ToString("#,###", cul.NumberFormat));
+                Console.WriteLine("Mã loại: {0} - Công việc: {1} - Họ tên: {2} - Lương {3} VNĐ", 
+                    i.maLoaiNV, i.loaiNhanVien.congViec, i.tenNhanVien, double.Parse(i.luong.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
             Console.WriteLine("Danh sách nhân viên lương cao nhất mỗi loại nhân viên");
             foreach (var i in luongCaoTheoLoai)
-                Console.WriteLine("Mã loại: {0} - Công việc: {1} - Họ tên: {2} - Lương {3} VNĐ", i.maLoaiNV, i.loaiNhanVien.congViec, i.tenNhanVien, double.Parse(i.luong.ToString()).ToString("#,###", cul.NumberFormat));
+                Console.WriteLine("Mã loại: {0} - Công việc: {1} - Họ tên: {2} - Lương {3} VNĐ", 
+                    i.maLoaiNV, i.loaiNhanVien.congViec, i.tenNhanVien, double.Parse(i.luong.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
         }
 
-        //8. Cho biết số lượng phòng máy lạnh đang được thuê ở tòa ...
-        public static void Linq8(char t)
+        //15. Liệt kê những thiết bị theo từng loại phòng
+        public static void Linq15()
         {
-            Console.WriteLine("Linq8");
-            var result = from p in dsPhong
-                         where p.loaiPhong.tenLoaiPhong.StartsWith("Phòng máy lạnh") && p.maToa == t
-                         select p;
-            Console.WriteLine("Số lượng phòng máy lạnh được thuê ở tòa {0} là: {1}", t, result.Count());
-            foreach (var p in result)
-                Console.WriteLine("Phòng: {0}", p.maPhong);
-            Console.WriteLine();
-        }
-
-        //9. Liệt kê những thiết bị theo từng loại phòng
-        public static void Linq9()
-        {
-            Console.WriteLine("Linq9");
+            Console.WriteLine("Linq15");
             var ThietBiTheoLoaiPhong = dsTrangBi.Select(x => x);
 
             foreach (var i in ThietBiTheoLoaiPhong)
             {
-                Console.WriteLine("Mã loại phòng: {0} - Tên loại phòng: {1}", i.loaiPhong.maLoaiPhong, i.loaiPhong.tenLoaiPhong);
+                Console.WriteLine("Mã loại phòng: {0} - Tên loại phòng: {1}", 
+                    i.loaiPhong.maLoaiPhong, i.loaiPhong.tenLoaiPhong);
                 foreach (var j in i.dsthietbi_loaiphong)
                 {
                     Console.WriteLine("Mã thiết bị: {0} - Tên thiết bị: {1}", j.maThietBi, j.tenThietBi);
@@ -651,29 +784,11 @@ namespace OOP_QuanLyKTX
             }
             Console.WriteLine();
         }
-
-        //10. Cho biết các phòng chưa thanh toán hóa đơn dịch vụ nào cả
-        public static void Linq10()
+        
+        //16. Cho biết thông tin sinh viên ký hợp đồng thuê KTX từ ngày 15/04/2020 đến 15/05/2020
+        public static void Linq16()
         {
-            Console.WriteLine("Linq10");
-            var tongSoPhong = from p in dsPhong
-                              where p.trangThai == true
-                              select p.maPhong;
-            var phongDaDongTien = from hd in dsHoaDon
-                                  where hd.ngayThanhToan != DateTime.MinValue
-                                  select hd.maPhong;
-            var result = from p in tongSoPhong.Except(phongDaDongTien)
-                         select p;
-            Console.WriteLine("Các phòng chưa thanh toán hóa đơn dịch vụ nào là: ");
-            foreach (var r in result)
-                Console.WriteLine("Phòng: {0}", r);
-            Console.WriteLine();
-        }
-
-        //11. Cho biết thông tin sinh viên ký hợp đồng thuê KTX từ ngày 15/04/2020 đến 15/05/2020
-        public static void Linq11()
-        {
-            Console.WriteLine("Linq11");
+            Console.WriteLine("Linq16");
             var hd = dsHopDong
                 .Where(x => x.ngayKyHopDong >= new DateTime(2020, 04, 15)
                 && x.ngayKyHopDong <= new DateTime(2020, 05, 15))
@@ -684,26 +799,10 @@ namespace OOP_QuanLyKTX
             Console.WriteLine();
         }
 
-
-        //12. Cho biết những hợp đồng hết hạn trước ngày 21/04/2021
-        public static void Linq12()
+        //17. Sắp xếp tổng tiền sử dụng dịch vụ từ cao xuống thấp
+        public static void Linq17()
         {
-            Console.WriteLine("Linq12");
-            var result = from hd in dsChiTietHopDong
-                         where hd.ngayKetThuc <= new DateTime(2021, 04, 21)
-                         select hd;
-            Console.WriteLine("Các hợp đồng hết hạn trước ngày 21/04/2021 là: ");
-            foreach (var hd in result)
-                Console.WriteLine("Hợp đồng " +
-                    "{0} của sinh viên {1} - {2} đang ở phòng {3}",
-                    hd.hopDong.maHopDong, hd.hopDong.maSinhVien, hd.hopDong.sinhVien.tenSV, hd.maPhong);
-            Console.WriteLine();
-        }
-
-        //13. Sắp xếp tổng tiền sử dụng dịch vụ từ cao xuống thấp
-        public static void Linq13()
-        {
-            Console.WriteLine("Linq13");
+            Console.WriteLine("Linq17");
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             var tongTienDichVu = dsHoaDon
             .GroupBy(x => x.maPhong)
@@ -713,36 +812,22 @@ namespace OOP_QuanLyKTX
                 .OrderByDescending(x => x.TienDV);
 
             foreach (var i in sapXepTien)
-                Console.WriteLine("Phòng: {0} - Tiền: {1} VNĐ", i.MaPhong, double.Parse(i.TienDV.ToString()).ToString("#,###", cul.NumberFormat));
+                Console.WriteLine("Phòng: {0} - Tiền: {1} VNĐ", 
+                    i.MaPhong, double.Parse(i.TienDV.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
         }
 
-        //14. Liệt kê các phòng đang được thuê theo thứ tự tăng dần giá phòng.
-        public static void Linq14()
+        //18. Cho biết danh sách thông tin từng phòng theo loại phòng
+        public static void Linq18()
         {
-            Console.WriteLine("Linq14");
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-            var result = from p in dsPhong
-                         where p.trangThai == true
-                         orderby p.loaiPhong.giaPhong
-                         select new { p.maPhong, p.loaiPhong.giaPhong, p.loaiPhong.tenLoaiPhong };
-            Console.WriteLine("Danh sách các phòng đang được thuê theo thứ tự tăng dần của giá phòng: ");
-            foreach (var p in result)
-                Console.WriteLine("Loại phòng: {0} - Phòng: {1} - Giá phòng: {2} VND", 
-                    p.tenLoaiPhong, p.maPhong, double.Parse(p.giaPhong.ToString()).ToString("#,###", cul.NumberFormat));
-            Console.WriteLine();
-        }
-
-        //15. Cho biết danh sách thông tin từng phòng theo loại phòng
-        public static void Linq15()
-        {
-            Console.WriteLine("Linq15");
+            Console.WriteLine("Linq18");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             foreach (var loai in dsLoaiPhong)
             {
                 Console.WriteLine("{0} - {1} - {2} VNĐ ",
-                   loai.maLoaiPhong, loai.tenLoaiPhong, double.Parse(loai.giaPhong.ToString()).ToString("#,###", cul.NumberFormat));
+                   loai.maLoaiPhong, loai.tenLoaiPhong, 
+                   double.Parse(loai.giaPhong.ToString()).ToString("#,###", cul.NumberFormat));
                 foreach (var phong in loai.dsphong_loai)
                 {
                     Console.WriteLine("{0} -Tòa {1} - {2}",
@@ -752,39 +837,10 @@ namespace OOP_QuanLyKTX
             }
         }
         
-        //16. Cho biết số lượng sinh viên trong mỗi phòng đang được thuê theo từng tòa
-        public static void Linq16()
+        //19.Cho biết thông tin hóa đơn thấp nhất và cao nhất mỗi phòng
+        public static void Linq19()
         {
-            Console.WriteLine("Linq16");
-
-            var groupTheoToa = dsPhong
-                .Where(p => p.trangThai)
-                .GroupBy(t => t.maToa)
-                .Select(y => new { MaToa = y.Key, Phong = y });
-
-            var SLSVTheoPhong = dsSinhVien
-                .GroupBy(p => p.phong.maPhong)
-                .Select(y => new { MaPhong = y.Key, SoLuongSV = y.Count() });
-
-            foreach (var i in groupTheoToa)
-            {
-                Console.WriteLine("Mã tòa: {0}", i.MaToa);
-                foreach (var j in i.Phong)
-                { 
-                    Console.Write("Mã phòng: {0} - ", j.maPhong);
-                    foreach (var k in SLSVTheoPhong)
-                    {
-                        if (j.maPhong == k.MaPhong)
-                        Console.WriteLine("Số lượng sinh viên: {0}", k.SoLuongSV);
-                    }
-                }
-            }
-            Console.WriteLine();
-        }
-        //17.Chó biết thông tin hóa đơn thấp nhất và cao nhất mỗi phòng
-        public static void Linq17()
-        {
-            Console.WriteLine("Linq17");
+            Console.WriteLine("Linq19");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
 
@@ -799,40 +855,20 @@ namespace OOP_QuanLyKTX
                 .Select(x => x.First());
             Console.WriteLine("Danh sách hóa đơn thấp nhất mỗi phòng");
             foreach (var i in hoaDonThapNhat)
-                Console.WriteLine("Phòng {0} - Hóa đơn: {1} - Giá trị hóa đơn: {2} VNĐ", i.maPhong, i.maHoaDon, double.Parse(i.tongTien.ToString()).ToString("#,###", cul.NumberFormat));
+                Console.WriteLine("Phòng {0} - Hóa đơn: {1} - Giá trị hóa đơn: {2} VNĐ", 
+                    i.maPhong, i.maHoaDon, double.Parse(i.tongTien.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
             Console.WriteLine("Danh sách hóa đơn cao nhất mỗi phòng");
             foreach (var i in hoaDonCaoNhat)
-                Console.WriteLine("Phòng {0} - Hóa đơn: {1} - Giá trị hóa đơn: {2} VNĐ", i.maPhong, i.maHoaDon, double.Parse(i.tongTien.ToString()).ToString("#,###", cul.NumberFormat));
+                Console.WriteLine("Phòng {0} - Hóa đơn: {1} - Giá trị hóa đơn: {2} VNĐ", 
+                    i.maPhong, i.maHoaDon, double.Parse(i.tongTien.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
         }
 
-        //18. Cho biết thời gian thuê phòng của từng sinh viên
-        public static void Linq18()
+        //20. Cho biết sức chứa từng tòa và sắp xếp số lượng SV đang ở từng tòa giảm dần
+        public static void Linq20()
         {
-            Console.WriteLine("Linq18");
-            var DanhSachThoiGianThue = dsChiTietHopDong
-                .Select(p => 
-                new { range = p.ngayKetThuc - p.ngayBatDau, p.hopDong.maSinhVien, p.hopDong.sinhVien.tenSV });
-            foreach (var tg in DanhSachThoiGianThue)
-            {
-                int years = (tg.range.Days) / 365;
-                int months = (tg.range.Days - years * 365) / 30;
-                int days = (tg.range.Days - years * 365 - months * 30);
-                if (years == 0)
-                    Console.WriteLine("Hợp đồng của {0} - {1} có thời hạn: {2} tháng {3} ngày", 
-                        tg.maSinhVien, tg.tenSV, months, days);
-                else
-                    Console.WriteLine("Hợp đồng của {0} - {1} có thời hạn: {2} năm {3} tháng {4} ngày",
-                        tg.maSinhVien, tg.tenSV, years, months, days);
-            }
-            Console.WriteLine();
-        }
-
-        //19. Cho biết sức chứa từng tòa và sắp xếp số lượng SV đang ở từng tòa giảm dần
-        public static void Linq19()
-        {
-            Console.WriteLine("Linq19");
+            Console.WriteLine("Linq20");
             var svDangThue = dsSinhVien
                .GroupBy(t => t.phong.toa.maToa)
                .Select(y => new { MaToa = y.Key, SLSVThue = y.Count() })
@@ -843,28 +879,6 @@ namespace OOP_QuanLyKTX
                 Console.WriteLine("Toa {0}: {1}", i.maToa, i.sucChua);
             foreach(var i in svDangThue)
                 Console.WriteLine("Số lượng SV đang ở tòa {0}: {1}",i.MaToa, i.SLSVThue);
-            Console.WriteLine();
-        }
-
-        //20. Cho biết tiền sử dụng dịch vụ trung bình của tòa ...
-        public static void Linq20(char ma)
-        {
-            Console.WriteLine("Linq20");
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-            var tienTungPhong = dsHoaDon
-                .GroupBy(p => p.maPhong)
-                .Select(y => new { maPhong = y.Key, tien = y.Sum(a => a.tongTien) });
-            var dsPhongTheoToa = dsPhong
-                .Where(p => p.maToa == ma)
-                .Select(t => t.maPhong);
-            var result = tienTungPhong.Join(dsPhongTheoToa, p => p.maPhong, t => t, (p, t) => p);
-            double average = result.Average(p => p.tien);
-            Console.WriteLine("Danh sách tiền dịch vụ theo từng phòng của tòa {0}: ", ma);
-            foreach (var avg in result)
-            {
-                Console.WriteLine("Phòng: {0} - Tiền: {1} VND", avg.maPhong, double.Parse(avg.tien.ToString()).ToString("#,###", cul.NumberFormat));
-            }
-            Console.WriteLine("Số tiền dịch vụ trung bình của tòa {0} là: {1} VND", ma, double.Parse(average.ToString()).ToString("#,###", cul.NumberFormat));
             Console.WriteLine();
         }
 
@@ -884,27 +898,26 @@ namespace OOP_QuanLyKTX
             TaoDanhSachChiTietHoaDonDichVu();
 
             Console.OutputEncoding = Encoding.UTF8;
-            Linq1();
-            Linq2("NV11");
-            Linq3();
-            Linq4();
-            Linq5("P02");
-            Linq6('C');
+            Linq1("NV11");
+            Linq2();
+            Linq3('B');
+            Linq4('C');
+            Linq5();
+            Linq6();
             Linq7();
-            Linq8('B');
+            Linq8();
             Linq9();
-            Linq10();
+            Linq10('C');
             Linq11();
             Linq12();
-            Linq13();
+            Linq13("P02");
             Linq14();
             Linq15();
             Linq16();
             Linq17();
             Linq18();
             Linq19();
-            Linq20('C');
-
+            Linq20();
             Console.ReadKey();
         }
     }
