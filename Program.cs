@@ -714,7 +714,7 @@ namespace OOP_QuanLyKTX
         //12. Sắp xếp tăng dần số lượng sinh viên theo từng phòng
         public static void Linq12()
         {
-            Console.WriteLine("Linq12");
+            Console.WriteLine("Linq12:");
             Console.WriteLine("Số lượng sinh viên theo từng phòng");
             var SLSVTheoPhong = dsSinhVien
                .GroupBy(p => p.phong.maPhong)
@@ -728,7 +728,7 @@ namespace OOP_QuanLyKTX
         //13. Liệt kê thông tin các sinh viên đang ở phòng " "
         public static void Linq13(string maph)
         {
-            Console.WriteLine("Linq13");
+            Console.WriteLine("Linq13:");
             Console.WriteLine("Thông tin sinh viên đang sống ở phòng {0}", maph);
             var SVTheoPhong = dsSinhVien
                .Where(t => t.phong.maPhong == maph)
@@ -741,7 +741,7 @@ namespace OOP_QuanLyKTX
         //14. Cho biết thông tin nhân viên có mức lương cao nhất và thấp nhấp theo mỗi loại nhân viên
         public static void Linq14()
         {
-            Console.WriteLine("Linq14");
+            Console.WriteLine("Linq14:");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
 
@@ -769,7 +769,7 @@ namespace OOP_QuanLyKTX
         //15. Liệt kê những thiết bị theo từng loại phòng
         public static void Linq15()
         {
-            Console.WriteLine("Linq15");
+            Console.WriteLine("Linq15:");
             var ThietBiTheoLoaiPhong = dsTrangBi.Select(x => x);
 
             foreach (var i in ThietBiTheoLoaiPhong)
@@ -788,7 +788,7 @@ namespace OOP_QuanLyKTX
         //16. Cho biết thông tin sinh viên ký hợp đồng thuê KTX từ ngày 15/04/2020 đến 15/05/2020
         public static void Linq16()
         {
-            Console.WriteLine("Linq16");
+            Console.WriteLine("Linq16:");
             var hd = dsHopDong
                 .Where(x => x.ngayKyHopDong >= new DateTime(2020, 04, 15)
                 && x.ngayKyHopDong <= new DateTime(2020, 05, 15))
@@ -802,7 +802,7 @@ namespace OOP_QuanLyKTX
         //17. Sắp xếp tổng tiền sử dụng dịch vụ từ cao xuống thấp
         public static void Linq17()
         {
-            Console.WriteLine("Linq17");
+            Console.WriteLine("Linq17:");
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             var tongTienDichVu = dsHoaDon
             .GroupBy(x => x.maPhong)
@@ -820,7 +820,7 @@ namespace OOP_QuanLyKTX
         //18. Cho biết danh sách thông tin từng phòng theo loại phòng
         public static void Linq18()
         {
-            Console.WriteLine("Linq18");
+            Console.WriteLine("Linq18:");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             foreach (var loai in dsLoaiPhong)
@@ -840,7 +840,7 @@ namespace OOP_QuanLyKTX
         //19.Cho biết thông tin hóa đơn thấp nhất và cao nhất mỗi phòng
         public static void Linq19()
         {
-            Console.WriteLine("Linq19");
+            Console.WriteLine("Linq19:");
             //Format tiền Việt
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
 
@@ -868,7 +868,7 @@ namespace OOP_QuanLyKTX
         //20. Cho biết sức chứa từng tòa và sắp xếp số lượng SV đang ở từng tòa giảm dần
         public static void Linq20()
         {
-            Console.WriteLine("Linq20");
+            Console.WriteLine("Linq20:");
             var svDangThue = dsSinhVien
                .GroupBy(t => t.phong.toa.maToa)
                .Select(y => new { MaToa = y.Key, SLSVThue = y.Count() })
