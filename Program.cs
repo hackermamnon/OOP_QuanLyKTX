@@ -692,7 +692,7 @@ namespace OOP_QuanLyKTX
         //11. Cho biết thông tin phòng còn trống ở mỗi tòa
         public static void Linq11()
         {
-            Console.WriteLine("Linq11");
+            Console.WriteLine("Linq11:");
             Console.WriteLine("Danh sách những phòng còn trống theo tòa");
 
             var groupTheoToa = dsPhong
@@ -898,16 +898,16 @@ namespace OOP_QuanLyKTX
             TaoDanhSachChiTietHoaDonDichVu();
 
             Console.OutputEncoding = Encoding.UTF8;
-            Linq1("NV11");
-            Linq2();
-            Linq3('B');
-            Linq4('C');
-            Linq5();
-            Linq6();
-            Linq7();
-            Linq8();
-            Linq9();
-            Linq10('C');
+            //Linq1("NV11");
+            //Linq2();
+            //Linq3('B');
+            //Linq4('C');
+            //Linq5();
+            //Linq6();
+            //Linq7();
+            //Linq8();
+            //Linq9();
+            //Linq10('C');
             Linq11();
             Linq12();
             Linq13("P02");
